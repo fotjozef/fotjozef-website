@@ -147,9 +147,9 @@
             color: #fe2c55;
         }
 
-        /* KLIPP-SEKTION (FLYTTAD UPP) */
+        /* KLIPP-SEKTION */
         .featured-section {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             text-align: center;
         }
 
@@ -209,32 +209,64 @@
             background-color: #fe2c55;
         }
 
-        /* LIVE FLÖDE SEKTION (NEDFLYTTAD) */
+        /* TIKTOK-VIBE KOLLAPSIBEL FLÖDES-SEKTION */
         .live-feed-section {
-            margin-top: 10px;
             margin-bottom: 24px;
             text-align: center;
-            border-top: 1px solid #eaeaea;
-            padding-top: 24px;
         }
 
-        .feed-title {
+        .collapse-btn {
+            width: 100%;
+            background-color: #ffffff;
+            color: #121212;
+            border: 2px solid #25F4EE;
+            padding: 14px 18px;
+            border-radius: 14px;
             font-size: 0.9rem;
             font-weight: 800;
-            color: #4b5563;
-            margin-bottom: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 14px rgba(37, 244, 238, 0.2);
+            transition: all 0.2s ease;
         }
 
-        /* YOUTUBE MENTION SEKTION */
+        .collapse-btn:hover {
+            background-color: #f0fdfd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 244, 238, 0.3);
+        }
+
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            padding: 0 4px;
+        }
+
+        .collapse-content.open {
+            max-height: 3000px; /* Tillräckligt hög för att rymma flödet */
+            padding-top: 16px;
+        }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .collapse-btn.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        /* YOUTUBE MENTION SEKTION (FLYTTAD NER) */
         .youtube-mention {
             width: 100%;
             background: #fff5f5;
             border: 2px solid #ff4d4d;
             border-radius: 16px;
             padding: 16px;
-            margin-top: 20px;
+            margin-bottom: 24px;
             text-align: center;
         }
 
@@ -278,7 +310,6 @@
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
-            margin-top: 28px;
             margin-bottom: 20px;
             padding-top: 16px;
             border-top: 1px solid #eaeaea;
@@ -345,7 +376,7 @@
                 </p>
             </div>
 
-            <!-- UTVALDA PINNADE KLIPP (FLYTTADE OVANFÖR FLÖDET) -->
+            <!-- UTVALDA PINNADE KLIPP -->
             <div class="featured-section">
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
@@ -372,28 +403,33 @@
                         <div class="play-btn-banner">▶ Facebook</div>
                     </a>
                 </div>
+            </div>
 
-                <!-- EMIL HANSIUS MENTION -->
-                <div class="youtube-mention">
-                    <h3>🎬 Vill du se hur Emil Hansius reagerar på Fotjozefs humor?</h3>
-                    <p>Kolla in när Emil Hansius blir sur som en citron! 🍋</p>
-                    <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-btn">
-                        ▶ Se på YouTube (07:34)
-                    </a>
+            <!-- KOLLAPSIBEL FLÖDES-SEKTION (TIKTOK-VIBE) -->
+            <div class="live-feed-section">
+                <button class="collapse-btn" onclick="toggleFeed()">
+                    <span>Klicka här för att se senaste kaoset från vardagen. 🙈</span>
+                    <span class="arrow-icon">▼</span>
+                </button>
+                <div class="collapse-content" id="feed-content">
+                    <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
+                    <script>
+                      (() => {
+                        if(window.__bhldScript)return;window.__bhldScript=true;
+                        const d=document,s=d.createElement("script");s.type="module";
+                        s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+                      })();
+                    </script>
                 </div>
             </div>
 
-            <!-- LIVE FLÖDE (NEDFLYTTAT SOM EN EXTRA BONUS) -->
-            <div class="live-feed-section">
-                <div class="feed-title">Senaste från flödet</div>
-                <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
-                <script>
-                  (() => {
-                    if(window.__bhldScript)return;window.__bhldScript=true;
-                    const d=document,s=d.createElement("script");s.type="module";
-                    s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
-                  })();
-                </script>
+            <!-- EMIL HANSIUS MENTION (FLYTTAD OVANFÖR STRECKET) -->
+            <div class="youtube-mention">
+                <h3>🎬 Vill du se hur Emil Hansius reagerar på Fotjozefs humor?</h3>
+                <p>Kolla in när Emil Hansius blir sur som en citron! 🍋</p>
+                <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-btn">
+                    ▶ Se på YouTube (07:34)
+                </a>
             </div>
 
             <!-- SIDFOT LÄNKAR -->
@@ -411,7 +447,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT FÖR MUSIK OCH DIAGNOS -->
+    <!-- SCRIPT FÖR MUSIK, DIAGNOS OCH KOLLAPSBART FLÖDE -->
     <script>
         const audio = document.getElementById('bg-audio');
         const musicBtn = document.getElementById('music-btn');
@@ -424,6 +460,13 @@
                 audio.pause();
                 musicBtn.innerHTML = '▶️';
             }
+        }
+
+        function toggleFeed() {
+            const btn = document.querySelector('.collapse-btn');
+            const content = document.getElementById('feed-content');
+            btn.classList.toggle('active');
+            content.classList.toggle('open');
         }
 
         const diseases = [
