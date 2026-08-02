@@ -44,7 +44,7 @@
             z-index: 1;
         }
 
-        /* Ny justerad profilring - Tunnare (2px) och genomskinlig fyllning */
+        /* Profilring – samma tunnhet (2px) och matchar bakgrunden utanför */
         .profile-wrap {
             position: absolute;
             top: -50px;
@@ -52,9 +52,9 @@
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            padding: 0; /* Ingen extra padding */
-            background-color: transparent; /* Ingen fyllnadsfärg */
-            border: 2px solid #0f172a; /* Samma tunnhet som huvudkanten */
+            padding: 0;
+            background-color: transparent; /* Genomskinlig bakgrund */
+            border: 2px solid #0f172a; /* Tunn ram (samma som kortet) */
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: flex;
@@ -65,7 +65,7 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Rymmer hela huvudet */
+            object-fit: contain; /* Håller hela bilden och frisyren synlig */
             border-radius: 50%;
         }
 
@@ -84,7 +84,7 @@
             font-weight: 500;
         }
 
-        /* Snygg grid/rutnät för länkarna */
+        /* Rutnät för länkarna */
         .links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -124,8 +124,8 @@
 
     <div class="page-wrap">
         <div class="profile-wrap">
-            <!-- VIKTIGT: Vi refererar fortfarande till profile.jpg för tillfället -->
-            <img class="profile-img" src="profile.jpg" alt="Fotjozef Profilbild">
+            <!-- När du har laddat upp den genomskinliga PNG-bilden byter du ut profile.jpg mot profile.png nedan -->
+            <img class="profile-img" src="profile.png" alt="Fotjozef Profilbild">
         </div>
 
         <div class="container">
