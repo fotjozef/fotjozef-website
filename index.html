@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #f8fafc; /* Sidans bakgrundsfärg */
+            background-color: #f8fafc;
             color: #0f172a;
             display: flex;
             justify-content: center;
@@ -36,14 +36,14 @@
             width: 100%;
             text-align: center;
             background: #ffffff;
-            padding: 80px 32px 40px 32px;
+            padding: 80px 32px 32px 32px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             border: 2px solid #0f172a;
             z-index: 1;
         }
 
-        /* CIRKELN: Matchar sidans bakgrund (#f8fafc) och täcker linjen */
+        /* Profilcirkel */
         .profile-wrap {
             position: absolute;
             top: -50px;
@@ -52,7 +52,7 @@
             height: 110px;
             border-radius: 50%;
             padding: 0;
-            background-color: #f8fafc; /* Matchar sidans bakgrundsfärg exakt! */
+            background-color: #f8fafc; /* Matchar bakgrunden utanför */
             border: 2px solid #0f172a;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -71,50 +71,76 @@
         h1 {
             font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
             color: #0f172a;
+        }
+
+        .tagline {
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 24px;
         }
 
         .bio {
-            color: #475569;
+            color: #334155;
             font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            font-weight: 500;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            text-align: left;
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
         }
 
-        .links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .btn {
+        /* Sidfot / Länkar på en rad längst ner */
+        .footer-links {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 16px 20px;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            padding-top: 10px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 18px;
             background-color: #ffffff;
             color: #0f172a;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: all 0.2s ease-in-out;
-            border: 2px solid #0f172a;
+            border: 1.5px solid #0f172a;
         }
 
         .btn:hover {
             background-color: #0f172a;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Speciell framhävning för TikTok-knappen */
+        .btn-tiktok {
+            border-color: #FE2C55;
+            color: #FE2C55;
+        }
+
+        .btn-tiktok:hover {
+            background-color: #FE2C55;
+            color: #ffffff;
         }
 
         footer {
-            margin-top: 40px;
             font-size: 0.85rem;
-            color: #64748b;
+            color: #94a3b8;
         }
     </style>
 </head>
@@ -127,10 +153,15 @@
 
         <div class="container">
             <h1>Fotjozef</h1>
-            <p class="bio">Välkommen till min officiella hemsida! Här hittar du mina kanaler, projekt och allt annat innehåll.</p>
+            <p class="tagline">Här mixar jag humor, stil och självironi ✨</p>
 
-            <div class="links">
-                <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn">TikTok</a>
+            <div class="bio">
+                Välkommen! Jag heter Jozef Lindström och är den digitala kreatören bakom humorkontot <strong>Fotjozef</strong>. Baserad i Stockholm skapar jag innehåll med fokus på humor, stil och självironi för att bjuda på en underhållande och personlig skymt av vardagen. Utöver mitt skapande på sociala medier arbetar jag inom finanssektorn på Handelsbanken.
+            </div>
+
+            <!-- Länkar placerade som sidfot längst ner -->
+            <div class="footer-links">
+                <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn btn-tiktok">TikTok</a>
                 <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn">Instagram</a>
                 <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn">YouTube</a>
                 <a href="mailto:kontakt@fotjozef.se" class="btn">Kontakta Mig</a>
