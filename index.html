@@ -99,6 +99,11 @@
             margin-bottom: 24px;
         }
 
+        /* SJUKDOMSTEXTEN I SVART */
+        .disease-name {
+            color: #121212;
+        }
+
         /* INTRO-TEXT ÖVER FLÖDET */
         .intro-text-section {
             margin-bottom: 20px;
@@ -182,7 +187,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 7px 8px;
+            padding-7px 8px;
             background-color: #121212;
             color: #ffffff;
             border-radius: 8px;
@@ -303,7 +308,7 @@
             
             <!-- HÄR VISAS DATUM OCH SLUMPAD DIAGNOS -->
             <div>
-                <span id="disease-box" class="disease-badge">Aktuell diagnos per 2 augusti 2026: Laddar...</span>
+                <span id="disease-box" class="disease-badge">Aktuell diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
             </div>
 
             <!-- INTRO-TEXT ÖVER FLÖDET -->
@@ -361,7 +366,7 @@
                             <span class="pinned-badge">📌 Fäst klipp</span>
                             <div class="video-title">Vasaloppet 🎿💅</div>
                         </div>
-                        <div class="play-btn-small">▶ Facebook</div>
+                        <div class="play-dfn play-btn-small">▶ Facebook</div>
                     </a>
                 </div>
 
@@ -398,43 +403,18 @@
     <!-- SCRIPT FÖR ATT SLUMPA FRAM SJUKDOM -->
     <script>
         const diseases = [
-            "Haltar",
-            "Svag",
-            "Ryggont",
-            "Dropfot",
-            "Nedsatt lungkapacitet",
-            "Ojämn",
-            "Dyslexi",
-            "Bokstavskombinationer",
-            "Blodbrist",
-            "Dyskalkyli",
-            "Nagelvärk",
-            "Nervös",
-            "Ledvärk",
-            "Hörselnedsättning",
-            "Dålig blodcirkulation",
-            "Fotvärk",
-            "Smalbent",
-            "Dåligt blodvärde",
-            "Knäsvag",
-            "Tandpressning",
-            "Dålig kondition",
-            "Grovt synfel",
-            "Rädd",
-            "Döv",
-            "Nackspänningar",
-            "Skolios",
-            "Polio",
-            "Muskelvärk",
-            "Allmänt nedsatt allmäntillstånd",
-            "Postpolio"
+            "Haltar", "Svag", "Ryggont", "Dropfot", "Nedsatt lungkapacitet", 
+            "Ojämn", "Dyslexi", "Bokstavskombinationer", "Blodbrist", "Dyskalkyli", 
+            "Nagelvärk", "Nervös", "Ledvärk", "Hörselnedsättning", "Dålig blodcirkulation", 
+            "Fotvärk", "Smalbent", "Dåligt blodvärde", "Knäsvag", "Tandpressning", 
+            "Dålig kondition", "Grovt synfel", "Rädd", "Döv", "Nackspänningar", 
+            "Skolios", "Polio", "Muskelvärk", "Allmänt nedsatt allmäntillstånd", "Postpolio"
         ];
 
-        // Slumpar fram en sjukdom från listan
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         
-        // Skriver ut i formatet: Aktuell diagnos per 2 augusti 2026: [Sjukdom]
-        document.getElementById("disease-box").innerText = "Aktuell diagnos per 2 augusti 2026: " + randomDisease;
+        // Lägger in den slumpade sjukdomen i den svarta span-taggen
+        document.getElementById("disease-box").innerHTML = 'Aktuell diagnos per 2 augusti 2026: <span class="disease-name">' + randomDisease + '</span>';
     </script>
 
 </body>
