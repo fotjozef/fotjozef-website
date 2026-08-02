@@ -47,11 +47,19 @@
             position: relative;
         }
 
-        /* FLYTANDE MUSIKKNAPP UPPE TILL HÖGER */
-        .music-float-btn {
+        /* FLYTANDE MUSIKKNAPP MED TEXT UPPE TILL HÖGER */
+        .music-float-wrapper {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            z-index: 10;
+        }
+
+        .music-float-btn {
             width: 44px;
             height: 44px;
             background-color: #ffffff;
@@ -64,13 +72,19 @@
             font-size: 1.1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             transition: all 0.2s ease;
-            z-index: 10;
         }
 
         .music-float-btn:hover {
             transform: scale(1.08);
             border-color: #121212;
             background-color: #f8fafc;
+        }
+
+        .music-btn-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #121212;
+            white-space: nowrap;
         }
 
         /* PROFILRING */
@@ -132,7 +146,7 @@
 
         /* INTRO-TEXT */
         .intro-text-section {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             text-align: center;
         }
 
@@ -147,10 +161,19 @@
             color: #fe2c55;
         }
 
-        /* KLIPP-SEKTION (4 I RAD BÅDE PÅ DATOR OCH MOBIL) */
+        /* KLIPP-SEKTION */
         .featured-section {
             margin-bottom: 24px;
             text-align: center;
+        }
+
+        .cards-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #121212;
+            margin-bottom: 10px;
+            text-align: left;
+            padding-left: 2px;
         }
 
         .video-grid {
@@ -221,12 +244,12 @@
             }
 
             .video-grid {
-                grid-template-columns: repeat(4, 1fr); /* Håller 4 i rad på mobil */
+                grid-template-columns: repeat(4, 1fr);
                 gap: 5px;
             }
 
             .video-card {
-                height: 155px; /* Något lägre höjd för perfekt balans på smala skärmar */
+                height: 155px;
                 padding: 4px;
                 border-radius: 8px;
             }
@@ -254,7 +277,7 @@
             border: 2px solid #25F4EE;
             padding: 14px 18px;
             border-radius: 14px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 800;
             cursor: pointer;
             display: flex;
@@ -386,10 +409,13 @@
         </div>
 
         <div class="container">
-            <!-- DOLD MUSIKFIL & FLYTANDE SPELAR-KNAPP -->
+            <!-- DOLD MUSIKFIL & FLYTANDE SPELAR-KNAPP MED TEXT UNDER -->
             <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
-            <div class="music-float-btn" id="music-btn" title="🎵 Lyssna på Fotjozef-låten" onclick="toggleMusic()">
-                ▶️
+            <div class="music-float-wrapper">
+                <div class="music-float-btn" id="music-btn" title="🎵 Lyssna på Fotjozef-låten" onclick="toggleMusic()">
+                    ▶️
+                </div>
+                <span class="music-btn-label">Fotjozef-låten</span>
             </div>
 
             <h1>Fotjozef</h1>
@@ -410,6 +436,7 @@
 
             <!-- UTVALDA PINNADE KLIPP -->
             <div class="featured-section">
+                <h2 class="cards-title">Några populära klipp:</h2>
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
                     <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
@@ -440,7 +467,7 @@
             <!-- KOLLAPSIBEL FLÖDES-SEKTION -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
-                    <span>Klicka här för att se senaste kaoset från vardagen. 🙈</span>
+                    <span>🔥 <span class="red-accent">Senaste från Fotjozef</span> Klipp, kaos & vardag</span>
                     <span class="arrow-icon">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content">
