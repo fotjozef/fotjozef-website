@@ -154,7 +154,7 @@
             text-align: center;
         }
 
-        /* KLIPP-SEKTION MED MINIATYRER */
+        /* KLIPP-SEKTION MED HELTÄCKANDE KORT */
         .featured-section {
             margin-top: 5px;
             margin-bottom: 24px;
@@ -164,58 +164,57 @@
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-            gap: 10px;
+            gap: 12px;
             width: 100%;
         }
 
         .video-card {
-            background: #ffffff;
+            position: relative;
+            background-size: cover;
+            background-position: center;
             border-radius: 14px;
-            border: 1px solid #4b5563;
-            padding: 8px 6px;
+            border: 1.5px solid #4b5563;
+            height: 220px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: space-between;
+            padding: 8px;
             text-decoration: none;
-            color: inherit;
+            overflow: hidden;
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .video-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
             border-color: #121212;
         }
 
-        .pinned-icon {
-            font-size: 0.8rem;
-            margin-bottom: 4px;
-        }
-
-        .video-thumb {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
+        .pinned-badge {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2px 6px;
             border-radius: 8px;
-            margin-bottom: 8px;
-            border: 1px solid #eaeaea;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        .play-btn-small {
-            display: inline-flex;
+        .play-btn-banner {
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 6px;
-            background-color: #121212;
+            padding: 7px;
+            background-color: rgba(18, 18, 18, 0.88);
             color: #ffffff;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 600;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+            transition: background-color 0.2s ease;
         }
 
-        .video-card:hover .play-btn-small {
+        .video-card:hover .play-btn-banner {
             background-color: #fe2c55;
         }
 
@@ -349,43 +348,31 @@
                 </script>
             </div>
 
-            <!-- UTVALDA KLIPP MED MINIATYRER OCH TOOLTIP -->
+            <!-- UTVALDA KLIPP MED HELTÄCKANDE BAKGRUNDSILDER -->
             <div class="featured-section">
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" title="Mekonomen 🇳🇴⚙️">
-                        <div>
-                            <div class="pinned-icon">📌</div>
-                            <img src="mekonomen.jpg" alt="Mekonomen" class="video-thumb">
-                        </div>
-                        <div class="play-btn-small">▶ TikTok</div>
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">▶ TikTok</div>
                     </a>
 
-                    <!-- Klipp 2: Lime / Emil -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" title="Lime / Emil 🍋😡">
-                        <div>
-                            <div class="pinned-icon">📌</div>
-                            <img src="emil.jpg" alt="Lime / Emil" class="video-thumb">
-                        </div>
-                        <div class="play-btn-small">▶ TikTok</div>
+                    <!-- Klipp 2: Emil -->
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" style="background-image: url('emil.jpg');" title="Lime / Emil 🍋😡">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">▶ TikTok</div>
                     </a>
 
-                    <!-- Klipp 3: Är du alkis -->
-                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" title="Är du alkis 🔄">
-                        <div>
-                            <div class="pinned-icon">📌</div>
-                            <img src="alkis.jpg" alt="Är du alkis" class="video-thumb">
-                        </div>
-                        <div class="play-btn-small">▶ Instagram</div>
+                    <!-- Klipp 3: Alkis -->
+                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" style="background-image: url('alkis.jpg');" title="Är du alkis 🔄">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">▶ Instagram</div>
                     </a>
 
                     <!-- Klipp 4: Vasaloppet -->
-                    <a href="https://www.facebook.com/share/r/1EacFuokSt/?mibextid=wwXIfr" target="_blank" class="video-card" title="Vasaloppet 🎿💅">
-                        <div>
-                            <div class="pinned-icon">📌</div>
-                            <img src="vasaloppet.jpg" alt="Vasaloppet" class="video-thumb">
-                        </div>
-                        <div class="play-btn-small">▶ Facebook</div>
+                    <a href="https://www.facebook.com/share/r/1EacFuokSt/?mibextid=wwXIfr" target="_blank" class="video-card" style="background-image: url('vasaloppet.jpg');" title="Vasaloppet 🎿💅">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">▶ Facebook</div>
                     </a>
                 </div>
 
