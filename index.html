@@ -288,7 +288,7 @@
             transform: rotate(180deg);
         }
 
-        /* YOUTUBE THUMBNAIL-SEKTION (NY LAYOUT) */
+        /* YOUTUBE THUMBNAIL-SEKTION (KOMPAKT) */
         .yt-section {
             margin-bottom: 28px;
             width: 100%;
@@ -298,21 +298,23 @@
         }
 
         .yt-title {
-            font-size: 1.05rem;
-            font-weight: 800; /* Fet stil */
-            color: #121212;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 500; /* Ej fet stil */
+            color: #4b5563;
+            margin-bottom: 12px;
             text-align: center;
+            max-width: 400px;
+            line-height: 1.4;
         }
 
         .yt-card {
             position: relative;
             width: 100%;
-            max-width: 440px; /* Perfekt storlek för miniatyr */
+            max-width: 320px; /* Gör miniatyren lagom stor och smidig */
             aspect-ratio: 16 / 9;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
             text-decoration: none;
             display: block;
             background-color: #000;
@@ -321,7 +323,7 @@
 
         .yt-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
         }
 
         .yt-thumb-img {
@@ -334,19 +336,19 @@
         /* Tidstämpel uppe på bilden */
         .yt-badge {
             position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background-color: rgba(0, 0, 0, 0.82);
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.85);
             color: #ffffff;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 800;
-            padding: 4px 8px;
-            border-radius: 6px;
+            padding: 3px 6px;
+            border-radius: 4px;
             backdrop-filter: blur(2px);
             z-index: 2;
         }
 
-        /* Det viktiga röda YouTube-strecket längst ner i bilden */
+        /* Rött YouTube-streck längst ner */
         .yt-progress-bar {
             position: absolute;
             bottom: 0;
@@ -358,21 +360,21 @@
             box-shadow: 0 0 6px rgba(255, 0, 0, 0.8);
         }
 
-        /* Mitten-playknapp vid hover */
+        /* Mitten-playknapp */
         .yt-play-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             background-color: rgba(255, 0, 0, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding-left: 3px;
             opacity: 0.9;
             transition: transform 0.2s ease, background-color 0.2s ease;
@@ -382,30 +384,6 @@
         .yt-card:hover .yt-play-overlay {
             transform: translate(-50%, -50%) scale(1.1);
             background-color: #ff0000;
-        }
-
-        /* Knappen under miniatyren */
-        .yt-action-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            background-color: #ff0000;
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 0.85rem;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            margin-top: 12px;
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.25);
-            transition: all 0.2s ease;
-        }
-
-        .yt-action-btn:hover {
-            background-color: #cc0000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 0, 0, 0.35);
         }
 
         /* SIDFOT LÄNKAR */
@@ -481,13 +459,12 @@
             }
 
             .yt-title {
-                font-size: 0.95rem;
+                font-size: 0.85rem;
+                padding: 0 10px;
             }
 
-            .yt-action-btn {
-                width: 100%;
-                font-size: 0.8rem;
-                padding: 10px 12px;
+            .yt-card {
+                max-width: 280px; /* Ännu smidigare i mobilen */
             }
         }
     </style>
@@ -565,19 +542,15 @@
                 </div>
             </div>
 
-            <!-- NY EMIL HANSIUS YOUTUBE-MINIATYR SEKTION -->
+            <!-- EMIL HANSIUS YOUTUBE-MINIATYR SEKTION -->
             <div class="yt-section">
-                <div class="yt-title">🎬 När Emil Hansius såg min video...</div>
+                <div class="yt-title">Vill du se hur youtubern och influeraren Emil Hansius reagerar på Fotjozefs humor?</div>
                 
                 <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-card">
                     <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-thumb-img">
                     <div class="yt-play-overlay">▶</div>
                     <div class="yt-badge">07:34</div>
                     <div class="yt-progress-bar"></div>
-                </a>
-
-                <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-action-btn">
-                    🍋 Se reaktionen på YouTube (07:34)
                 </a>
             </div>
 
