@@ -157,10 +157,6 @@
             line-height: 1.4;
         }
 
-        .red-accent {
-            color: #fe2c55;
-        }
-
         /* KLIPP-SEKTION */
         .featured-section {
             margin-bottom: 24px;
@@ -169,7 +165,7 @@
 
         .cards-title {
             font-size: 0.95rem;
-            font-weight: 800;
+            font-weight: 500; /* EJ FET */
             color: #121212;
             margin-bottom: 10px;
             text-align: left;
@@ -278,7 +274,6 @@
             padding: 14px 18px;
             border-radius: 14px;
             font-size: 0.88rem;
-            font-weight: 800;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -291,6 +286,15 @@
             background-color: #f0fdfd;
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(37, 244, 238, 0.3);
+        }
+
+        .bold-red {
+            color: #fe2c55;
+            font-weight: 800;
+        }
+
+        .normal-text {
+            font-weight: 500; /* EJ FET */
         }
 
         .collapse-content {
@@ -429,8 +433,7 @@
             <!-- INTRO-TEXT -->
             <div class="intro-text-section">
                 <p class="section-headline">
-                    Du har säkert sett honom i flödet.<br>
-                    <span class="red-accent">Nu vet du vem det är.</span> 👀
+                    Mannen. Myten. Legenden. 💪🏾
                 </p>
             </div>
 
@@ -467,7 +470,7 @@
             <!-- KOLLAPSIBEL FLÖDES-SEKTION -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
-                    <span>🔥 <span class="red-accent">Senaste från Fotjozef</span> Klipp, kaos & vardag</span>
+                    <span>🔥 <span class="bold-red">Senaste från Fotjozef</span> <span class="normal-text">Klipp, kaos & vardag</span></span>
                     <span class="arrow-icon">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content">
