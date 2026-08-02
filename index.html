@@ -132,7 +132,7 @@
 
         /* INTRO-TEXT */
         .intro-text-section {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-align: center;
         }
 
@@ -147,7 +147,7 @@
             color: #fe2c55;
         }
 
-        /* KLIPP-SEKTION */
+        /* KLIPP-SEKTION (4 PÅ RAD) */
         .featured-section {
             margin-bottom: 24px;
             text-align: center;
@@ -155,8 +155,8 @@
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
             width: 100%;
         }
 
@@ -164,13 +164,13 @@
             position: relative;
             background-size: cover;
             background-position: center;
-            border-radius: 14px;
+            border-radius: 12px;
             border: 1.5px solid #4b5563;
-            height: 220px;
+            height: 155px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 8px;
+            padding: 6px;
             text-decoration: none;
             overflow: hidden;
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -184,10 +184,10 @@
 
         .pinned-badge {
             align-self: flex-end;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-            margin-top: 2px;
-            margin-right: 2px;
+            margin-top: 1px;
+            margin-right: 1px;
         }
 
         .play-btn-banner {
@@ -195,14 +195,15 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 7px;
+            padding: 5px 2px;
             background-color: rgba(18, 18, 18, 0.88);
             color: #ffffff;
-            border-radius: 8px;
-            font-size: 0.72rem;
+            border-radius: 6px;
+            font-size: 0.62rem;
             font-weight: 700;
             backdrop-filter: blur(4px);
             transition: background-color 0.2s ease;
+            white-space: nowrap;
         }
 
         .video-card:hover .play-btn-banner {
@@ -246,7 +247,7 @@
         }
 
         .collapse-content.open {
-            max-height: 3000px; /* Tillräckligt hög för att rymma flödet */
+            max-height: 3000px;
             padding-top: 16px;
         }
 
@@ -259,7 +260,7 @@
             transform: rotate(180deg);
         }
 
-        /* YOUTUBE MENTION SEKTION (FLYTTAD NER) */
+        /* YOUTUBE MENTION SEKTION */
         .youtube-mention {
             width: 100%;
             background: #fff5f5;
@@ -376,7 +377,7 @@
                 </p>
             </div>
 
-            <!-- UTVALDA PINNADE KLIPP -->
+            <!-- UTVALDA PINNADE KLIPP (4 PÅ RAD) -->
             <div class="featured-section">
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
@@ -405,7 +406,7 @@
                 </div>
             </div>
 
-            <!-- KOLLAPSIBEL FLÖDES-SEKTION (TIKTOK-VIBE) -->
+            <!-- KOLLAPSIBEL FLÖDES-SEKTION -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
                     <span>Klicka här för att se senaste kaoset från vardagen. 🙈</span>
@@ -423,7 +424,7 @@
                 </div>
             </div>
 
-            <!-- EMIL HANSIUS MENTION (FLYTTAD OVANFÖR STRECKET) -->
+            <!-- EMIL HANSIUS MENTION -->
             <div class="youtube-mention">
                 <h3>🎬 Vill du se hur Emil Hansius reagerar på Fotjozefs humor?</h3>
                 <p>Kolla in när Emil Hansius blir sur som en citron! 🍋</p>
