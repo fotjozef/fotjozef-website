@@ -22,7 +22,7 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 40px 16px;
         }
 
         .page-wrap {
@@ -39,7 +39,7 @@
             width: 100%;
             text-align: center;
             background: #ffffff;
-            padding: 80px 24px 32px 24px;
+            padding: 80px 20px 32px 20px;
             border-radius: 24px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
             border: 2px solid #121212;
@@ -147,7 +147,7 @@
             color: #fe2c55;
         }
 
-        /* KLIPP-SEKTION (STANDARD / DATOR) */
+        /* KLIPP-SEKTION (4 I RAD BÅDE PÅ DATOR OCH MOBIL) */
         .featured-section {
             margin-bottom: 24px;
             text-align: center;
@@ -156,7 +156,7 @@
         .video-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 8px;
             width: 100%;
         }
 
@@ -166,7 +166,7 @@
             background-position: center;
             border-radius: 12px;
             border: 1.5px solid #4b5563;
-            height: 210px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -195,7 +195,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 6px 2px;
+            padding: 5px 2px;
             background-color: rgba(18, 18, 18, 0.88);
             color: #ffffff;
             border-radius: 6px;
@@ -210,14 +210,34 @@
             background-color: #fe2c55;
         }
 
-        /* MOBILANPASSNING (FIXAR PROPORTIONERNA PÅ TELEFONEN) */
+        /* RESPONSIV ANPASSNING FÖR SMÅ SKÄRMAR (MOBIL) */
         @media (max-width: 600px) {
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2x2 grid i mobilen istället för alla 4 ihoptryckta */
-                gap: 10px;
+            body {
+                padding: 20px 8px;
             }
+
+            .container {
+                padding: 70px 10px 24px 10px;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(4, 1fr); /* Håller 4 i rad på mobil */
+                gap: 5px;
+            }
+
             .video-card {
-                height: 200px; /* Perfekt proportion för mobilen */
+                height: 155px; /* Något lägre höjd för perfekt balans på smala skärmar */
+                padding: 4px;
+                border-radius: 8px;
+            }
+
+            .pinned-badge {
+                font-size: 0.8rem;
+            }
+
+            .play-btn-banner {
+                font-size: 0.55rem;
+                padding: 4px 1px;
             }
         }
 
