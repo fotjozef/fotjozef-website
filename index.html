@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #f8fafc;
+            background-color: #f8fafc; /* Sidans bakgrundsfärg */
             color: #0f172a;
             display: flex;
             justify-content: center;
@@ -40,11 +40,11 @@
             padding: 80px 32px 40px 32px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 2px solid #0f172a;
+            border: 2px solid #0f172a; /* Huvudkant (2px) */
             z-index: 1;
         }
 
-        /* Nerskalad cirkel för balanserat utseende */
+        /* Ny justerad profilring - Tunnare (2px) och genomskinlig fyllning */
         .profile-wrap {
             position: absolute;
             top: -50px;
@@ -52,9 +52,9 @@
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            padding: 4px;
-            background-color: #ffffff;
-            border: 4px solid #0f172a;
+            padding: 0; /* Ingen extra padding */
+            background-color: transparent; /* Ingen fyllnadsfärg */
+            border: 2px solid #0f172a; /* Samma tunnhet som huvudkanten */
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: flex;
@@ -62,11 +62,10 @@
             align-items: center;
         }
 
-        /* Gör så att HELA bilden och frisyren ryms utan beskärning */
         .profile-img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* Rymmer hela huvudet */
             border-radius: 50%;
         }
 
@@ -125,6 +124,7 @@
 
     <div class="page-wrap">
         <div class="profile-wrap">
+            <!-- VIKTIGT: Vi refererar fortfarande till profile.jpg för tillfället -->
             <img class="profile-img" src="profile.jpg" alt="Fotjozef Profilbild">
         </div>
 
