@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #f8fafc; /* Sidans bakgrundsfärg */
+            background-color: #f8fafc;
             color: #0f172a;
             display: flex;
             justify-content: center;
@@ -22,7 +22,6 @@
             padding: 40px 20px;
         }
 
-        /* Bredare layout för hemsidekänsla */
         .page-wrap {
             max-width: 680px;
             width: 100%;
@@ -40,21 +39,21 @@
             padding: 80px 32px 40px 32px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 2px solid #0f172a; /* Huvudkant (2px) */
-            z-index: 1;
+            border: 2px solid #0f172a;
+            z-index: 1; /* Boxen har lägre z-index */
         }
 
-        /* Profilring – samma tunnhet (2px) och matchar bakgrunden utanför */
+        /* FIX: Profilring med vit bakgrund för att täcka strecket */
         .profile-wrap {
             position: absolute;
             top: -50px;
-            z-index: 2;
+            z-index: 2; /* Ringen har högre z-index för att täcka strecket */
             width: 110px;
             height: 110px;
             border-radius: 50%;
             padding: 0;
-            background-color: transparent; /* Genomskinlig bakgrund */
-            border: 2px solid #0f172a; /* Tunn ram (samma som kortet) */
+            background-color: #ffffff; /* Vit bakgrund inuti ringen täcker strecket! */
+            border: 2px solid #0f172a; /* Samma tunnhet (2px) */
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: flex;
@@ -65,7 +64,7 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Håller hela bilden och frisyren synlig */
+            object-fit: contain;
             border-radius: 50%;
         }
 
@@ -84,7 +83,6 @@
             font-weight: 500;
         }
 
-        /* Rutnät för länkarna */
         .links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -124,7 +122,7 @@
 
     <div class="page-wrap">
         <div class="profile-wrap">
-            <!-- När du har laddat upp den genomskinliga PNG-bilden byter du ut profile.jpg mot profile.png nedan -->
+            <!-- Använder profile.png som tidigare -->
             <img class="profile-img" src="profile.png" alt="Fotjozef Profilbild">
         </div>
 
