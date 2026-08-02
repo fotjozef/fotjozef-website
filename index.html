@@ -99,56 +99,82 @@
             font-weight: 500;
         }
 
-        /* KLIPP-SEKTION */
+        /* KLIPP-SEKTION (Grid med mindre kort) */
         .featured-section {
             margin-top: 20px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-
-        .section-headline {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: #121212;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            margin-bottom: 30px;
             text-align: center;
         }
 
+        .section-headline {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #121212;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
         .video-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
             width: 100%;
         }
 
         .video-card {
-            width: 100%;
-            max-width: 340px;
             background: #ffffff;
             border-radius: 16px;
-            border: 1.5px solid #eaeaea;
-            padding: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 2px solid #121212;
+            padding: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
+            justify-content: space-between;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
         }
 
         .pinned-badge {
-            align-self: flex-start;
             background: #fe2c55;
             color: #ffffff;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-bottom: 12px;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
+        }
+
+        .video-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #121212;
+        }
+
+        .play-btn-small {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 8px 12px;
+            background-color: #121212;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .video-card:hover .play-btn-small {
+            background-color: #fe2c55;
         }
 
         /* YOUTUBE MENTION SEKTION */
@@ -158,34 +184,33 @@
             border: 2px solid #ff4d4d;
             border-radius: 16px;
             padding: 20px;
-            margin-top: 36px;
+            margin-top: 30px;
             text-align: center;
         }
 
         .youtube-mention h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 800;
             color: #cc0000;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .youtube-mention p {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: #333333;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             font-weight: 500;
-            line-height: 1.5;
         }
 
         .yt-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: #ff0000;
             color: #ffffff;
             font-weight: 800;
-            font-size: 0.88rem;
-            padding: 10px 18px;
+            font-size: 0.85rem;
+            padding: 10px 16px;
             border-radius: 10px;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -194,7 +219,6 @@
         .yt-btn:hover {
             background: #cc0000;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
         }
 
         /* SIDFOT LÄNKAR */
@@ -229,7 +253,6 @@
             background-color: #121212;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         footer {
@@ -262,38 +285,39 @@
 
                 <div class="video-grid">
                     <!-- Klipp 1: TikTok -->
-                    <div class="video-card">
-                        <span class="pinned-badge">📌 Fäst klipp</span>
-                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" data-video-id="7179084741583392005" style="max-width: 320px; min-width: 280px;">
-                            <section> <a target="_blank" title="@fotjozef.official" href="https://www.tiktok.com/@fotjozef.official?refer=embed">@fotjozef.official</a> </section>
-                        </blockquote>
-                    </div>
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card">
+                        <div>
+                            <span class="pinned-badge">📌 Fäst klipp</span>
+                            <div class="video-title">Mekonomen 🎵</div>
+                        </div>
+                        <div class="play-btn-small">▶ Se på TikTok</div>
+                    </a>
 
                     <!-- Klipp 2: TikTok -->
-                    <div class="video-card">
-                        <span class="pinned-badge">📌 Fäst klipp</span>
-                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" data-video-id="7228226685773122842" style="max-width: 320px; min-width: 280px;">
-                            <section> <a target="_blank" title="@fotjozef.official" href="https://www.tiktok.com/@fotjozef.official?refer=embed">@fotjozef.official</a> </section>
-                        </blockquote>
-                    </div>
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card">
+                        <div>
+                            <span class="pinned-badge">📌 Fäst klipp</span>
+                            <div class="video-title">Humorklipp 🔥</div>
+                        </div>
+                        <div class="play-btn-small">▶ Se på TikTok</div>
+                    </a>
 
                     <!-- Klipp 3: Instagram Reel -->
-                    <div class="video-card">
-                        <span class="pinned-badge">📌 Fäst klipp</span>
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:12px; box-shadow:none; margin:1px; max-width:320px; min-width:280px; padding:0; width:99.375%;">
-                            <div style="padding:16px;">
-                                <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> Se klippet på Instagram</a>
-                            </div>
-                        </blockquote>
-                    </div>
+                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card">
+                        <div>
+                            <span class="pinned-badge">📌 Fäst klipp</span>
+                            <div class="video-title">Instagram Reel 📸</div>
+                        </div>
+                        <div class="play-btn-small">▶ Se på Instagram</div>
+                    </a>
                 </div>
 
                 <!-- EMIL HANSIUS MENTION -->
                 <div class="youtube-mention">
                     <h3>🎬 Vill du se hur Emil Hansius reagerar på Fotjozefs humor?</h3>
-                    <p>Kolla in när Emil Hansius lyfter fram klippen i sin YouTube-video!</p>
+                    <p>Kolla in när Emil Hansius lyfter fram klippen i sin video!</p>
                     <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-btn">
-                        ▶ Se klippet på YouTube (07:34)
+                        ▶ Se på YouTube (07:34)
                     </a>
                 </div>
             </div>
@@ -313,8 +337,5 @@
         </div>
     </div>
 
-    <!-- Skript för inbäddning av TikTok & Instagram -->
-    <script async src="https://www.tiktok.com/embed.js"></script>
-    <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
