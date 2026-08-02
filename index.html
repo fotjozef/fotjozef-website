@@ -126,14 +126,13 @@
             margin-bottom: 24px;
         }
 
-        /* SJUKDOMSTEXTEN I SVART */
         .disease-name {
             color: #121212;
         }
 
-        /* INTRO-TEXT ÖVER FLÖDET */
+        /* INTRO-TEXT */
         .intro-text-section {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             text-align: center;
         }
 
@@ -148,16 +147,9 @@
             color: #fe2c55;
         }
 
-        /* BEHOLD FEED SEKTION */
-        .live-feed-section {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* KLIPP-SEKTION MED HELTÄCKANDE KORT */
+        /* KLIPP-SEKTION (FLYTTAD UPP) */
         .featured-section {
-            margin-top: 5px;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             text-align: center;
         }
 
@@ -215,6 +207,24 @@
 
         .video-card:hover .play-btn-banner {
             background-color: #fe2c55;
+        }
+
+        /* LIVE FLÖDE SEKTION (NEDFLYTTAD) */
+        .live-feed-section {
+            margin-top: 10px;
+            margin-bottom: 24px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+            padding-top: 24px;
+        }
+
+        .feed-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #4b5563;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* YOUTUBE MENTION SEKTION */
@@ -327,7 +337,7 @@
                 <span id="disease-box" class="disease-badge">Aktuell diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
             </div>
 
-            <!-- INTRO-TEXT ÖVER FLÖDET -->
+            <!-- INTRO-TEXT -->
             <div class="intro-text-section">
                 <p class="section-headline">
                     Du har säkert sett honom i flödet.<br>
@@ -335,19 +345,7 @@
                 </p>
             </div>
 
-            <!-- LIVE FLÖDE (BEHOLD WIDGET) -->
-            <div class="live-feed-section">
-                <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
-                <script>
-                  (() => {
-                    if(window.__bhldScript)return;window.__bhldScript=true;
-                    const d=document,s=d.createElement("script");s.type="module";
-                    s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
-                  })();
-                </script>
-            </div>
-
-            <!-- UTVALDA KLIPP MED HÄFTSTIFT UTAN VIT BAKGRUND UPP TILL HÖGER -->
+            <!-- UTVALDA PINNADE KLIPP (FLYTTADE OVANFÖR FLÖDET) -->
             <div class="featured-section">
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
@@ -383,6 +381,19 @@
                         ▶ Se på YouTube (07:34)
                     </a>
                 </div>
+            </div>
+
+            <!-- LIVE FLÖDE (NEDFLYTTAT SOM EN EXTRA BONUS) -->
+            <div class="live-feed-section">
+                <div class="feed-title">Senaste från flödet</div>
+                <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
+                <script>
+                  (() => {
+                    if(window.__bhldScript)return;window.__bhldScript=true;
+                    const d=document,s=d.createElement("script");s.type="module";
+                    s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+                  })();
+                </script>
             </div>
 
             <!-- SIDFOT LÄNKAR -->
