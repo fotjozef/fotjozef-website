@@ -86,22 +86,27 @@
             margin-bottom: 24px;
         }
 
+        /* INTRO-TEXT ÖVER FLÖDET */
+        .intro-text-section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-headline {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #121212;
+            line-height: 1.5;
+        }
+
+        .red-accent {
+            color: #fe2c55;
+        }
+
         /* BEHOLD FEED SEKTION */
         .live-feed-section {
             margin-bottom: 30px;
             text-align: center;
-        }
-
-        .live-feed-title {
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: #fe2c55;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
         }
 
         /* KLIPP-SEKTION */
@@ -109,14 +114,6 @@
             margin-top: 10px;
             margin-bottom: 30px;
             text-align: center;
-        }
-
-        .section-headline {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #121212;
-            margin-bottom: 24px;
-            line-height: 1.5;
         }
 
         .video-grid {
@@ -293,10 +290,15 @@
             <h1>Fotjozef</h1>
             <p class="tagline">Humor, stil och självironi ✨</p>
 
-            <!-- SENASTE FRÅN FLÖDET (BEHOLD WIDGET) -->
+            <!-- INTRO-TEXT ÖVER FLÖDET -->
+            <div class="intro-text-section">
+                <p class="section-headline">
+                    Du har säkert sett några av dessa klipp i ditt flöde och undrat vem den personen är. <span class="red-accent">Nu vet du!</span> 👇🏾
+                </p>
+            </div>
+
+            <!-- LIVE FLÖDE (BEHOLD WIDGET) -->
             <div class="live-feed-section">
-                <span class="live-feed-title">🔴 Senaste från flödet</span>
-                
                 <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
                 <script>
                   (() => {
@@ -309,10 +311,6 @@
 
             <!-- UTVALDA KLIPP -->
             <div class="featured-section">
-                <p class="section-headline">
-                    Du har säkert sett några av dessa klipp i ditt flöde och undrat vem den personen är. Nu vet du! 👇🏾
-                </p>
-
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
                     <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card">
