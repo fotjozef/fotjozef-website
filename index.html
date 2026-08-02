@@ -298,8 +298,8 @@
         }
 
         .yt-title {
-            font-size: 0.9rem;
-            font-weight: 500; /* Ej fet stil */
+            font-size: 0.95rem;
+            font-style: italic; /* Kursiv stil */
             color: #4b5563;
             margin-bottom: 12px;
             text-align: center;
@@ -307,10 +307,15 @@
             line-height: 1.4;
         }
 
+        .yt-title strong {
+            font-weight: 800; /* Fet stil för namnet */
+            color: #121212;
+        }
+
         .yt-card {
             position: relative;
             width: 100%;
-            max-width: 320px; /* Gör miniatyren lagom stor och smidig */
+            max-width: 320px;
             aspect-ratio: 16 / 9;
             border-radius: 12px;
             overflow: hidden;
@@ -459,12 +464,12 @@
             }
 
             .yt-title {
-                font-size: 0.85rem;
+                font-size: 0.88rem;
                 padding: 0 10px;
             }
 
             .yt-card {
-                max-width: 280px; /* Ännu smidigare i mobilen */
+                max-width: 280px;
             }
         }
     </style>
@@ -491,7 +496,7 @@
             
             <!-- HÄR VISAS DATUM OCH SLUMPAD DIAGNOS -->
             <div>
-                <span id="disease-box" class="disease-badge">Aktuell diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
+                <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
             </div>
 
             <!-- UTVALDA PINNADE KLIPP -->
@@ -544,7 +549,7 @@
 
             <!-- EMIL HANSIUS YOUTUBE-MINIATYR SEKTION -->
             <div class="yt-section">
-                <div class="yt-title">Vill du se hur youtubern och influeraren Emil Hansius reagerar på Fotjozefs humor?</div>
+                <div class="yt-title">Vad tycker <strong>Emil Hansius</strong> om Fotjozefs humor</div>
                 
                 <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-card">
                     <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-thumb-img">
@@ -602,7 +607,7 @@
 
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         
-        document.getElementById("disease-box").innerHTML = 'Aktuell diagnos per 2 augusti 2026: <span class="disease-name">' + randomDisease + '</span>';
+        document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026: <span class="disease-name">' + randomDisease + '</span>';
     </script>
 
 </body>
