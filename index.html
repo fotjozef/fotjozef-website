@@ -6,7 +6,7 @@
     <title>Fotjozef | Officiell Hemsida</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -125,9 +125,10 @@
             font-size: 0.95rem;
             font-weight: 700;
             margin-bottom: 16px;
+            line-height: 1.4;
         }
 
-        /* SLUMPAD DIAGNOS BADGE (MED MER LUFT) */
+        /* SLUMPAD DIAGNOS BADGE */
         .disease-badge {
             display: inline-block;
             background-color: #fff5f5;
@@ -146,19 +147,6 @@
             color: #121212;
         }
 
-        /* INTRO-TEXT (TYDLIGARE OCH MÄKTIGARE TAGLINE) */
-        .intro-text-section {
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .section-headline {
-            font-size: 1.15rem; /* Större för mer tryck */
-            font-weight: 900;
-            color: #121212;
-            letter-spacing: -0.2px;
-        }
-
         /* KLIPP-SEKTION */
         .featured-section {
             margin-bottom: 28px;
@@ -166,11 +154,12 @@
         }
 
         .cards-title {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             font-weight: 500;
+            font-style: italic; /* KURSIV TEXT */
             color: #4b5563;
             margin-bottom: 12px;
-            text-align: center; /* Centrerad för bättre balans */
+            text-align: center;
         }
 
         .video-grid {
@@ -310,10 +299,6 @@
             font-weight: 800;
         }
 
-        .normal-text {
-            font-weight: 500;
-        }
-
         .collapse-content {
             max-height: 0;
             overflow: hidden;
@@ -440,18 +425,11 @@
             </div>
 
             <h1>Fotjozef</h1>
-            <p class="tagline">Svensk kreatör med humor, stil och självironi ✨</p>
+            <p class="tagline">Svensk kreatör med humor, stil, självironi och världsrekord i selfies ✨🤳🏾</p>
             
             <!-- HÄR VISAS DATUM OCH SLUMPAD DIAGNOS -->
             <div>
                 <span id="disease-box" class="disease-badge">Aktuell diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
-            </div>
-
-            <!-- INTRO-TEXT (TYDLIGARE HIERARKI) -->
-            <div class="intro-text-section">
-                <p class="section-headline">
-                    Mannen. Myten. Legenden. 🦾
-                </p>
             </div>
 
             <!-- UTVALDA PINNADE KLIPP -->
@@ -487,7 +465,7 @@
             <!-- KOLLAPSIBEL FLÖDES-SEKTION -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
-                    <span>🔥 <span class="bold-red">Senaste från Fotjozef</span> <span class="normal-text">Klipp, kaos & vardag</span></span>
+                    <span>🔥 <span class="bold-red">Senaste från Fotjozef</span></span>
                     <span class="arrow-icon">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content">
@@ -521,7 +499,7 @@
             </div>
 
             <div class="copyright-footer">
-                © 2026 Jozef Lindström. Jag är originalet!
+                © 2026 Jozef Lindström. Mannen. Myten. Legenden. 🦿
             </div>
         </div>
     </div>
