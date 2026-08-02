@@ -86,6 +86,33 @@
             margin-bottom: 12px;
         }
 
+        /* MUSIKSPELARE */
+        .music-player-box {
+            background-color: #f8fafc;
+            border: 1px solid #4b5563;
+            border-radius: 14px;
+            padding: 10px 14px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .music-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #121212;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        audio {
+            width: 100%;
+            height: 32px;
+        }
+
         /* SLUMPAD DIAGNOS BADGE */
         .disease-badge {
             display: inline-block;
@@ -299,6 +326,15 @@
             <h1>Fotjozef</h1>
             <p class="tagline">Svensk kreatör med humor, stil och självironi ✨</p>
             
+            <!-- MUSIKSPELARE -->
+            <div class="music-player-box">
+                <div class="music-label">🎵 Lyssna på Fotjozef-låten:</div>
+                <audio controls>
+                    <source src="Fotjozef_by_DarkAudiogram972.mp3" type="audio/mpeg">
+                    Din webbläsare stödjer inte ljudfiler.
+                </audio>
+            </div>
+
             <!-- HÄR VISAS DATUM OCH SLUMPAD DIAGNOS -->
             <div>
                 <span id="disease-box" class="disease-badge">Aktuell diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
