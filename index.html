@@ -141,10 +141,13 @@
             margin-top: 4px;
             margin-bottom: 28px;
             box-shadow: 0 2px 8px rgba(254, 44, 85, 0.08);
+            line-height: 1.4;
         }
 
         .disease-name {
             color: #121212;
+            font-weight: 800;
+            display: inline-block;
         }
 
         /* KLIPP-SEKTION */
@@ -299,7 +302,7 @@
 
         .yt-title {
             font-size: 0.95rem;
-            font-style: italic; /* Kursiv stil */
+            font-style: italic; /* Kursiv stil exakt som cards-title */
             color: #4b5563;
             margin-bottom: 12px;
             text-align: center;
@@ -308,8 +311,9 @@
         }
 
         .yt-title strong {
-            font-weight: 800; /* Fet stil för namnet */
+            font-weight: 800; /* Fet stil för Emil Hansius */
             color: #121212;
+            font-style: normal;
         }
 
         .yt-card {
@@ -496,7 +500,7 @@
             
             <!-- HÄR VISAS DATUM OCH SLUMPAD DIAGNOS -->
             <div>
-                <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026: <span class="disease-name">Laddar...</span></span>
+                <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026:<br><span class="disease-name">Laddar...</span></span>
             </div>
 
             <!-- UTVALDA PINNADE KLIPP -->
@@ -532,7 +536,7 @@
             <!-- KOLLAPSIBEL FLÖDES-SEKTION -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
-                    <span>🔥 <span class="bold-red">Senaste från Fotjozef</span></span>
+                    <span>📣 <span class="bold-red">Senaste nytt – kika här!</span></span>
                     <span class="arrow-icon">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content">
@@ -549,7 +553,7 @@
 
             <!-- EMIL HANSIUS YOUTUBE-MINIATYR SEKTION -->
             <div class="yt-section">
-                <div class="yt-title">Vad tycker <strong>Emil Hansius</strong> om Fotjozefs humor</div>
+                <h2 class="yt-title">Se vad <strong>Emil Hansius</strong> tycker om min humor</h2>
                 
                 <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-card">
                     <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-thumb-img">
@@ -569,7 +573,7 @@
             </div>
 
             <div class="copyright-footer">
-                © 2026 Jozef Lindström. Mannen. Myten. Legenden. 🦿
+                © 2026 Jozef Lindström. Mannen. Myten. Legenden.🦿
             </div>
         </div>
     </div>
@@ -607,7 +611,7 @@
 
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         
-        document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026: <span class="disease-name">' + randomDisease + '</span>';
+        document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026:<br><span class="disease-name">' + randomDisease + '</span>';
     </script>
 
 </body>
