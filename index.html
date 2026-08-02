@@ -86,9 +86,27 @@
             margin-bottom: 24px;
         }
 
+        /* BEHOLD FEED SEKTION */
+        .live-feed-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .live-feed-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #fe2c55;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         /* KLIPP-SEKTION */
         .featured-section {
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 30px;
             text-align: center;
         }
@@ -244,7 +262,7 @@
             transform: translateY(-2px);
         }
 
-        /* BIO OM MIG (UTAN RUTA & MINDRE STORLEK) */
+        /* BIO OM MIG */
         .bio-footer {
             color: #555555;
             font-size: 0.85rem;
@@ -274,6 +292,20 @@
         <div class="container">
             <h1>Fotjozef</h1>
             <p class="tagline">Humor, stil och självironi ✨</p>
+
+            <!-- SENASTE FRÅN FLÖDET (BEHOLD WIDGET) -->
+            <div class="live-feed-section">
+                <span class="live-feed-title">🔴 Senaste från flödet</span>
+                
+                <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
+                <script>
+                  (() => {
+                    if(window.__bhldScript)return;window.__bhldScript=true;
+                    const d=document,s=d.createElement("script");s.type="module";
+                    s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
+                  })();
+                </script>
+            </div>
 
             <!-- UTVALDA KLIPP -->
             <div class="featured-section">
@@ -338,7 +370,7 @@
                 <a href="mailto:kontakt@fotjozef.se" class="btn">Kontakt</a>
             </div>
 
-            <!-- BIO/OM MIG FLYTTAD UNDER KNAPPARNA (UTAN RUTA & MINDRE) -->
+            <!-- BIO/OM MIG -->
             <div class="bio-footer">
                 <strong>Fotjozef</strong> är en svensk kreatör på sociala medier vars riktiga namn är Jozef Lindström. Han skapar i huvudsak underhållande och vardagsnära innehåll med fokus på humor, livsstil och en hälsosam dos självironi.
             </div>
