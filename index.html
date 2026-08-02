@@ -6,7 +6,7 @@
     <title>Fotjozef | Officiell Hemsida</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700;1,800&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -291,7 +291,7 @@
             transform: rotate(180deg);
         }
 
-        /* YOUTUBE THUMBNAIL-SEKTION (KOMPAKT) */
+        /* YOUTUBE THUMBNAIL-SEKTION */
         .yt-section {
             margin-bottom: 28px;
             width: 100%;
@@ -302,18 +302,18 @@
 
         .yt-title {
             font-size: 0.95rem;
-            font-style: italic; /* Kursiv stil exakt som cards-title */
+            font-weight: 500;
+            font-style: italic;
             color: #4b5563;
             margin-bottom: 12px;
             text-align: center;
-            max-width: 400px;
             line-height: 1.4;
         }
 
         .yt-title strong {
-            font-weight: 800; /* Fet stil för Emil Hansius */
-            color: #121212;
-            font-style: normal;
+            font-weight: 800;
+            font-style: italic;
+            color: #4b5563;
         }
 
         .yt-card {
@@ -437,7 +437,12 @@
             margin-top: 10px;
         }
 
-        /* RESPONSIV ANPASSNING FÖR SMÅ SKÄRMAR (MOBIL) */
+        .footer-highlight {
+            color: #121212;
+            font-weight: 700;
+        }
+
+        /* RESPONSIV ANPASSNING FÖR MOBIL */
         @media (max-width: 600px) {
             body {
                 padding: 20px 8px;
@@ -486,7 +491,7 @@
         </div>
 
         <div class="container">
-            <!-- DOLD MUSIKFIL & FLYTANDE SPELAR-KNAPP MED TEXT UNDER -->
+            <!-- DOLD MUSIKFIL & FLYTANDE SPELAR-KNAPP -->
             <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
             <div class="music-float-wrapper">
                 <div class="music-float-btn" id="music-btn" title="🎵 Lyssna på Fotjozef-låten" onclick="toggleMusic()">
@@ -498,9 +503,9 @@
             <h1>Fotjozef</h1>
             <p class="tagline">Svensk kreatör med humor, stil, självironi och världsrekord i selfies ✨🤳🏾</p>
             
-            <!-- HÄR VISAS DATUM OCH SLUMPAD DIAGNOS -->
+            <!-- DATUM OCH DIAGNOS (UTAN KOLON EFTER DATUM) -->
             <div>
-                <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026:<br><span class="disease-name">Laddar...</span></span>
+                <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026<br><span class="disease-name">Laddar...</span></span>
             </div>
 
             <!-- UTVALDA PINNADE KLIPP -->
@@ -573,12 +578,12 @@
             </div>
 
             <div class="copyright-footer">
-                © 2026 Jozef Lindström. Mannen. Myten. Legenden.🦿
+                © 2026 Jozef Lindström. <span class="footer-highlight">Mannen. Myten. Legenden.🦿</span>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT FÖR MUSIK, DIAGNOS OCH KOLLAPSBART FLÖDE -->
+    <!-- SCRIPT -->
     <script>
         const audio = document.getElementById('bg-audio');
         const musicBtn = document.getElementById('music-btn');
@@ -611,7 +616,7 @@
 
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         
-        document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026:<br><span class="disease-name">' + randomDisease + '</span>';
+        document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026<br><span class="disease-name">' + randomDisease + '</span>';
     </script>
 
 </body>
