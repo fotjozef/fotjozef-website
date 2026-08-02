@@ -147,7 +147,7 @@
             color: #fe2c55;
         }
 
-        /* KLIPP-SEKTION (4 PÅ RAD MED RÄTT PROPORTIONER) */
+        /* KLIPP-SEKTION (STANDARD / DATOR) */
         .featured-section {
             margin-bottom: 24px;
             text-align: center;
@@ -166,7 +166,7 @@
             background-position: center;
             border-radius: 12px;
             border: 1.5px solid #4b5563;
-            height: 210px; /* Tillbaka till snygg stående form */
+            height: 210px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -208,6 +208,17 @@
 
         .video-card:hover .play-btn-banner {
             background-color: #fe2c55;
+        }
+
+        /* MOBILANPASSNING (FIXAR PROPORTIONERNA PÅ TELEFONEN) */
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 grid i mobilen istället för alla 4 ihoptryckta */
+                gap: 10px;
+            }
+            .video-card {
+                height: 200px; /* Perfekt proportion för mobilen */
+            }
         }
 
         /* TIKTOK-VIBE KOLLAPSIBEL FLÖDES-SEKTION */
@@ -377,7 +388,7 @@
                 </p>
             </div>
 
-            <!-- UTVALDA PINNADE KLIPP (4 PÅ RAD) -->
+            <!-- UTVALDA PINNADE KLIPP -->
             <div class="featured-section">
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
