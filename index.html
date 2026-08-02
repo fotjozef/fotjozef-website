@@ -154,7 +154,7 @@
             text-align: center;
         }
 
-        /* KLIPP-SEKTION */
+        /* KLIPP-SEKTION MED MINIATYRER */
         .featured-section {
             margin-top: 5px;
             margin-bottom: 24px;
@@ -180,7 +180,6 @@
             text-decoration: none;
             color: inherit;
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            min-height: 100px;
         }
 
         .video-card:hover {
@@ -189,25 +188,18 @@
             border-color: #121212;
         }
 
-        .pinned-badge {
-            background: #fe2c55;
-            color: #ffffff;
-            font-size: 0.62rem;
-            font-weight: 800;
-            padding: 2px 6px;
-            border-radius: 10px;
-            margin-bottom: 2px;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
+        .pinned-icon {
+            font-size: 0.8rem;
+            margin-bottom: 4px;
         }
 
-        .video-title {
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin: 0;
-            color: #121212;
-            line-height: 1.2;
+        .video-thumb {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #eaeaea;
         }
 
         .play-btn-small {
@@ -215,7 +207,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 5px 6px;
+            padding: 6px;
             background-color: #121212;
             color: #ffffff;
             border-radius: 6px;
@@ -357,41 +349,41 @@
                 </script>
             </div>
 
-            <!-- UTVALDA KLIPP -->
+            <!-- UTVALDA KLIPP MED MINIATYRER OCH TOOLTIP -->
             <div class="featured-section">
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card">
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" title="Mekonomen 🇳🇴⚙️">
                         <div>
-                            <span class="pinned-badge">📌 Fäst klipp</span>
-                            <div class="video-title">Mekonomen 🇳🇴⚙️</div>
+                            <div class="pinned-icon">📌</div>
+                            <img src="mekonomen.jpg" alt="Mekonomen" class="video-thumb">
                         </div>
                         <div class="play-btn-small">▶ TikTok</div>
                     </a>
 
                     <!-- Klipp 2: Lime / Emil -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card">
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" title="Lime / Emil 🍋😡">
                         <div>
-                            <span class="pinned-badge">📌 Fäst klipp</span>
-                            <div class="video-title">Lime / Emil 🍋😡</div>
+                            <div class="pinned-icon">📌</div>
+                            <img src="emil.jpg" alt="Lime / Emil" class="video-thumb">
                         </div>
                         <div class="play-btn-small">▶ TikTok</div>
                     </a>
 
                     <!-- Klipp 3: Är du alkis -->
-                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card">
+                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" title="Är du alkis 🔄">
                         <div>
-                            <span class="pinned-badge">📌 Fäst klipp</span>
-                            <div class="video-title">Är du alkis 🔄</div>
+                            <div class="pinned-icon">📌</div>
+                            <img src="alkis.jpg" alt="Är du alkis" class="video-thumb">
                         </div>
                         <div class="play-btn-small">▶ Instagram</div>
                     </a>
 
                     <!-- Klipp 4: Vasaloppet -->
-                    <a href="https://www.facebook.com/share/r/1EacFuokSt/?mibextid=wwXIfr" target="_blank" class="video-card">
+                    <a href="https://www.facebook.com/share/r/1EacFuokSt/?mibextid=wwXIfr" target="_blank" class="video-card" title="Vasaloppet 🎿💅">
                         <div>
-                            <span class="pinned-badge">📌 Fäst klipp</span>
-                            <div class="video-title">Vasaloppet 🎿💅</div>
+                            <div class="pinned-icon">📌</div>
+                            <img src="vasaloppet.jpg" alt="Vasaloppet" class="video-thumb">
                         </div>
                         <div class="play-btn-small">▶ Facebook</div>
                     </a>
@@ -424,7 +416,6 @@
 
     <!-- SCRIPT FÖR MUSIK OCH DIAGNOS -->
     <script>
-        // Musik-kontroll
         const audio = document.getElementById('bg-audio');
         const musicBtn = document.getElementById('music-btn');
 
@@ -438,7 +429,6 @@
             }
         }
 
-        // Slumpad diagnos
         const diseases = [
             "Haltar", "Svag", "Ryggont", "Dropfot", "Nedsatt lungkapacitet", 
             "Ojämn", "Dyslexi", "Bokstavskombinationer", "Blodbrist", "Dyskalkyli", 
