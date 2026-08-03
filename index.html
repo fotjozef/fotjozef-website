@@ -178,7 +178,7 @@
         }
 
         .disease-value {
-            font-size: 1.35rem; /* Större och tydligare */
+            font-size: 1.35rem;
             font-weight: 800;
             color: #121212;
         }
@@ -242,7 +242,7 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            color: #fe2c55; /* Rosa/röd accent för breaking/humor */
+            color: #fe2c55;
             margin-bottom: 6px;
         }
 
@@ -322,7 +322,7 @@
             width: 100%;
             background-color: #ffffff;
             color: #121212;
-            border: 1.5px solid #25F4EE; /* Cyan för interaktion */
+            border: 1.5px solid #25F4EE;
             padding: 14px 20px;
             border-radius: 16px;
             font-size: 0.95rem;
@@ -421,7 +421,7 @@
 
         .primary-buttons {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* TikTok | Instagram | YouTube på rad */
+            grid-template-columns: repeat(2, 1fr); /* Endast TikTok & Instagram på storbild */
             gap: 10px;
             margin-bottom: 16px;
         }
@@ -431,7 +431,7 @@
             justify-content: center;
             align-items: center;
             padding: 14px 10px;
-            background-color: #121212; /* Svart för primär CTA */
+            background-color: #121212;
             color: #ffffff;
             text-decoration: none;
             border-radius: 14px;
@@ -458,7 +458,7 @@
             display: inline-flex;
             padding: 8px 14px;
             background-color: #ffffff;
-            color: #4b5563; /* Grå för sekundär information */
+            color: #4b5563;
             text-decoration: none;
             border-radius: 10px;
             font-weight: 600;
@@ -499,7 +499,7 @@
         .footer-highlight {
             color: #121212;
             font-weight: 800;
-            font-size: 0.95rem; /* Större för personligheten */
+            font-size: 0.95rem;
             display: block;
             margin-top: 4px;
         }
@@ -592,7 +592,7 @@
                 </div>
             </div>
 
-            <!-- POPULÄRA KLIPP (LÄNK MED PIL) -->
+            <!-- POPULÄRA KLIPP -->
             <div class="link-section-wrap">
                 <div class="section-title" style="text-align: left; margin-bottom: 10px;">Populära klipp</div>
                 <div class="video-grid" style="margin-top: 0;">
@@ -636,19 +636,18 @@
                 </div>
             </div>
 
-            <!-- HÄNG MED (TVÅ NIVÅER) -->
+            <!-- HÄNG MED (TVÅ NIVÅER UTAN KAKA PÅ KAKA) -->
             <div class="social-section">
                 <div class="section-title">Häng med</div>
                 
-                <div class="social-tier-label">Följ</div>
                 <div class="primary-buttons">
                     <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn-primary">🎵 TikTok</a>
                     <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn-primary">📸 Instagram</a>
-                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-primary">▶️ YouTube</a>
                 </div>
 
                 <div class="social-tier-label" style="margin-top: 16px;">Också här</div>
                 <div class="secondary-buttons">
+                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-secondary">▶️ YouTube</a>
                     <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
                     <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
                     <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
@@ -681,7 +680,6 @@
         }
 
         function toggleFeed() {
-            const btn = event.currentTarget;
             const content = document.getElementById('feed-content');
             const arrow = document.getElementById('feed-arrow');
             
