@@ -55,7 +55,7 @@
         .page-wrap {
             max-width: 620px;
             width: 100%;
-            margin-top: 60px; /* Ger plats åt profilikonen */
+            margin-top: 60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -75,7 +75,7 @@
             z-index: 1;
         }
 
-        /* PROFILBILD HERO - TILLBAKA PÅ KANTEN OVERST */
+        /* PROFILBILD HERO */
         .profile-wrap {
             position: absolute;
             top: -55px;
@@ -190,36 +190,6 @@
             margin-top: 2px;
         }
 
-        /* INBÄDDAD YOUTUBE REAKTIONSEKTION */
-        .reaction-feature {
-            background: #fafafa;
-            border: 1.5px solid #e5e7eb;
-            border-radius: 20px;
-            padding: 16px;
-            margin-bottom: 32px;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            background-color: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
         /* SIFFER-SEKTION */
         .stats-editorial {
             display: grid;
@@ -250,54 +220,6 @@
             font-weight: 700;
             color: #6b7280;
             margin-top: 4px;
-        }
-
-        /* SENASTE NYTT (COLLAPSIBLE) */
-        .live-feed-section {
-            margin-bottom: 32px;
-        }
-
-        .collapse-btn {
-            width: 100%;
-            background-color: #ffffff;
-            color: #121212;
-            border: 1.5px solid #25F4EE;
-            padding: 12px 18px;
-            border-radius: 14px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(37, 244, 238, 0.15);
-            transition: all 0.2s ease;
-        }
-
-        .collapse-btn:hover {
-            background-color: #f0fdfd;
-            transform: translateY(-1px);
-        }
-
-        .collapse-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.3s ease;
-            padding: 0 4px;
-        }
-
-        .collapse-content.open {
-            max-height: 3000px;
-            padding-top: 16px;
-        }
-
-        .arrow-icon {
-            transition: transform 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .collapse-btn.active .arrow-icon {
-            transform: rotate(180deg);
         }
 
         /* POPULÄRA KLIPP */
@@ -360,6 +282,124 @@
             font-size: 0.65rem;
             font-weight: 700;
             backdrop-filter: blur(2px);
+        }
+
+        /* YOUTUBE HÖJDPUNKT (MED EGEN BILD & INBÄDDNING VID KLICK) */
+        .reaction-feature {
+            background: #fafafa;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 32px;
+        }
+
+        .yt-preview-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            background-color: #000;
+            cursor: pointer;
+        }
+
+        .yt-preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+
+        .yt-preview-box:hover .yt-preview-img {
+            transform: scale(1.02);
+        }
+
+        .yt-play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            background-color: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding-left: 3px;
+            z-index: 2;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .yt-preview-box:hover .yt-play-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: #ff0000;
+        }
+
+        .yt-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 6px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        /* SENASTE NYTT (COLLAPSIBLE) */
+        .live-feed-section {
+            margin-bottom: 32px;
+        }
+
+        .collapse-btn {
+            width: 100%;
+            background-color: #ffffff;
+            color: #121212;
+            border: 1.5px solid #25F4EE;
+            padding: 12px 18px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(37, 244, 238, 0.15);
+            transition: all 0.2s ease;
+        }
+
+        .collapse-btn:hover {
+            background-color: #f0fdfd;
+            transform: translateY(-1px);
+        }
+
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            padding: 0 4px;
+        }
+
+        .collapse-content.open {
+            max-height: 3000px;
+            padding-top: 16px;
+        }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .collapse-btn.active .arrow-icon {
+            transform: rotate(180deg);
         }
 
         /* HÄNG MED (SOCIALA MEDIER) */
@@ -470,7 +510,7 @@
 <body>
 
     <div class="page-wrap">
-        <!-- HERO PROFILBILD (PLACERAD OVANPÅ RAMEN) -->
+        <!-- HERO PROFILBILD -->
         <div class="profile-wrap">
             <img class="profile-img" src="profile.png" alt="Fotjozef">
         </div>
@@ -492,22 +532,7 @@
                 <div class="disease-card">
                     <div class="disease-label">Dagens Diagnos</div>
                     <div class="disease-value" id="disease-name">Laddar...</div>
-                    <div class="disease-date">Uppdaterad per 2 augusti 2026</div>
-                </div>
-            </div>
-
-            <!-- MERITER / EMIL HANSIUS REAKTION (INBÄDDAD YOUTUBE-SPELARE) -->
-            <div class="reaction-feature">
-                <div class="section-title">🏆 Klassiska Höjdpunkter</div>
-                <p style="font-size: 0.88rem; font-weight: 700; color: #121212;">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
-                
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/7rHjrC0AT_A?start=454" 
-                        title="Emil Hansius reagerar på Fotjozef" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <div class="disease-date">Uppdaterad per 3 augusti 2026</div>
                 </div>
             </div>
 
@@ -552,6 +577,19 @@
                 </div>
             </div>
 
+            <!-- KLASSISKA HÖJDPUNKTER (YOUTUBE MED EGEN BILD & INBÄDDNING) -->
+            <div class="reaction-feature">
+                <div class="section-title">🏆 Klassiska Höjdpunkter</div>
+                <p style="font-size: 0.88rem; font-weight: 700; color: #121212;">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
+                
+                <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
+                    <!-- HÄR KAN DU BYTA UT 'Emil_Hansius.jpg' MOT VILKEN BILD DU VILL -->
+                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
+                    <div class="yt-play-overlay">▶</div>
+                    <div class="yt-badge">07:34</div>
+                </div>
+            </div>
+
             <!-- SENASTE NYTT (KOLLAPSIBEL) -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
@@ -570,7 +608,7 @@
                 </div>
             </div>
 
-            <!-- SOCIALA MEDIER / HÄNG MED -->
+            <!-- HÄNG MED (SOCIALA MEDIER) -->
             <div class="social-section">
                 <div class="section-title">Häng med</div>
                 
@@ -582,11 +620,11 @@
 
                 <div class="secondary-buttons">
                     <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
-                    <a href="https://bereal.com/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
+                    <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
                     <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
                 </div>
 
-                <a href="mailto:kontakt@jozef.se" class="contact-link">✉️ Skicka ett mail</a>
+                <a href="mailto:kontakt@jozef.se" class="contact-link">✉️ kontakt@jozef.se</a>
             </div>
 
             <!-- COPYRIGHT FOOTER -->
@@ -617,6 +655,20 @@
             const content = document.getElementById('feed-content');
             btn.classList.toggle('active');
             content.classList.toggle('open');
+        }
+
+        // Funktion som laddar in den riktiga YouTube-spelaren när man klickar på din valda bild
+        function loadYouTubeVideo() {
+            const box = document.getElementById('yt-player-box');
+            box.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/7rHjrC0AT_A?start=454&autoplay=1" 
+                    title="Emil Hansius reagerar på Fotjozef" 
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
         }
 
         const diseases = [
