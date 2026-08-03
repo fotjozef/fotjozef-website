@@ -217,8 +217,8 @@
         }
 
         .stat-huge.infinity {
-            font-size: 2.2rem; /* Större för oändlighetssymbolen */
-            line-height: 1;
+            font-size: 2.6rem; /* Större och mer balanserad oändlighetssymbol */
+            line-height: 0.9;
         }
 
         .stat-sub {
@@ -228,7 +228,7 @@
             margin-top: 4px;
         }
 
-        /* IKONISKT ÖGONBLICK (EMIL HANSIUS UNDER SIFFROR) */
+        /* IKONISKT ÖGONBLICK (EMIL HANSIUS) */
         .reaction-feature {
             background: #fafafa;
             border: 1.5px solid #e5e7eb;
@@ -298,7 +298,7 @@
             z-index: 2;
         }
 
-        /* POPULÄRA KLIPP (TILLBAKA TILL 3 KORT) */
+        /* POPULÄRA KLIPP (KOLLAPSIBEL) */
         .featured-section {
             margin-bottom: 32px;
         }
@@ -360,7 +360,7 @@
             backdrop-filter: blur(2px);
         }
 
-        /* SENASTE NYTT (COLLAPSIBLE) */
+        /* SENASTE NYTT & POPULÄRA KLIPP (GEMENSAM KOLLAPSIBEL STIL) */
         .live-feed-section {
             margin-bottom: 32px;
         }
@@ -415,7 +415,7 @@
 
         .primary-buttons {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* 2 stycken på rad (TikTok & Instagram) */
             gap: 10px;
             margin-bottom: 12px;
         }
@@ -508,7 +508,7 @@
             }
 
             .stat-huge.infinity {
-                font-size: 1.8rem;
+                font-size: 2.1rem;
             }
 
             .video-grid {
@@ -585,27 +585,32 @@
                 </div>
             </div>
 
-            <!-- POPULÄRA KLIPP (3 ST) -->
-            <div class="featured-section">
-                <div class="section-title">📌 Populära klipp</div>
-                <div class="video-grid">
-                    <!-- Klipp 1: Mekonomen -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">TikTok</div>
-                    </a>
+            <!-- POPULÄRA KLIPP (KOLLAPSIBEL) -->
+            <div class="live-feed-section">
+                <button class="collapse-btn" onclick="toggleClips()">
+                    <span>🎬 <strong>Populära klipp</strong> – kika här!</span>
+                    <span class="arrow-icon" id="clips-arrow">▼</span>
+                </button>
+                <div class="collapse-content" id="clips-content" style="padding-top: 0;">
+                    <div class="video-grid" style="margin-top: 16px;">
+                        <!-- Klipp 1: Mekonomen -->
+                        <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
+                            <div class="pinned-badge">📌</div>
+                            <div class="play-btn-banner">TikTok</div>
+                        </a>
 
-                    <!-- Klipp 2: Emil -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" style="background-image: url('emil.jpg');" title="Lime / Emil 🍋😡">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">TikTok</div>
-                    </a>
+                        <!-- Klipp 2: Emil -->
+                        <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" style="background-image: url('emil.jpg');" title="Lime / Emil 🍋😡">
+                            <div class="pinned-badge">📌</div>
+                            <div class="play-btn-banner">TikTok</div>
+                        </a>
 
-                    <!-- Klipp 3: Alkis -->
-                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" style="background-image: url('alkis.jpg');" title="Är du alkis 🔄">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">Instagram</div>
-                    </a>
+                        <!-- Klipp 3: Alkis -->
+                        <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" style="background-image: url('alkis.jpg');" title="Är du alkis 🔄">
+                            <div class="pinned-badge">📌</div>
+                            <div class="play-btn-banner">Instagram</div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -613,7 +618,7 @@
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
                     <span>📣 <strong>Senaste flödet</strong> – kika här!</span>
-                    <span class="arrow-icon">▼</span>
+                    <span class="arrow-icon" id="feed-arrow">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content">
                     <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
@@ -634,10 +639,10 @@
                 <div class="primary-buttons">
                     <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn-primary">🎵 TikTok</a>
                     <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn-primary">📸 Instagram</a>
-                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-primary">▶️ YouTube</a>
                 </div>
 
                 <div class="secondary-buttons">
+                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-secondary">▶️ YouTube</a>
                     <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
                     <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
                     <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
@@ -670,8 +675,15 @@
             }
         }
 
+        function toggleClips() {
+            const btn = event.currentTarget;
+            const content = document.getElementById('clips-content');
+            btn.classList.toggle('active');
+            content.classList.toggle('open');
+        }
+
         function toggleFeed() {
-            const btn = document.querySelector('.collapse-btn');
+            const btn = event.currentTarget;
             const content = document.getElementById('feed-content');
             btn.classList.toggle('active');
             content.classList.toggle('open');
