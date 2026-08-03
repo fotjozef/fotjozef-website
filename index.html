@@ -19,7 +19,7 @@
     <meta name="description" content="Det här är Fotjozef – svensk kreatör med humor, stil, självironi och världsrekord i selfies. Följ Fotjozef på TikTok, Instagram och YouTube.">
     <link rel="canonical" href="https://fotjozef.se/">
 
-    <!-- OPEN GRAPH (Sociala medier-förhandsvisning) -->
+    <!-- OPEN GRAPH -->
     <meta property="og:title" content="Det här är Fotjozef">
     <meta property="og:description" content="Svensk kreatör med humor, stil, självironi och världsrekord i selfies.">
     <meta property="og:url" content="https://fotjozef.se/">
@@ -32,7 +32,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700;1,800&display=swap" rel="stylesheet">
+    
     <style>
+        /* BASE & SYSTEM SPACING (8/16/24/32px) */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -47,308 +49,284 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            padding: 40px 16px;
+            padding: 32px 16px;
         }
 
         .page-wrap {
-            max-width: 680px;
+            max-width: 620px;
             width: 100%;
-            position: relative;
-            margin-top: 60px;
+            margin-top: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* HUVUDCONTAINER - Mjukare ram och skugga */
         .container {
             width: 100%;
             text-align: center;
             background: #ffffff;
-            padding: 80px 20px 32px 20px;
-            border-radius: 24px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-            border: 2px solid #121212;
-            z-index: 1;
+            padding: 64px 24px 32px 24px;
+            border-radius: 28px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+            border: 1.5px solid rgba(18, 18, 18, 0.8);
             position: relative;
         }
 
-        /* FLYTANDE MUSIKKNAPP MED TEXT UPPE TILL HÖGER */
-        .music-float-wrapper {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            z-index: 10;
-        }
-
-        .music-float-btn {
-            width: 44px;
-            height: 44px;
-            background-color: #ffffff;
-            border: 1px solid #4b5563;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: all 0.2s ease;
-        }
-
-        .music-float-btn:hover {
-            transform: scale(1.08);
-            border-color: #121212;
-            background-color: #f8fafc;
-        }
-
-        .music-btn-label {
-            font-size: 0.65rem;
-            font-weight: 800;
-            color: #121212;
-            white-space: nowrap;
-        }
-
-        /* PROFILRING */
+        /* PROFILBILD HERO - Luftigare placering */
         .profile-wrap {
             position: absolute;
-            top: -55px;
-            z-index: 2;
-            width: 115px;
-            height: 115px;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            padding: 0;
-            background-color: #f8fafc;
-            border: 3.5px solid #25F4EE;
-            box-shadow: 0 4px 14px rgba(37, 244, 238, 0.35);
+            background-color: #ffffff;
+            border: 3px solid #25F4EE;
+            box-shadow: 0 6px 20px rgba(37, 244, 238, 0.3);
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 10;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 50%;
         }
 
+        /* TYPOGRAFI HIERARKI */
         h1 {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             font-weight: 900;
             letter-spacing: -0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             color: #121212;
         }
 
         .tagline {
-            color: #666666;
+            color: #4b5563;
             font-size: 0.95rem;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 16px;
-            line-height: 1.4;
+            line-height: 1.45;
+            padding: 0 8px;
         }
 
-        /* SLUMPAD DIAGNOS BADGE */
-        .disease-badge {
-            display: inline-block;
-            background-color: #fff5f5;
-            color: #fe2c55;
-            border: 1.5px solid #fe2c55;
-            font-size: 0.85rem;
+        .section-title {
+            font-size: 0.8rem;
             font-weight: 800;
-            padding: 8px 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        /* TYDLIG OCH CLEAN MUSIKKNAPP */
+        .audio-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 6px 16px;
             border-radius: 20px;
-            margin-top: 4px;
             margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(254, 44, 85, 0.08);
-            line-height: 1.4;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .disease-name {
+        .audio-bar:hover {
+            background: #e2e8f0;
+            transform: translateY(-1px);
+        }
+
+        .audio-btn {
+            font-size: 0.9rem;
+        }
+
+        .audio-text {
+            font-size: 0.75rem;
+            font-weight: 700;
             color: #121212;
-            font-weight: 800;
-            display: inline-block;
         }
 
-        /* FOTJOZEF I SIFFROR SEKTION */
-        .stats-section {
-            margin-bottom: 28px;
-            background: #fafafa;
-            border: 1.5px dashed #d1d5db;
+        /* PREMIUM DIAGNOS-KORT */
+        .disease-card {
+            background-color: #fff5f5;
+            border: 1px solid #fecdd3;
             border-radius: 16px;
-            padding: 16px 12px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            display: inline-block;
+            width: 100%;
+            max-width: 360px;
         }
 
-        .stats-title {
-            font-size: 0.85rem;
+        .disease-label {
+            font-size: 0.65rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            color: #4b5563;
-            margin-bottom: 12px;
+            color: #fe2c55;
+            margin-bottom: 2px;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .stat-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 10px 6px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            transition: transform 0.2s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-            border-color: #121212;
-        }
-
-        .stat-number {
-            font-size: 1.25rem;
-            font-weight: 900;
+        .disease-value {
+            font-size: 1.15rem;
+            font-weight: 800;
             color: #121212;
-            line-height: 1.2;
         }
 
-        .stat-label {
-            font-size: 0.7rem;
-            font-weight: 700;
+        .disease-date {
+            font-size: 0.68rem;
             color: #6b7280;
-            margin-top: 3px;
-        }
-
-        /* KLIPP-SEKTION */
-        .featured-section {
-            margin-bottom: 28px;
-            text-align: center;
-        }
-
-        .cards-title {
-            font-size: 0.95rem;
             font-weight: 500;
-            font-style: italic;
-            color: #4b5563;
-            margin-bottom: 12px;
-            text-align: center;
+            margin-top: 2px;
         }
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            width: 100%;
+        /* POPPIG OCH PROMINENT REAKTIONSEKTION (EMIL HANSIUS) */
+        .reaction-feature {
+            background: #fafafa;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 32px;
         }
 
-        .video-card {
+        .yt-card {
             position: relative;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             border-radius: 12px;
-            border: 1.5px solid #4b5563;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 6px;
-            text-decoration: none;
             overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: block;
+            background-color: #000;
+            margin-top: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .video-card::after {
-            content: '';
+        .yt-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .yt-thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .yt-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 6px;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .yt-progress-bar {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 55%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0) 100%);
-            z-index: 1;
-            pointer-events: none;
+            height: 4px;
+            background-color: #ff0000;
+            z-index: 3;
         }
 
-        .video-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-            border-color: #121212;
-        }
-
-        .pinned-badge {
-            align-self: flex-end;
-            font-size: 0.95rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-            margin-top: 1px;
-            margin-right: 1px;
-            z-index: 2;
-        }
-
-        .play-btn-banner {
-            position: relative;
-            z-index: 2;
+        .yt-play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            padding: 5px 2px;
-            background-color: rgba(18, 18, 18, 0.92);
             color: #ffffff;
-            border-radius: 6px;
-            font-size: 0.65rem;
+            font-size: 1.2rem;
+            padding-left: 3px;
+            z-index: 2;
+            transition: transform 0.2s ease;
+        }
+
+        .yt-card:hover .yt-play-overlay {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: #ff0000;
+        }
+
+        /* REDESIGNAD SIFFER-SEKTION (REDAKTIONELL KÄNSLA) */
+        .stats-editorial {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 8px 0;
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .stat-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-huge {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #121212;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .stat-sub {
+            font-size: 0.7rem;
             font-weight: 700;
-            backdrop-filter: blur(4px);
-            transition: background-color 0.2s ease;
-            white-space: nowrap;
+            color: #6b7280;
+            margin-top: 4px;
         }
 
-        .video-card:hover .play-btn-banner {
-            background-color: #fe2c55;
-        }
-
-        /* TIKTOK-VIBE KOLLAPSIBEL FLÖDES-SEKTION */
+        /* SENASTE NYTT (COLLAPSIBLE) */
         .live-feed-section {
-            margin-bottom: 24px;
-            text-align: center;
+            margin-bottom: 32px;
         }
 
         .collapse-btn {
             width: 100%;
             background-color: #ffffff;
             color: #121212;
-            border: 2px solid #25F4EE;
-            padding: 14px 18px;
+            border: 1.5px solid #25F4EE;
+            padding: 12px 18px;
             border-radius: 14px;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
+            font-weight: 700;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 14px rgba(37, 244, 238, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 244, 238, 0.15);
             transition: all 0.2s ease;
         }
 
         .collapse-btn:hover {
             background-color: #f0fdfd;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(37, 244, 238, 0.3);
-        }
-
-        .bold-red {
-            color: #fe2c55;
-            font-weight: 800;
+            transform: translateY(-1px);
         }
 
         .collapse-content {
@@ -365,209 +343,176 @@
 
         .arrow-icon {
             transition: transform 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .collapse-btn.active .arrow-icon {
             transform: rotate(180deg);
         }
 
-        /* YOUTUBE THUMBNAIL-SEKTION */
-        .yt-section {
-            margin-bottom: 28px;
-            width: 100%;
+        /* POPULÄRA KLIPP - 3 KORT DÄR THUMBNAILS SYNS BÄTTRE */
+        .featured-section {
+            margin-bottom: 32px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .video-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            height: 180px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-        }
-
-        .yt-title {
-            font-size: 0.95rem;
-            font-weight: 500;
-            font-style: italic;
-            color: #4b5563;
-            margin-bottom: 12px;
-            text-align: center;
-            line-height: 1.4;
-        }
-
-        .yt-title strong {
-            font-weight: 800;
-            font-style: italic;
-            color: #4b5563;
-        }
-
-        .yt-card {
-            position: relative;
-            width: 100%;
-            max-width: 320px;
-            aspect-ratio: 16 / 9;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            justify-content: space-between;
+            padding: 8px;
             text-decoration: none;
-            display: block;
-            background-color: #000;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .yt-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
-        }
-
-        .yt-thumb-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Tidstämpel uppe på bilden */
-        .yt-badge {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.85);
-            color: #ffffff;
-            font-size: 0.68rem;
-            font-weight: 800;
-            padding: 3px 6px;
-            border-radius: 4px;
-            backdrop-filter: blur(2px);
-            z-index: 2;
-        }
-
-        /* Rött YouTube-streck längst ner */
-        .yt-progress-bar {
+        .video-card::after {
+            content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background-color: #ff0000;
-            z-index: 3;
-            box-shadow: 0 0 6px rgba(255, 0, 0, 0.8);
+            height: 40%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
         }
 
-        /* Mitten-playknapp */
-        .yt-play-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 44px;
-            height: 44px;
-            background-color: rgba(255, 0, 0, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 1.1rem;
-            padding-left: 3px;
-            opacity: 0.9;
-            transition: transform 0.2s ease, background-color 0.2s ease;
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: #121212;
+        }
+
+        .pinned-badge {
+            align-self: flex-end;
+            font-size: 0.85rem;
             z-index: 2;
         }
 
-        .yt-card:hover .yt-play-overlay {
-            transform: translate(-50%, -50%) scale(1.1);
-            background-color: #ff0000;
+        .play-btn-banner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 4px;
+            background-color: rgba(18, 18, 18, 0.85);
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            backdrop-filter: blur(2px);
         }
 
-        /* SIDFOT LÄNKAR */
-        .footer-links {
+        /* SOCIALA MEDIER - PRIMÄRA & SEKUNDÄRA */
+        .social-section {
+            margin-bottom: 24px;
+        }
+
+        .primary-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .btn-primary {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            padding-top: 16px;
-            border-top: 1px solid #eaeaea;
-        }
-
-        .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 7px 12px;
-            background-color: #ffffff;
-            color: #121212;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.78rem;
-            transition: all 0.2s ease;
-            border: 1px solid #4b5563;
-        }
-
-        .btn:hover {
+            padding: 12px 8px;
             background-color: #121212;
             color: #ffffff;
-            border-color: #121212;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #25F4EE;
+            color: #121212;
             transform: translateY(-2px);
         }
 
-        /* COPYRIGHT */
-        .copyright-footer {
-            color: #666666;
-            font-size: 0.78rem;
+        .secondary-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            padding: 7px 12px;
+            background-color: #ffffff;
+            color: #4b5563;
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: 600;
-            margin-top: 10px;
+            font-size: 0.78rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #121212;
+            color: #121212;
+            background-color: #f8fafc;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: #121212;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-bottom: 16px;
+        }
+
+        /* REDAKTIONELL FOOTER */
+        .copyright-footer {
+            color: #6b7280;
+            font-size: 0.78rem;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 20px;
+            line-height: 1.5;
         }
 
         .footer-highlight {
             color: #121212;
             font-weight: 700;
+            display: block;
+            margin-top: 2px;
         }
 
-        /* RESPONSIV ANPASSNING FÖR MOBIL */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 8px;
-            }
-
+        /* RESPONSIVITET MOBIL */
+        @media (max-width: 500px) {
             .container {
-                padding: 70px 10px 24px 10px;
+                padding: 56px 16px 24px 16px;
             }
 
-            .stat-number {
-                font-size: 1rem;
-            }
-
-            .stat-label {
-                font-size: 0.62rem;
-            }
-
-            .video-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 5px;
+            .stat-huge {
+                font-size: 1.45rem;
             }
 
             .video-card {
                 height: 155px;
-                padding: 4px;
-                border-radius: 8px;
             }
 
-            .pinned-badge {
-                font-size: 0.8rem;
-            }
-
-            .play-btn-banner {
-                font-size: 0.55rem;
-                padding: 4px 1px;
-            }
-
-            .yt-title {
-                font-size: 0.88rem;
-                padding: 0 10px;
-            }
-
-            .yt-card {
-                max-width: 280px;
+            .primary-buttons {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
         }
     </style>
@@ -575,81 +520,90 @@
 <body>
 
     <div class="page-wrap">
+        <!-- HERO PROFILBILD -->
         <div class="profile-wrap">
             <img class="profile-img" src="profile.png" alt="Fotjozef">
         </div>
 
         <div class="container">
-            <!-- DOLD MUSIKFIL & FLYTANDE SPELAR-KNAPP -->
-            <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
-            <div class="music-float-wrapper">
-                <div class="music-float-btn" id="music-btn" title="🎵 Lyssna på Fotjozef-låten" onclick="toggleMusic()">
-                    ▶️
-                </div>
-                <span class="music-btn-label">Fotjozef-låten</span>
-            </div>
-
+            <!-- TITEL & TAGLINE -->
             <h1>Fotjozef</h1>
             <p class="tagline">Svensk kreatör med humor, stil, självironi och världsrekord i selfies ✨🤳🏾</p>
             
-            <!-- DATUM OCH DIAGNOS -->
-            <div>
-                <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026<br><span class="disease-name">Laddar...</span></span>
+            <!-- LJUDSPELARE -->
+            <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
+            <div class="audio-bar" onclick="toggleMusic()">
+                <span class="audio-btn" id="music-icon">▶️</span>
+                <span class="audio-text">Lyssna på Fotjozef-låten</span>
             </div>
 
-            <!-- FOTJOZEF I SIFFROR -->
-            <div class="stats-section">
-                <div class="stats-title">📊 Fotjozef i siffror</div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">5,2M+</span>
-                        <span class="stat-label">👻 Snapscore</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" id="bereal-streak-count">1 168</span>
-                        <span class="stat-label">⚠️ Dagar BeReal Streak</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">🤳 Selfies i arkivet</span>
-                    </div>
+            <!-- DAGENS DIAGNOS -->
+            <div>
+                <div class="disease-card">
+                    <div class="disease-label">Dagens Diagnos</div>
+                    <div class="disease-value" id="disease-name">Laddar...</div>
+                    <div class="disease-date">Uppdaterad per 2 augusti 2026</div>
                 </div>
             </div>
 
-            <!-- UTVALDA PINNADE KLIPP -->
+            <!-- AKTUELLT / EMIL HANSIUS REAKTION -->
+            <div class="reaction-feature">
+                <div class="section-title">🔥 Aktuellt Just Nu</div>
+                <p style="font-size: 0.88rem; font-weight: 700; color: #121212;">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
+                
+                <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-card">
+                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-thumb-img">
+                    <div class="yt-play-overlay">▶</div>
+                    <div class="yt-badge">07:34</div>
+                    <div class="yt-progress-bar"></div>
+                </a>
+            </div>
+
+            <!-- FOTJOZEF I SIFFROR (REDAKTIONELL LAYOUT) -->
+            <div class="section-title">📊 Fotjozef i siffror</div>
+            <div class="stats-editorial">
+                <div class="stat-box">
+                    <span class="stat-huge">5,2M+</span>
+                    <span class="stat-sub">Snapscore</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-huge" id="bereal-streak-count">1 168</span>
+                    <span class="stat-sub">Dagar BeReal</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-huge">∞</span>
+                    <span class="stat-sub">Selfies</span>
+                </div>
+            </div>
+
+            <!-- POPULÄRA KLIPP (3 STÖRRE KORT) -->
             <div class="featured-section">
-                <h2 class="cards-title">Några populära klipp:</h2>
+                <div class="section-title">📌 Populära klipp</div>
                 <div class="video-grid">
                     <!-- Klipp 1: Mekonomen -->
                     <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
                         <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">▶ TikTok</div>
+                        <div class="play-btn-banner">TikTok</div>
                     </a>
 
                     <!-- Klipp 2: Emil -->
                     <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" style="background-image: url('emil.jpg');" title="Lime / Emil 🍋😡">
                         <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">▶ TikTok</div>
+                        <div class="play-btn-banner">TikTok</div>
                     </a>
 
                     <!-- Klipp 3: Alkis -->
                     <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" style="background-image: url('alkis.jpg');" title="Är du alkis 🔄">
                         <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">▶ Instagram</div>
-                    </a>
-
-                    <!-- Klipp 4: Vasaloppet -->
-                    <a href="https://www.facebook.com/share/r/1EacFuokSt/?mibextid=wwXIfr" target="_blank" class="video-card" style="background-image: url('vasaloppet.jpg');" title="Vasaloppet 🎿💅">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">▶ Facebook</div>
+                        <div class="play-btn-banner">Instagram</div>
                     </a>
                 </div>
             </div>
 
-            <!-- KOLLAPSIBEL FLÖDES-SEKTION -->
+            <!-- SENASTE NYTT (KOLLAPSIBEL) -->
             <div class="live-feed-section">
                 <button class="collapse-btn" onclick="toggleFeed()">
-                    <span>📣 <span class="bold-red">Senaste nytt – kika här!</span></span>
+                    <span>📣 <strong>Senaste flödet</strong> – kika här!</span>
                     <span class="arrow-icon">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content">
@@ -664,31 +618,29 @@
                 </div>
             </div>
 
-            <!-- EMIL HANSIUS YOUTUBE-MINIATYR SEKTION -->
-            <div class="yt-section">
-                <h2 class="yt-title">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</h2>
+            <!-- SOCIALA MEDIER (PRIMÄRA VS SEKUNDÄRA) -->
+            <div class="social-section">
+                <div class="section-title">Häng med</div>
                 
-                <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="yt-card">
-                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-thumb-img">
-                    <div class="yt-play-overlay">▶</div>
-                    <div class="yt-badge">07:34</div>
-                    <div class="yt-progress-bar"></div>
-                </a>
+                <div class="primary-buttons">
+                    <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn-primary">🎵 TikTok</a>
+                    <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn-primary">📸 Instagram</a>
+                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-primary">▶️ YouTube</a>
+                </div>
+
+                <div class="secondary-buttons">
+                    <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
+                    <a href="https://bereal.com/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
+                    <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
+                </div>
+
+                <a href="mailto:kontakt@jozef.se" class="contact-link">✉️ Skicka ett mail</a>
             </div>
 
-            <!-- SIDFOT LÄNKAR -->
-            <div class="footer-links">
-                <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn">🎵 TikTok</a>
-                <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn">📸 Instagram</a>
-                <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn">▶️ YouTube</a>
-                <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn">🧵 Threads</a>
-                <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn">👻 Snapchat</a>
-                <a href="https://bereal.com/fotjozef" target="_blank" class="btn">⚠️ BeReal</a>
-                <a href="mailto:kontakt@jozef.se" class="btn">✉️ Kontakt</a>
-            </div>
-
+            <!-- COPYRIGHT FOOTER -->
             <div class="copyright-footer">
-                © 2026 Jozef Lindström. <span class="footer-highlight">Mannen. Myten. Legenden.🦿</span>
+                © 2026 Jozef Lindström
+                <span class="footer-highlight">Mannen. Myten. Legenden. 🦿</span>
             </div>
         </div>
     </div>
@@ -696,15 +648,15 @@
     <!-- SCRIPT -->
     <script>
         const audio = document.getElementById('bg-audio');
-        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
 
         function toggleMusic() {
             if (audio.paused) {
                 audio.play();
-                musicBtn.innerHTML = '⏸️';
+                musicIcon.innerHTML = '⏸️';
             } else {
                 audio.pause();
-                musicBtn.innerHTML = '▶️';
+                musicIcon.innerHTML = '▶️';
             }
         }
 
@@ -725,10 +677,9 @@
         ];
 
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
-        
-        document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026<br><span class="disease-name">' + randomDisease + '</span>';
+        document.getElementById("disease-name").innerText = randomDisease;
 
-        // AUTOMATISK BEREAL-STREAK RÄKNARE (+1 dag för varje ny dag efter 3 augusti 2026)
+        // AUTOMATISK BEREAL-STREAK RÄKNARE (+1 dag för varje dag efter 3 augusti 2026)
         const startDate = new Date('2026-08-03');
         const today = new Date();
         const diffTime = Math.max(0, today - startDate);
