@@ -164,7 +164,7 @@
             padding: 8px 18px;
             border-radius: 20px;
             margin-top: 4px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             box-shadow: 0 2px 8px rgba(254, 44, 85, 0.08);
             line-height: 1.4;
         }
@@ -173,6 +173,62 @@
             color: #121212;
             font-weight: 800;
             display: inline-block;
+        }
+
+        /* FOTJOZEF I SIFFROR SEKTION */
+        .stats-section {
+            margin-bottom: 28px;
+            background: #fafafa;
+            border: 1.5px dashed #d1d5db;
+            border-radius: 16px;
+            padding: 16px 12px;
+        }
+
+        .stats-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #4b5563;
+            margin-bottom: 12px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 10px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: #121212;
+        }
+
+        .stat-number {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #121212;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #6b7280;
+            margin-top: 3px;
         }
 
         /* KLIPP-SEKTION */
@@ -477,6 +533,14 @@
                 padding: 70px 10px 24px 10px;
             }
 
+            .stat-number {
+                font-size: 1rem;
+            }
+
+            .stat-label {
+                font-size: 0.62rem;
+            }
+
             .video-grid {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 5px;
@@ -531,6 +595,25 @@
             <!-- DATUM OCH DIAGNOS -->
             <div>
                 <span id="disease-box" class="disease-badge">Diagnos per 2 augusti 2026<br><span class="disease-name">Laddar...</span></span>
+            </div>
+
+            <!-- FOTJOZEF I SIFFROR -->
+            <div class="stats-section">
+                <div class="stats-title">📊 Fotjozef i siffror</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">5,2M+</span>
+                        <span class="stat-label">👻 Snapscore</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" id="bereal-streak-count">1 168</span>
+                        <span class="stat-label">⚠️ Dagar BeReal Streak</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">🤳 Selfies i arkivet</span>
+                    </div>
+                </div>
             </div>
 
             <!-- UTVALDA PINNADE KLIPP -->
@@ -644,6 +727,15 @@
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         
         document.getElementById("disease-box").innerHTML = 'Diagnos per 2 augusti 2026<br><span class="disease-name">' + randomDisease + '</span>';
+
+        // AUTOMATISK BEREAL-STREAK RÄKNARE (+1 dag för varje ny dag efter 3 augusti 2026)
+        const startDate = new Date('2026-08-03');
+        const today = new Date();
+        const diffTime = Math.max(0, today - startDate);
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const currentStreak = 1168 + diffDays;
+        
+        document.getElementById('bereal-streak-count').innerText = currentStreak.toLocaleString('sv-SE');
     </script>
 
 </body>
