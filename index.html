@@ -222,69 +222,7 @@
             margin-top: 4px;
         }
 
-        /* POPULÄRA KLIPP */
-        .featured-section {
-            margin-bottom: 32px;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .video-card {
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-            height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 8px;
-            text-decoration: none;
-            overflow: hidden;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .video-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
-            z-index: 1;
-        }
-
-        .video-card:hover {
-            transform: translateY(-3px);
-            border-color: #121212;
-        }
-
-        .pinned-badge {
-            align-self: flex-end;
-            font-size: 0.85rem;
-            z-index: 2;
-        }
-
-        .play-btn-banner {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 4px;
-            background-color: rgba(18, 18, 18, 0.85);
-            color: #ffffff;
-            border-radius: 6px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            backdrop-filter: blur(2px);
-        }
-
-        /* YOUTUBE HÖJDPUNKT (MED EGEN BILD & INBÄDDNING VID KLICK) */
+        /* IKONISKT ÖGONBLICK (YOUTUBE-FLEXEN) */
         .reaction-feature {
             background: #fafafa;
             border: 1.5px solid #e5e7eb;
@@ -352,6 +290,68 @@
             padding: 3px 6px;
             border-radius: 4px;
             z-index: 2;
+        }
+
+        /* POPULÄRA KLIPP (4 KORT PÅ RAD) */
+        .featured-section {
+            margin-bottom: 32px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .video-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 6px;
+            text-decoration: none;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .video-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+            z-index: 1;
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: #121212;
+        }
+
+        .pinned-badge {
+            align-self: flex-end;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+
+        .play-btn-banner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 3px;
+            background-color: rgba(18, 18, 18, 0.85);
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            backdrop-filter: blur(2px);
         }
 
         /* SENASTE NYTT (COLLAPSIBLE) */
@@ -464,10 +464,15 @@
         .contact-link {
             display: inline-block;
             color: #121212;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            text-decoration: underline;
+            text-decoration: none; /* BORTTAGET UNDERSTRECK */
             margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #25F4EE;
         }
 
         /* FOOTER */
@@ -494,6 +499,11 @@
 
             .stat-huge {
                 font-size: 1.45rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
             .video-card {
@@ -553,7 +563,20 @@
                 </div>
             </div>
 
-            <!-- POPULÄRA KLIPP -->
+            <!-- IKONISKT ÖGONBLICK (EMIL HANSIUS UNDER SIFFROR) -->
+            <div class="reaction-feature">
+                <div class="section-title">🏆 Ikoniskt ögonblick</div>
+                <p style="font-size: 0.88rem; font-weight: 700; color: #121212;">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
+                
+                <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
+                    <!-- HÄR KAN DU BYTA UT 'Emil_Hansius.jpg' MOT VILKEN BILD DU VILL -->
+                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
+                    <div class="yt-play-overlay">▶</div>
+                    <div class="yt-badge">07:34</div>
+                </div>
+            </div>
+
+            <!-- POPULÄRA KLIPP (INKLUSIVE YOUTUBE-VIDEON SOM FJERDE KORT) -->
             <div class="featured-section">
                 <div class="section-title">📌 Populära klipp</div>
                 <div class="video-grid">
@@ -574,19 +597,12 @@
                         <div class="pinned-badge">📌</div>
                         <div class="play-btn-banner">Instagram</div>
                     </a>
-                </div>
-            </div>
 
-            <!-- KLASSISKA HÖJDPUNKTER (YOUTUBE MED EGEN BILD & INBÄDDNING) -->
-            <div class="reaction-feature">
-                <div class="section-title">🏆 Klassiska Höjdpunkter</div>
-                <p style="font-size: 0.88rem; font-weight: 700; color: #121212;">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
-                
-                <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
-                    <!-- HÄR KAN DU BYTA UT 'Emil_Hansius.jpg' MOT VILKEN BILD DU VILL -->
-                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
-                    <div class="yt-play-overlay">▶</div>
-                    <div class="yt-badge">07:34</div>
+                    <!-- Klipp 4: YouTube (enda videon) -->
+                    <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="video-card" style="background-image: url('Emil_Hansius.jpg');" title="YouTube 🏆">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">YouTube</div>
+                    </a>
                 </div>
             </div>
 
@@ -657,7 +673,6 @@
             content.classList.toggle('open');
         }
 
-        // Funktion som laddar in den riktiga YouTube-spelaren när man klickar på din valda bild
         function loadYouTubeVideo() {
             const box = document.getElementById('yt-player-box');
             box.innerHTML = `
@@ -683,7 +698,6 @@
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         document.getElementById("disease-name").innerText = randomDisease;
 
-        // AUTOMATISK BEREAL-STREAK RÄKNARE (+1 dag för varje dag efter 3 augusti 2026)
         const startDate = new Date('2026-08-03');
         const today = new Date();
         const diffTime = Math.max(0, today - startDate);
