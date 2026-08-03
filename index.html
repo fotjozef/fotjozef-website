@@ -205,6 +205,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
 
         .stat-huge {
@@ -215,6 +216,11 @@
             line-height: 1.1;
         }
 
+        .stat-huge.infinity {
+            font-size: 2.2rem; /* Större för oändlighetssymbolen */
+            line-height: 1;
+        }
+
         .stat-sub {
             font-size: 0.7rem;
             font-weight: 700;
@@ -222,7 +228,7 @@
             margin-top: 4px;
         }
 
-        /* IKONISKT ÖGONBLICK (YOUTUBE-FLEXEN) */
+        /* IKONISKT ÖGONBLICK (EMIL HANSIUS UNDER SIFFROR) */
         .reaction-feature {
             background: #fafafa;
             border: 1.5px solid #e5e7eb;
@@ -292,15 +298,15 @@
             z-index: 2;
         }
 
-        /* POPULÄRA KLIPP (4 KORT PÅ RAD) */
+        /* POPULÄRA KLIPP (TILLBAKA TILL 3 KORT) */
         .featured-section {
             margin-bottom: 32px;
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
 
         .video-card {
@@ -466,7 +472,7 @@
             color: #121212;
             font-size: 0.85rem;
             font-weight: 700;
-            text-decoration: none; /* BORTTAGET UNDERSTRECK */
+            text-decoration: none;
             margin-bottom: 16px;
             transition: color 0.2s ease;
         }
@@ -501,13 +507,17 @@
                 font-size: 1.45rem;
             }
 
+            .stat-huge.infinity {
+                font-size: 1.8rem;
+            }
+
             .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
             }
 
             .video-card {
-                height: 155px;
+                height: 140px;
             }
 
             .primary-buttons {
@@ -555,28 +565,27 @@
                 </div>
                 <div class="stat-box">
                     <span class="stat-huge" id="bereal-streak-count">1 168</span>
-                    <span class="stat-sub">Dagar BeReal</span>
+                    <span class="stat-sub">BeReal Streak</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-huge">∞</span>
+                    <span class="stat-huge infinity">∞</span>
                     <span class="stat-sub">Selfies</span>
                 </div>
             </div>
 
-            <!-- IKONISKT ÖGONBLICK (EMIL HANSIUS UNDER SIFFROR) -->
+            <!-- IKONISKT ÖGONBLICK (EMIL HANSIUS) -->
             <div class="reaction-feature">
                 <div class="section-title">🏆 Ikoniskt ögonblick</div>
                 <p style="font-size: 0.88rem; font-weight: 700; color: #121212;">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
                 
                 <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
-                    <!-- HÄR KAN DU BYTA UT 'Emil_Hansius.jpg' MOT VILKEN BILD DU VILL -->
                     <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
                     <div class="yt-play-overlay">▶</div>
                     <div class="yt-badge">07:34</div>
                 </div>
             </div>
 
-            <!-- POPULÄRA KLIPP (INKLUSIVE YOUTUBE-VIDEON SOM FJERDE KORT) -->
+            <!-- POPULÄRA KLIPP (3 ST) -->
             <div class="featured-section">
                 <div class="section-title">📌 Populära klipp</div>
                 <div class="video-grid">
@@ -596,12 +605,6 @@
                     <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" style="background-image: url('alkis.jpg');" title="Är du alkis 🔄">
                         <div class="pinned-badge">📌</div>
                         <div class="play-btn-banner">Instagram</div>
-                    </a>
-
-                    <!-- Klipp 4: YouTube (enda videon) -->
-                    <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="video-card" style="background-image: url('Emil_Hansius.jpg');" title="YouTube 🏆">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">YouTube</div>
                     </a>
                 </div>
             </div>
@@ -638,6 +641,7 @@
                     <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
                     <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
                     <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
+                    <a href="https://www.youtube.com/watch?v=7rHjrC0AT_A&t=7m34s" target="_blank" class="btn-secondary">▶️ YouTube-video</a>
                 </div>
 
                 <a href="mailto:kontakt@jozef.se" class="contact-link">✉️ kontakt@jozef.se</a>
