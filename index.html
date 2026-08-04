@@ -109,15 +109,25 @@
             color: #121212;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
-        /* VERIFIERAD BOCK */
+        /* RUND VERIFIERAD BOCK */
         .verified-badge {
-            color: #20d5df;
-            font-size: 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background-color: #25F4EE;
+            color: #121212;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: 900;
             vertical-align: middle;
-            line-height: 1;
+            box-shadow: 0 2px 8px rgba(37, 244, 238, 0.4);
         }
 
         .tagline {
@@ -416,7 +426,7 @@
             backdrop-filter: blur(2px);
         }
 
-        /* HÄNG MED (TVÅ NIVÅER UTAN KAKA PÅ KAKA) */
+        /* HÄNG MED (TVÅ NIVÅER) */
         .social-section {
             margin-bottom: 32px;
         }
@@ -554,8 +564,8 @@
         </div>
 
         <div class="container">
-            <!-- TITEL & TAGLINE MED BLÅ BOCK -->
-            <h1>Fotjozef <span class="verified-badge" title="Verifierad">✔</span></h1>
+            <!-- TITEL & TAGLINE MED RUND VERIFIERAD BOCK -->
+            <h1>Fotjozef <span class="verified-badge" title="Verifierad">✓</span></h1>
             <p class="tagline">Svensk kreatör med humor, stil, självironi och världsrekord i selfies ✨🤳🏾</p>
             
             <!-- LJUDSPELARE -->
