@@ -180,7 +180,7 @@
             color: #121212;
         }
 
-        /* PREMIUM DIAGNOS-KORT (FÖRSTÅRD +10%) */
+        /* PREMIUM DIAGNOS-KORT */
         .disease-card {
             background-color: #fff5f5;
             border: 1.5px solid #fecdd3;
@@ -233,7 +233,7 @@
         }
 
         .stat-huge {
-            font-size: 2rem;
+            font-size: 1.85rem;
             font-weight: 900;
             color: #121212;
             letter-spacing: -0.5px;
@@ -241,7 +241,7 @@
         }
 
         .stat-huge.infinity {
-            font-size: 2.9rem;
+            font-size: 2.6rem;
             line-height: 0.9;
         }
 
@@ -252,7 +252,7 @@
             margin-top: 6px;
         }
 
-        /* IKONISKT ÖGONBLICK (SIDANS KLIMAX - STÖRRE) */
+        /* IKONISKT ÖGONBLICK */
         .reaction-feature {
             background: #fafafa;
             border: 1.5px solid #e5e7eb;
@@ -337,7 +337,7 @@
             z-index: 2;
         }
 
-        /* LÄNK-SEKTIONER MED PILAR (POPULÄRA KLIPP & SENASTE FLÖDET) */
+        /* LÄNK-SEKTIONER */
         .link-section-wrap {
             margin-bottom: 36px;
         }
@@ -429,7 +429,7 @@
             backdrop-filter: blur(2px);
         }
 
-        /* HÄNG MED (TVÅ NIVÅER) */
+        /* HÄNG MED */
         .social-section {
             margin-bottom: 32px;
         }
@@ -535,11 +535,11 @@
             }
 
             .stat-huge {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             .stat-huge.infinity {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
 
             .video-grid {
@@ -587,15 +587,15 @@
                 </div>
             </div>
 
-            <!-- FOTJOZEF I SIFFROR (TILLBAKA MED RUBRIK) -->
+            <!-- FOTJOZEF I SIFFROR -->
             <div class="section-title">📊 Fotjozef i siffror</div>
             <div class="stats-editorial">
                 <div class="stat-box">
-                    <span class="stat-huge">5,2M+</span>
+                    <span class="stat-huge" id="snapscore-count">0</span>
                     <span class="stat-sub">Snapscore</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-huge" id="bereal-streak-count">1 168</span>
+                    <span class="stat-huge" id="bereal-streak-count">0</span>
                     <span class="stat-sub">BeReal Streak</span>
                 </div>
                 <div class="stat-box">
@@ -604,7 +604,7 @@
                 </div>
             </div>
 
-            <!-- IKONISKT ÖGONBLICK MED HOVRINGSTEXT & CITRON -->
+            <!-- IKONISKT ÖGONBLICK -->
             <div class="reaction-feature">
                 <div class="reaction-title-main">🏆 Ikoniskt ögonblick</div>
                 <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
@@ -640,7 +640,7 @@
                 </div>
             </div>
 
-            <!-- SENASTE FLÖDET (KOLLAPSIBEL MED PIL) -->
+            <!-- SENASTE FLÖDET -->
             <div class="link-section-wrap">
                 <button class="action-link-btn" onclick="toggleFeed()">
                     <span>📣 <strong>Senaste flödet</strong> – kika här!</span>
@@ -660,7 +660,7 @@
                 </div>
             </div>
 
-            <!-- HÄNG MED (TVÅ NIVÅER) -->
+            <!-- HÄNG MED -->
             <div class="social-section">
                 <div class="section-title">Häng med</div>
                 
@@ -752,8 +752,36 @@
         const diffTime = Math.max(0, today - startDate);
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const currentStreak = 1168 + diffDays;
-        
-        document.getElementById('bereal-streak-count').innerText = currentStreak.toLocaleString('sv-SE');
+
+        // RULLANDE SIFFROR ANIMATION (2 SEKUNDER)
+        function animateValue(id, start, end, duration, formatFn) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentVal = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = formatFn ? formatFn(currentVal) : currentVal;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Starta animationerna när sidan laddas
+        window.addEventListener('DOMContentLoaded', () => {
+            // Snapscore räknas upp till 5200000 (visas som 5,2M+)
+            animateValue("snapscore-count", 0, 5200000, 2000, (val) => {
+                if (val >= 5200000) return "5,2M+";
+                return (val / 1000000).toFixed(1).replace('.', ',') + "M+";
+            });
+
+            // BeReal räknas upp till det faktiska streak-värdet
+            animateValue("bereal-streak-count", 0, currentStreak, 2000, (val) => {
+                return val.toLocaleString('sv-SE');
+            });
+        });
     </script>
 
 </body>
