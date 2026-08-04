@@ -181,7 +181,7 @@
             margin-bottom: 18px;
         }
 
-        /* LJUDSPELARE */
+        /* LJUDSPELARE (OMGJORD TILL KNAPP) */
         .audio-bar {
             display: inline-flex;
             align-items: center;
@@ -193,6 +193,7 @@
             margin-bottom: 32px;
             cursor: pointer;
             transition: all 0.2s ease;
+            font-family: inherit;
         }
 
         .audio-bar:hover {
@@ -387,6 +388,11 @@
             align-items: center;
             cursor: pointer;
             user-select: none;
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
         }
 
         .seo-about-title {
@@ -449,6 +455,7 @@
             box-shadow: 0 4px 14px rgba(37, 244, 238, 0.15);
             transition: all 0.2s ease;
             text-decoration: none;
+            font-family: inherit;
         }
 
         .action-link-btn:hover {
@@ -664,12 +671,12 @@
             <p class="tagline">Sveriges kanske mest självupptagna selfielegend ✨</p>
             <p class="sub-tagline">Svensk kreatör med humor, självironi och världsrekord i selfies 🤳🏾</p>
             
-            <!-- LJUDSPELARE -->
+            <!-- LJUDSPELARE (OMGJORD TILL BUTTON) -->
             <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
-            <div class="audio-bar" onclick="toggleMusic()">
+            <button class="audio-bar" onclick="toggleMusic()" aria-label="Spela upp eller pausa Fotjozef-låten">
                 <span class="audio-btn" id="music-icon">▶️</span>
                 <span class="audio-text">Lyssna på Fotjozef-låten</span>
-            </div>
+            </button>
 
             <!-- DAGENS DIAGNOS -->
             <div>
@@ -711,10 +718,10 @@
 
             <!-- OM FOTJOZEF (EXPANDERBAR SEO-BOX) -->
             <div class="seo-about-section">
-                <div class="seo-about-header" onclick="toggleSeoAbout()">
-                    <div class="seo-about-title">Om Fotjozef</div>
-                    <div class="seo-about-toggle" id="seo-toggle-btn">Läs mer ↓</div>
-                </div>
+                <button class="seo-about-header" onclick="toggleSeoAbout()" aria-expanded="false">
+                    <span class="seo-about-title">Om Fotjozef</span>
+                    <span class="seo-about-toggle" id="seo-toggle-btn">Läs mer ↓</span>
+                </button>
                 <p class="seo-intro-text">Fotjozef är en svensk kreatör som blandar humor, självironi, stil och vardagskaos med ett stort intresse för selfies och sociala medier.</p>
                 
                 <div class="seo-collapse-content" id="seo-collapse">
