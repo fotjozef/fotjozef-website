@@ -241,8 +241,8 @@
         }
 
         .stat-huge.infinity {
-            font-size: 2.6rem;
-            line-height: 0.9;
+            font-size: 2.2rem;
+            line-height: 1.1;
         }
 
         .stat-sub {
@@ -539,7 +539,7 @@
             }
 
             .stat-huge.infinity {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
 
             .video-grid {
@@ -753,7 +753,7 @@
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const currentStreak = 1168 + diffDays;
 
-        // RULLANDE SIFFROR ANIMATION (2 SEKUNDER)
+        // RULLANDE SIFFROR ANIMATION (3.5 SEKUNDER FÖR LUGNARE TEMPO)
         function animateValue(id, start, end, duration, formatFn) {
             const obj = document.getElementById(id);
             let startTimestamp = null;
@@ -771,14 +771,14 @@
 
         // Starta animationerna när sidan laddas
         window.addEventListener('DOMContentLoaded', () => {
-            // Snapscore räknas upp till 5200000 (visas som 5,2M+)
-            animateValue("snapscore-count", 0, 5200000, 2000, (val) => {
+            // Snapscore räknas upp under 3500ms (3,5 sekunder)
+            animateValue("snapscore-count", 0, 5200000, 3500, (val) => {
                 if (val >= 5200000) return "5,2M+";
                 return (val / 1000000).toFixed(1).replace('.', ',') + "M+";
             });
 
-            // BeReal räknas upp till det faktiska streak-värdet
-            animateValue("bereal-streak-count", 0, currentStreak, 2000, (val) => {
+            // BeReal räknas upp under samma tid
+            animateValue("bereal-streak-count", 0, currentStreak, 3500, (val) => {
                 return val.toLocaleString('sv-SE');
             });
         });
