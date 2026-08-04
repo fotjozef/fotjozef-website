@@ -583,7 +583,7 @@
                 <div class="disease-card">
                     <div class="disease-label">Dagens Diagnos</div>
                     <div class="disease-value" id="disease-name">Laddar...</div>
-                    <div class="disease-date">Uppdaterad per 3 augusti 2026</div>
+                    <div class="disease-date" id="diagnosis-date">Uppdaterad per idag</div>
                 </div>
             </div>
 
@@ -607,7 +607,7 @@
             <!-- IKONISKT ÖGONBLICK MED HOVRINGSTEXT & CITRON -->
             <div class="reaction-feature">
                 <div class="reaction-title-main">🏆 Ikoniskt ögonblick</div>
-                <p class="reaction-desc">När <strong title="Är han en citron?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
+                <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
                 
                 <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
                     <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
@@ -741,8 +741,14 @@
         const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
         document.getElementById("disease-name").innerText = randomDisease;
 
-        const startDate = new Date('2026-08-03');
+        // AUTOMATISKT DAGENS DATUM PÅ SVENSKA
         const today = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const formattedDate = today.toLocaleDateString('sv-SE', options);
+        document.getElementById("diagnosis-date").innerText = "Uppdaterad per " + formattedDate;
+
+        // BEREAL STREAK BERÄKNING
+        const startDate = new Date('2026-08-03');
         const diffTime = Math.max(0, today - startDate);
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const currentStreak = 1168 + diffDays;
