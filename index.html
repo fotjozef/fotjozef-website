@@ -13,14 +13,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Det här är Fotjozef</title>
+    <title>Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies</title>
     
     <!-- META DESCRIPTION & CANONICAL -->
     <meta name="description" content="Det här är Fotjozef – svensk kreatör med humor, stil, självironi och världsrekord i selfies. Följ Fotjozef på TikTok, Instagram och YouTube.">
     <link rel="canonical" href="https://fotjozef.se/">
 
     <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Det här är Fotjozef">
+    <meta property="og:title" content="Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies">
     <meta property="og:description" content="Svensk kreatör med humor, stil, självironi och världsrekord i selfies.">
     <meta property="og:url" content="https://fotjozef.se/">
     <meta property="og:type" content="website">
@@ -28,6 +28,27 @@
 
     <!-- FAVICON -->
     <link rel="icon" type="image/jpeg" href="profile.jpg">
+
+    <!-- STRUCTURED DATA (PERSON SCHEMA) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jozef Lindström",
+      "alternateName": "Fotjozef",
+      "url": "https://fotjozef.se/",
+      "image": "https://fotjozef.se/profile.jpg",
+      "jobTitle": "Kreatör",
+      "sameAs": [
+        "https://www.tiktok.com/@fotjozef.official",
+        "https://www.instagram.com/fotjozef",
+        "https://www.youtube.com/@fotjozef",
+        "https://www.snapchat.com/add/fotjozef",
+        "https://bere.al/fotjozef",
+        "https://www.threads.net/@fotjozef"
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,7 +250,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Håller innehållet stabilt i höjdled */
+            justify-content: flex-start;
         }
 
         .stat-huge {
@@ -238,7 +259,7 @@
             color: #121212;
             letter-spacing: -0.5px;
             line-height: 1.1;
-            height: 38px; /* Fast höjdexakt i linje med övriga siffror */
+            height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -593,7 +614,7 @@
             </div>
 
             <!-- FOTJOZEF I SIFFROR -->
-            <div class="section-title">📊 Fotjozef i siffror</div>
+            <h2 class="section-title">📊 Fotjozef i siffror</h2>
             <div class="stats-editorial">
                 <div class="stat-box">
                     <span class="stat-huge" id="snapscore-count">3,0M+</span>
@@ -611,7 +632,7 @@
 
             <!-- IKONISKT ÖGONBLICK -->
             <div class="reaction-feature">
-                <div class="reaction-title-main">🏆 Ikoniskt ögonblick</div>
+                <h2 class="reaction-title-main">🏆 Ikoniskt ögonblick</h2>
                 <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
                 
                 <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
@@ -623,7 +644,7 @@
 
             <!-- POPULÄRA KLIPP -->
             <div class="link-section-wrap">
-                <div class="section-title" style="text-align: left; margin-bottom: 10px;">Populära klipp</div>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 10px;">Populära klipp</h2>
                 <div class="video-grid" style="margin-top: 0;">
                     <!-- Klipp 1: Mekonomen -->
                     <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
@@ -667,7 +688,7 @@
 
             <!-- HÄNG MED -->
             <div class="social-section">
-                <div class="section-title">Häng med</div>
+                <h2 class="section-title">Häng med</h2>
                 
                 <div class="primary-buttons">
                     <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn-primary">🎵 TikTok</a>
