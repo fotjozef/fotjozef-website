@@ -241,7 +241,7 @@
         }
 
         .stat-huge.infinity {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             line-height: 1.1;
         }
 
@@ -539,7 +539,7 @@
             }
 
             .stat-huge.infinity {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
 
             .video-grid {
@@ -591,11 +591,11 @@
             <div class="section-title">📊 Fotjozef i siffror</div>
             <div class="stats-editorial">
                 <div class="stat-box">
-                    <span class="stat-huge" id="snapscore-count">0</span>
+                    <span class="stat-huge" id="snapscore-count">3,0M+</span>
                     <span class="stat-sub">Snapscore</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-huge" id="bereal-streak-count">0</span>
+                    <span class="stat-huge" id="bereal-streak-count">800</span>
                     <span class="stat-sub">BeReal Streak</span>
                 </div>
                 <div class="stat-box">
@@ -753,7 +753,7 @@
         const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const currentStreak = 1168 + diffDays;
 
-        // RULLANDE SIFFROR ANIMATION (3.5 SEKUNDER FÖR LUGNARE TEMPO)
+        // RULLANDE SIFFROR ANIMATION (BÖRJARRAPP PÅ 1 SEKUND)
         function animateValue(id, start, end, duration, formatFn) {
             const obj = document.getElementById(id);
             let startTimestamp = null;
@@ -769,16 +769,14 @@
             window.requestAnimationFrame(step);
         }
 
-        // Starta animationerna när sidan laddas
+        // Starta animationerna när sidan laddas (startar på 3,0M och 800, rullar under 1 sekund)
         window.addEventListener('DOMContentLoaded', () => {
-            // Snapscore räknas upp under 3500ms (3,5 sekunder)
-            animateValue("snapscore-count", 0, 5200000, 3500, (val) => {
+            animateValue("snapscore-count", 3000000, 5200000, 1000, (val) => {
                 if (val >= 5200000) return "5,2M+";
                 return (val / 1000000).toFixed(1).replace('.', ',') + "M+";
             });
 
-            // BeReal räknas upp under samma tid
-            animateValue("bereal-streak-count", 0, currentStreak, 3500, (val) => {
+            animateValue("bereal-streak-count", 800, currentStreak, 1000, (val) => {
                 return val.toLocaleString('sv-SE');
             });
         });
