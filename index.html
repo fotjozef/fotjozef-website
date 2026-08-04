@@ -362,14 +362,22 @@
             z-index: 2;
         }
 
-        /* OM FOTJOZEF (SEO TEXT-BOX) */
+        /* OM FOTJOZEF (EXPANDERBAR SEO-BOX) */
         .seo-about-section {
             background-color: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 20px;
-            padding: 24px;
+            padding: 20px;
             margin-bottom: 40px;
             text-align: left;
+        }
+
+        .seo-about-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
         }
 
         .seo-about-title {
@@ -378,18 +386,37 @@
             text-transform: uppercase;
             letter-spacing: 1.2px;
             color: #4b5563;
-            margin-bottom: 12px;
+        }
+
+        .seo-about-toggle {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #25F4EE;
+            background: #121212;
+            padding: 4px 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .seo-intro-text {
+            font-size: 0.88rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .seo-collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
         }
 
         .seo-about-text {
             font-size: 0.88rem;
             color: #4b5563;
             line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .seo-about-text:last-child {
-            margin-bottom: 0;
+            margin-top: 12px;
         }
 
         /* LÄNK-SEKTIONER */
@@ -672,13 +699,19 @@
                 </div>
             </div>
 
-            <!-- OM FOTJOZEF (SEO & PRESENTATIONS-BOX) -->
+            <!-- OM FOTJOZEF (EXPANDERBAR SEO-BOX) -->
             <div class="seo-about-section">
-                <div class="seo-about-title">Om Fotjozef</div>
-                <p class="seo-about-text">Fotjozef är en svensk kreatör som blandar humor, självironi, stil och vardagskaos med ett stort intresse för selfies och sociala medier.</p>
-                <p class="seo-about-text">Med sin egna stil och sitt speciella sätt att se på saker har Fotjozef skapat en egen liten värld på sociala medier – fylld av humor, selfies, rekord, streaks och ögonblick som kanske inte borde tas på så stort allvar.</p>
-                <p class="seo-about-text">Här samlas några av de mest ikoniska Fotjozef-ögonblicken, från Snapscore och BeReal-streak till selfies, reaktioner och andra klassiska moments. En samlingsplats för dig som vill veta mer om Fotjozef och upptäcka människan bakom alla selfies.</p>
-                <p class="seo-about-text" style="font-weight: 700; color: #121212; margin-top: 8px;">Humor, självironi, selfies och lite för mycket självförtroende. Precis som det ska vara.</p>
+                <div class="seo-about-header" onclick="toggleSeoAbout()">
+                    <div class="seo-about-title">Om Fotjozef</div>
+                    <div class="seo-about-toggle" id="seo-toggle-btn">Läs mer ↓</div>
+                </div>
+                <p class="seo-intro-text">Fotjozef är en svensk kreatör som blandar humor, självironi, stil och vardagskaos med ett stort intresse för selfies och sociala medier.</p>
+                
+                <div class="seo-collapse-content" id="seo-collapse">
+                    <p class="seo-about-text">Med sin egna stil och sitt speciella sätt att se på saker har Fotjozef skapat en egen liten värld på sociala medier – fylld av humor, selfies, rekord, streaks och ögonblick som kanske inte borde tas på så stort allvar.</p>
+                    <p class="seo-about-text">Här samlas några av de mest ikoniska Fotjozef-ögonblicken, från Snapscore och BeReal-streak till selfies, reaktioner och andra klassiska moments. En samlingsplats för dig som vill veta mer om Fotjozef och upptäcka människan bakom alla selfies.</p>
+                    <p class="seo-about-text" style="font-weight: 700; color: #121212;">Humor, självironi, selfies och lite för mycket självförtroende. Precis som det ska vara.</p>
+                </div>
             </div>
 
             <!-- POPULÄRA KLIPP -->
@@ -778,6 +811,19 @@
             } else {
                 content.style.maxHeight = "3000px";
                 arrow.style.transform = "rotate(180deg)";
+            }
+        }
+
+        function toggleSeoAbout() {
+            const collapse = document.getElementById('seo-collapse');
+            const toggleBtn = document.getElementById('seo-toggle-btn');
+            
+            if (collapse.style.maxHeight && collapse.style.maxHeight !== "0px") {
+                collapse.style.maxHeight = "0px";
+                toggleBtn.innerText = "Läs mer ↓";
+            } else {
+                collapse.style.maxHeight = "1000px";
+                toggleBtn.innerText = "Visa mindre ↑";
             }
         }
 
