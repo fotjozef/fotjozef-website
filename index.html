@@ -114,7 +114,7 @@
             flex-wrap: wrap;
         }
 
-        /* RUND VERIFIERAD BOCK */
+        /* RUND VERIFIERAD BOCK (GÅR EJ ATT MARKERA) */
         .verified-badge {
             display: inline-flex;
             align-items: center;
@@ -128,6 +128,9 @@
             font-weight: 900;
             vertical-align: middle;
             box-shadow: 0 2px 8px rgba(37, 244, 238, 0.4);
+            user-select: none;
+            -webkit-user-select: none;
+            pointer-events: none;
         }
 
         .tagline {
@@ -564,7 +567,7 @@
         </div>
 
         <div class="container">
-            <!-- TITEL & TAGLINE MED RUND VERIFIERAD BOCK -->
+            <!-- TITEL & TAGLINE MED ICKE-MARKERBAR BOCK -->
             <h1>Fotjozef <span class="verified-badge" title="Verifierad">✓</span></h1>
             <p class="tagline">Svensk kreatör med humor, stil, självironi och världsrekord i selfies ✨🤳🏾</p>
             
@@ -601,10 +604,10 @@
                 </div>
             </div>
 
-            <!-- IKONISKT ÖGONBLICK (EMIL HANSIUS) - STARTAR DIREKT VID 1 KICK -->
+            <!-- IKONISKT ÖGONBLICK MED HOVRINGSTEXT PÅ EMIL HANSIUS -->
             <div class="reaction-feature">
                 <div class="reaction-title-main">🏆 Ikoniskt ögonblick</div>
-                <p class="reaction-desc">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
+                <p class="reaction-desc">När <strong title="Är han en citron?">Emil Hansius</strong> reagerar på Fotjozef 😂</p>
                 
                 <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
                     <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
