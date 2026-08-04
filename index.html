@@ -655,6 +655,17 @@
                 gap: 8px;
             }
         }
+
+        /* EXTRA ANPASSNING FÖR VÄLDIGT SMÅ SKÄRMAR (T.EX. IPHONE SE / < 380px) */
+        @media (max-width: 380px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-card {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
