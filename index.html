@@ -107,6 +107,17 @@
             letter-spacing: -0.5px;
             margin-bottom: 8px;
             color: #121212;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* VERIFIERAD BOCK */
+        .verified-badge {
+            color: #20d5df;
+            font-size: 1.8rem;
+            vertical-align: middle;
+            line-height: 1;
         }
 
         .tagline {
@@ -405,7 +416,7 @@
             backdrop-filter: blur(2px);
         }
 
-        /* HÄNG MED (TVÅ TYDLIGA NIVÅER) */
+        /* HÄNG MED (TVÅ NIVÅER UTAN KAKA PÅ KAKA) */
         .social-section {
             margin-bottom: 32px;
         }
@@ -421,7 +432,7 @@
 
         .primary-buttons {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Endast TikTok & Instagram på storbild */
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
             margin-bottom: 16px;
         }
@@ -543,8 +554,8 @@
         </div>
 
         <div class="container">
-            <!-- TITEL & TAGLINE -->
-            <h1>Fotjozef</h1>
+            <!-- TITEL & TAGLINE MED BLÅ BOCK -->
+            <h1>Fotjozef <span class="verified-badge" title="Verifierad">✔</span></h1>
             <p class="tagline">Svensk kreatör med humor, stil, självironi och världsrekord i selfies ✨🤳🏾</p>
             
             <!-- LJUDSPELARE -->
@@ -580,7 +591,7 @@
                 </div>
             </div>
 
-            <!-- IKONISKT ÖGONBLICK (EMIL HANSIUS) -->
+            <!-- IKONISKT ÖGONBLICK (EMIL HANSIUS) - STARTAR DIREKT VID 1 KICK -->
             <div class="reaction-feature">
                 <div class="reaction-title-main">🏆 Ikoniskt ögonblick</div>
                 <p class="reaction-desc">När <strong>Emil Hansius</strong> reagerar på Fotjozef 😂</p>
@@ -636,7 +647,7 @@
                 </div>
             </div>
 
-            <!-- HÄNG MED (TVÅ NIVÅER UTAN KAKA PÅ KAKA) -->
+            <!-- HÄNG MED (TVÅ NIVÅER) -->
             <div class="social-section">
                 <div class="section-title">Häng med</div>
                 
