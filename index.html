@@ -30,14 +30,33 @@
     <!-- FAVICON -->
     <link rel="icon" type="image/jpeg" href="profile.jpg">
 
-    <!-- STRUCTURED DATA (WEBSITE SCHEMA) -->
+    <!-- STRUCTURED DATA (WEBSITE & PERSON SCHEMA) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Fotjozef",
-      "url": "https://fotjozef.se/",
-      "image": "https://fotjozef.se/profile.jpg"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://fotjozef.se/#website",
+          "url": "https://fotjozef.se/",
+          "name": "Fotjozef",
+          "image": "https://fotjozef.se/profile.jpg"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://fotjozef.se/#person",
+          "name": "Fotjozef",
+          "url": "https://fotjozef.se/",
+          "image": "https://fotjozef.se/profile.jpg",
+          "jobTitle": "Content Creator",
+          "sameAs": [
+            "https://www.tiktok.com/@fotjozef.official",
+            "https://www.instagram.com/fotjozef",
+            "https://www.youtube.com/@fotjozef",
+            "https://www.snapchat.com/add/fotjozef"
+          ]
+        }
+      ]
     }
     </script>
 
@@ -54,7 +73,7 @@
         <!-- HERO PROFILBILD MED WEBP-STÖD -->
         <picture class="profile-wrap">
             <source srcset="profile.webp" type="image/webp">
-            <img class="profile-img" src="profile.jpg" alt="Fotjozef">
+            <img class="profile-img" src="profile.jpg" alt="Fotjozef profilbild">
         </picture>
 
         <div class="container">
@@ -102,7 +121,7 @@
                 <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
                 
                 <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
-                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
+                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reagerar på Fotjozef" class="yt-preview-img">
                     <div class="yt-play-overlay">▶</div>
                     <div class="yt-badge">07:34</div>
                 </div>
@@ -128,19 +147,22 @@
                 <h2 class="section-title" style="text-align: left; margin-bottom: 10px;">Populära klipp</h2>
                 <div class="video-grid" style="margin-top: 0;">
                     <!-- Klipp 1: Mekonomen (TikTok) -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" style="background-image: url('mekonomen.jpg');" title="Mekonomen 🇳🇴⚙️">
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" title="Mekonomen 🇳🇴⚙️">
+                        <img src="mekonomen.jpg" alt="Fotjozef besöker Mekonomen" class="video-card-img">
                         <div class="pinned-badge">📌</div>
                         <div class="play-btn-banner">TikTok</div>
                     </a>
 
                     <!-- Klipp 2: Emil (TikTok) -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" style="background-image: url('emil.jpg');" title="Lime / Emil 🍋😡">
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" title="Lime / Emil 🍋😡">
+                        <img src="emil.jpg" alt="Fotjozef och citroner i relation till Emil Hansius" class="video-card-img">
                         <div class="pinned-badge">📌</div>
                         <div class="play-btn-banner">TikTok</div>
                     </a>
 
                     <!-- Klipp 3: Alkis (Instagram) -->
-                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" style="background-image: url('alkis.jpg');" title="Är du alkis 🔄">
+                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" title="Är du alkis 🔄">
+                        <img src="alkis.jpg" alt="Fotjozef humoromdöme om alkis-frågan" class="video-card-img">
                         <div class="pinned-badge">📌</div>
                         <div class="play-btn-banner">Instagram</div>
                     </a>
@@ -190,7 +212,7 @@
 
             <!-- COPYRIGHT FOOTER -->
             <div class="copyright-footer">
-                © 2026 Jozef Lindström
+                © 2026 Fotjozef
                 <span class="footer-highlight">Mannen. Myten. Legenden. 🦿</span>
                 
                 <!-- TURN-O-MATIC BILJETT -->
@@ -315,7 +337,7 @@
         // HÄMTA RIKTIGT BESÖKARNUMMER (ANVÄNDER API FÖR LIVE-RÄKNARE)
         async function fetchVisitorCount() {
             try {
-                const response = await fetch('https://api.counterapi.dev/v1/fotjozef/visits/up');
+                const response = substantial = await fetch('https://api.counterapi.dev/v1/fotjozef/visits/up');
                 const data = await response.json();
                 if (data && data.count) {
                     document.getElementById("queue-number").innerText = data.count;
