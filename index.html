@@ -808,22 +808,15 @@
                 </div>
             </div>
 
-            <!-- SENASTE FLÖDET -->
+            <!-- SENASTE FLÖDET (MED LAZY LOAD PÅ KLICK) -->
             <div class="link-section-wrap">
                 <button class="action-link-btn" onclick="toggleFeed()">
                     <span>📣 <strong>Senaste flödet</strong> – kika här!</span>
                     <span class="action-link-arrow" id="feed-arrow">▼</span>
                 </button>
                 <div class="collapse-content" id="feed-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.3s ease;">
-                    <div style="padding-top: 16px;">
-                        <behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>
-                        <script>
-                          (() => {
-                            if(window.__bhldScript)return;window.__bhldScript=true;
-                            const d=document,s=d.createElement("script");s.type="module";
-                            s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
-                          })();
-                        </script>
+                    <div style="padding-top: 16px;" id="behold-container">
+                        <!-- Widgeten laddas dynamiskt här vid klick -->
                     </div>
                 </div>
             </div>
@@ -886,6 +879,7 @@
             }
         }
 
+        let feedLoaded = false;
         function toggleFeed() {
             const content = document.getElementById('feed-content');
             const arrow = document.getElementById('feed-arrow');
@@ -896,6 +890,18 @@
             } else {
                 content.style.maxHeight = "3000px";
                 arrow.style.transform = "rotate(180deg)";
+
+                // Ladda behold-widgeten först vid första klicket (Lazy Load)
+                if (!feedLoaded) {
+                    feedLoaded = true;
+                    const beholdContainer = document.getElementById('behold-container');
+                    beholdContainer.innerHTML = '<behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>';
+                    
+                    const d = document, s = d.createElement("script");
+                    s.type = "module";
+                    s.src = "https://w.behold.so/widget.js";
+                    d.head.append(s);
+                }
             }
         }
 
