@@ -733,8 +733,9 @@
 
             <!-- DAGENS DIAGNOS -->
             <div>
+                <h2 class="section-title">Dagens Diagnos</h2>
                 <div class="disease-card">
-                    <div class="disease-label">Dagens Diagnos</div>
+                    <div class="disease-label">Status</div>
                     <div class="disease-value" id="disease-name">Laddar...</div>
                     <div class="disease-date" id="diagnosis-date">Uppdaterad per idag</div>
                 </div>
@@ -763,7 +764,10 @@
                 <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
                 
                 <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
-                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
+                    <picture style="width: 100%; height: 100%; display: block;">
+                        <source srcset="Emil_Hansius.webp" type="image/webp">
+                        <img src="Emil_Hansius.jpg" alt="Emil Hansius reaktion" class="yt-preview-img">
+                    </picture>
                     <div class="yt-play-overlay">▶</div>
                     <div class="yt-badge">07:34</div>
                 </div>
@@ -772,7 +776,7 @@
             <!-- OM FOTJOZEF (EXPANDERBAR SEO-BOX) -->
             <div class="seo-about-section">
                 <button class="seo-about-header" onclick="toggleSeoAbout()" aria-expanded="false">
-                    <span class="seo-about-title">Om Fotjozef</span>
+                    <h2 class="seo-about-title" style="margin: 0; display: inline;">Om Fotjozef</h2>
                     <span class="seo-about-toggle" id="seo-toggle-btn">Läs mer ↓</span>
                 </button>
                 <p class="seo-intro-text">Fotjozef är en svensk kreatör som blandar humor, självironi, stil och vardagskaos med ett stort intresse för selfies och sociala medier.</p>
@@ -838,7 +842,7 @@
                     <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn-primary">📸 Instagram</a>
                 </div>
 
-                <div class="social-tier-label" style="margin-top: 16px;">Också här</div>
+                <h3 class="social-tier-label" style="margin-top: 16px; font-size: 0.75rem;">Också här</h3>
                 <div class="secondary-buttons">
                     <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-secondary">▶️ YouTube</a>
                     <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
