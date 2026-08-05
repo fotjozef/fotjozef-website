@@ -337,7 +337,7 @@
         // HÄMTA RIKTIGT BESÖKARNUMMER (ANVÄNDER API FÖR LIVE-RÄKNARE)
         async function fetchVisitorCount() {
             try {
-                const response = substantial = await fetch('https://api.counterapi.dev/v1/fotjozef/visits/up');
+                const response = await fetch('https://api.counterapi.dev/v1/fotjozef/visits/up');
                 const data = await response.json();
                 if (data && data.count) {
                     document.getElementById("queue-number").innerText = data.count;
