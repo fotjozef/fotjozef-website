@@ -1,661 +1,377 @@
-/* BASE & SYSTEM SPACING */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-display: swap;
-}
-
-body {
-    background-color: #f8fafc;
-    color: #121212;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 60px 16px;
-}
-
-.page-wrap {
-    max-width: 620px;
-    width: 100%;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-/* HUVUDCONTAINER MED MER LUFT */
-.container {
-    width: 100%;
-    text-align: center;
-    background: #ffffff;
-    padding: 85px 28px 40px 28px;
-    border-radius: 32px;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.04);
-    border: 1.5px solid rgba(18, 18, 18, 0.8);
-    position: relative;
-    z-index: 1;
-}
-
-/* PROFILBILD HERO */
-.profile-wrap {
-    position: absolute;
-    top: -62px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 124px;
-    height: 124px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 4px solid #25F4EE;
-    box-shadow: 0 8px 24px rgba(37, 244, 238, 0.35);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TYPOGRAFI HIERARKI (+10% STORLEK & LUFT) */
-h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
-    color: #121212;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-/* RUND VERIFIERAD BOCK (MED VIT BOCK ENLIGT TIKTOK-STANDARD) */
-.verified-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    background-color: #20d5df;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 0.85rem;
-    font-weight: 900;
-    vertical-align: middle;
-    box-shadow: 0 2px 8px rgba(32, 213, 223, 0.4);
-    user-select: none;
-    -webkit-user-select: none;
-    pointer-events: none;
-}
-
-.tagline {
-    color: #121212;
-    font-size: 1.15rem;
-    font-weight: 800;
-    margin-bottom: 6px;
-    letter-spacing: -0.3px;
-}
-
-.sub-tagline {
-    color: #4b5563;
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-    line-height: 1.5;
-    padding: 0 12px;
-}
-
-.section-title {
-    font-size: 0.88rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #6b7280;
-    margin-bottom: 18px;
-}
-
-/* LJUDSPELARE (OMGJORD TILL KNAPP) */
-.audio-bar {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    padding: 8px 18px;
-    border-radius: 24px;
-    margin-bottom: 32px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
-}
-
-.audio-bar:hover {
-    background: #e2e8f0;
-    transform: translateY(-1px);
-}
-
-.audio-btn {
-    font-size: 1rem;
-}
-
-.audio-text {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #121212;
-}
-
-/* PREMIUM DIAGNOS-KORT */
-.disease-card {
-    background-color: #fff5f5;
-    border: 1.5px solid #fecdd3;
-    border-radius: 18px;
-    padding: 16px 20px;
-    margin-bottom: 32px;
-    display: inline-block;
-    width: 100%;
-    max-width: 390px;
-}
-
-.disease-label {
-    font-size: 0.72rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.9px;
-    color: #fe2c55;
-    margin-bottom: 4px;
-}
-
-.disease-value {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: #121212;
-}
-
-.disease-date {
-    font-size: 0.75rem;
-    color: #6b7280;
-    font-weight: 500;
-    margin-top: 4px;
-}
-
-/* SIFFER-SEKTION */
-.stats-editorial {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 40px;
-    padding: 12px 0;
-    border-top: 1px solid #f1f5f9;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.stat-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.stat-huge {
-    font-size: 1.85rem;
-    font-weight: 900;
-    color: #121212;
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.stat-huge.infinity {
-    font-size: 2.8rem;
-    line-height: 1;
-}
-
-.stat-sub {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #6b7280;
-    margin-top: 6px;
-}
-
-/* IKONISKT ÖGONBLICK */
-.reaction-feature {
-    background: #fafafa;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 24px;
-    padding: 20px;
-    margin-bottom: 40px;
-}
-
-.reaction-title-main {
-    font-size: 0.88rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #fe2c55;
-    margin-bottom: 6px;
-}
-
-.reaction-desc {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #121212;
-    margin-bottom: 14px;
-}
-
-.yt-preview-box {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-    background-color: #000;
-    cursor: pointer;
-}
-
-.yt-preview-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.yt-preview-box:hover .yt-preview-img {
-    transform: scale(1.02);
-}
-
-.yt-play-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background-color: rgba(255, 0, 0, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 1.4rem;
-    padding-left: 3px;
-    z-index: 2;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.yt-preview-box:hover .yt-play-overlay {
-    transform: translate(-50%, -50%) scale(1.1);
-    background-color: #ff0000;
-}
-
-.yt-badge {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 4px 8px;
-    border-radius: 6px;
-    z-index: 2;
-}
-
-/* OM FOTJOZEF (EXPANDERBAR SEO-BOX) */
-.seo-about-section {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 40px;
-    text-align: left;
-}
-
-.seo-about-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-}
-
-.seo-about-title {
-    font-size: 0.88rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #4b5563;
-}
-
-.seo-about-toggle {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #25F4EE;
-    background: #121212;
-    padding: 4px 10px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.seo-intro-text {
-    font-size: 0.88rem;
-    color: #4b5563;
-    line-height: 1.6;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
-.seo-collapse-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-}
-
-.seo-about-text {
-    font-size: 0.88rem;
-    color: #4b5563;
-    line-height: 1.6;
-    margin-top: 12px;
-}
-
-/* LÄNK-SEKTIONER */
-.link-section-wrap {
-    margin-bottom: 36px;
-}
-
-.action-link-btn {
-    width: 100%;
-    background-color: #ffffff;
-    color: #121212;
-    border: 1.5px solid #25F4EE;
-    padding: 14px 20px;
-    border-radius: 16px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 14px rgba(37, 244, 238, 0.15);
-    transition: all 0.2s ease;
-    text-decoration: none;
-    font-family: inherit;
-}
-
-.action-link-btn:hover {
-    background-color: #f0fdfd;
-    transform: translateY(-1px);
-}
-
-.action-link-arrow {
-    font-size: 1rem;
-    font-weight: 900;
-    color: #121212;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 16px;
-}
-
-.video-card {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
-    height: 175px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 8px;
-    text-decoration: none;
-    overflow: hidden;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.video-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
-    z-index: 1;
-}
-
-.video-card:hover {
-    transform: translateY(-3px);
-    border-color: #121212;
-}
-
-.pinned-badge {
-    align-self: flex-end;
-    font-size: 0.8rem;
-    z-index: 2;
-}
-
-.play-btn-banner {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 4px;
-    background-color: rgba(18, 18, 18, 0.85);
-    color: #ffffff;
-    border-radius: 6px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    backdrop-filter: blur(2px);
-}
-
-/* HÄNG MED */
-.social-section {
-    margin-bottom: 32px;
-}
-
-.social-tier-label {
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #6b7280;
-    margin-bottom: 10px;
-}
-
-.primary-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.btn-primary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 10px;
-    background-color: #121212;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 14px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-    background-color: #25F4EE;
-    color: #121212;
-    transform: translateY(-2px);
-}
-
-.secondary-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.btn-secondary {
-    display: inline-flex;
-    padding: 8px 14px;
-    background-color: #ffffff;
-    color: #4b5563;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.82rem;
-    border: 1px solid #e5e7eb;
-    transition: all 0.2s ease;
-}
-
-.btn-secondary:hover {
-    border-color: #121212;
-    color: #121212;
-    background-color: #f8fafc;
-}
-
-.contact-link {
-    display: inline-block;
-    color: #121212;
-    font-size: 0.92rem;
-    font-weight: 700;
-    text-decoration: none;
-    margin-bottom: 20px;
-    transition: color 0.2s ease;
-}
-
-.contact-link:hover {
-    color: #25F4EE;
-}
-
-/* FOOTER & TURN-O-MATIC WIDGET */
-.copyright-footer {
-    color: #6b7280;
-    font-size: 0.85rem;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 24px;
-    line-height: 1.6;
-    text-align: center;
-    position: relative;
-}
-
-.footer-highlight {
-    color: #121212;
-    font-weight: 800;
-    font-size: 0.95rem;
-    display: block;
-    margin-top: 4px;
-}
-
-.turnomatic-ticket {
-    background: #ffffff;
-    border: 2px solid #e06d8a;
-    border-radius: 4px;
-    width: 65px;
-    padding: 3px 2px 5px 2px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-    position: absolute;
-    right: 0;
-    top: 20px;
-    transform: rotate(2deg);
-    transition: transform 0.2s ease;
-}
-
-.turnomatic-ticket:hover {
-    transform: rotate(0deg) scale(1.05);
-}
-
-.ticket-banner {
-    background-color: #e06d8a;
-    color: white;
-    font-size: 5px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 2px 0;
-    margin: -3px -2px 4px -2px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-}
-
-.ticket-number {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    font-weight: bold;
-    color: #1a1a1a;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.ticket-arrow {
-    font-size: 10px;
-    color: #e06d8a;
-    font-weight: bold;
-    margin-top: 2px;
-    line-height: 1;
-}
-
-/* RESPONSIVITET MOBIL */
-@media (max-width: 500px) {
-    .container {
-        padding: 70px 16px 28px 16px;
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DV5R9XW0G4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DV5R9XW0G4');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OPTIMERAD FÖR SEO OCH SÖKMOTORER -->
+    <title>Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies</title>
+    
+    <!-- META DESCRIPTION & CANONICAL -->
+    <meta name="description" content="Det här är Fotjozef – svensk kreatör med humor, stil, självironi och världsrekord i selfies. Följ #fotjozef på TikTok, Instagram och YouTube.">
+    <link rel="canonical" href="https://fotjozef.se/">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies">
+    <meta property="og:description" content="Svensk kreatör med humor, stil, självironi och världsrekord i selfies.">
+    <meta property="og:url" content="https://fotjozef.se/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://fotjozef.se/profile.jpg">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="profile.jpg">
+
+    <!-- STRUCTURED DATA (WEBSITE & PERSON SCHEMA) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://fotjozef.se/#website",
+          "url": "https://fotjozef.se/",
+          "name": "Fotjozef",
+          "image": "https://fotjozef.se/profile.jpg"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://fotjozef.se/#person",
+          "name": "Fotjozef",
+          "url": "https://fotjozef.se/",
+          "image": "https://fotjozef.se/profile.jpg",
+          "jobTitle": "Content Creator",
+          "sameAs": [
+            "https://www.tiktok.com/@fotjozef.official",
+            "https://www.instagram.com/fotjozef",
+            "https://www.youtube.com/@fotjozef",
+            "https://www.snapchat.com/add/fotjozef"
+          ]
+        }
+      ]
     }
+    </script>
 
-    .stat-huge {
-        font-size: 1.5rem;
-        height: 32px;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700;1,800&display=swap" rel="stylesheet">
+    
+    <!-- EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    .stat-huge.infinity {
-        font-size: 2.2rem;
-    }
+    <div class="page-wrap">
+        <!-- HERO PROFILBILD MED WEBP-STÖD -->
+        <picture class="profile-wrap">
+            <source srcset="profile.webp" type="image/webp">
+            <img class="profile-img" src="profile.jpg" alt="Fotjozef profilbild">
+        </picture>
 
-    .video-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-    }
+        <div class="container">
+            <!-- TITEL & TAGLINE MED KAXIG TOUCH -->
+            <h1>Fotjozef <span class="verified-badge" title="Verifierad">✓</span></h1>
+            <p class="tagline">Sveriges kanske mest självupptagna selfielegend ✨</p>
+            <p class="sub-tagline">Svensk kreatör med humor, självironi och världsrekord i selfies 🤳🏾</p>
+            
+            <!-- LJUDSPELARE (OMGJORD TILL KNAPP) -->
+            <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
+            <button class="audio-bar" onclick="toggleMusic()" aria-label="Spela upp eller pausa Fotjozef-låten">
+                <span class="audio-btn" id="music-icon">▶️</span>
+                <span class="audio-text">Lyssna på Fotjozef-låten</span>
+            </button>
 
-    .video-card {
-        height: 145px;
-    }
+            <!-- DAGENS DIAGNOS -->
+            <div>
+                <div class="disease-card">
+                    <div class="disease-label">Dagens Diagnos</div>
+                    <div class="disease-value" id="disease-name">Laddar...</div>
+                    <div class="disease-date" id="diagnosis-date">Uppdaterad per idag</div>
+                </div>
+            </div>
 
-    .primary-buttons {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-}
+            <!-- FOTJOZEF I SIFFROR -->
+            <h2 class="section-title">📊 Fotjozef i siffror</h2>
+            <div class="stats-editorial">
+                <div class="stat-box">
+                    <span class="stat-huge" id="snapscore-count">3,0M+</span>
+                    <span class="stat-sub">Snapscore</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-huge" id="bereal-streak-count">800</span>
+                    <span class="stat-sub">BeReal Streak</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-huge infinity">∞</span>
+                    <span class="stat-sub">Selfies</span>
+                </div>
+            </div>
 
-@media (max-width: 380px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
+            <!-- IKONISKT ÖGONBLICK -->
+            <div class="reaction-feature">
+                <h2 class="reaction-title-main">🏆 Ikoniskt ögonblick</h2>
+                <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
+                
+                <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
+                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reagerar på Fotjozef" class="yt-preview-img">
+                    <div class="yt-play-overlay">▶</div>
+                    <div class="yt-badge">07:34</div>
+                </div>
+            </div>
 
-    .video-card {
-        height: 200px;
-    }
-}
+            <!-- OM FOTJOZEF (EXPANDERBAR SEO-BOX MED FÖRSLAG 2) -->
+            <div class="seo-about-section">
+                <button class="seo-about-header" onclick="toggleSeoAbout()" aria-expanded="false">
+                    <span class="seo-about-title">Om Fotjozef</span>
+                    <span class="seo-about-toggle" id="seo-toggle-btn">Läs mer ↓</span>
+                </button>
+                <p class="seo-intro-text">Fotjozef är en svensk innehållsskapare och digital kreatör som på ett unikt sätt blandar humor, självironi, stil och vardagskaos.</p>
+                
+                <div class="seo-collapse-content" id="seo-collapse">
+                    <p class="seo-about-text">Med ett brinnande intresse för fotografi, selfies och sociala medier har #fotjozef etablerat en egen, igenkännbar närvaro online.</p>
+                    
+                    <p class="seo-about-text" style="font-weight: 700; color: #121212; margin-top: 14px;">Människan bakom #fotjozef</p>
+                    <p class="seo-about-text">Med en personlig och avslappnad stil har Fotjozef byggt en engagerande digital värld fylld av komiska betraktelser, selfies, imponerande digitala milstolpar som höga streaks, och vardagsögonblick som varken tar sig själva eller tillvaron på för stort allvar.</p>
+                    <p class="seo-about-text">Denna sida fungerar som en central samlingsplats för allt som rör Fotjozef. Här hittar du:</p>
+                    
+                    <ul class="seo-about-text" style="padding-left: 20px; margin-bottom: 12px;">
+                        <li style="margin-bottom: 6px;"><strong>Ikoniska ögonblick:</strong> Klassiska reaktioner, minnesvärda händelser och höjdpunkter under hashtagen #fotjozef.</li>
+                        <li style="margin-bottom: 6px;"><strong>Sociala medier-rekord:</strong> Inblickar i livet på plattformar som Snapchat och TikTok, inklusive fokus på engagemang och aktiva streaks.</li>
+                        <li style="margin-bottom: 6px;"><strong>Autentiskt innehåll:</strong> En blandning av humor, selfies och självironi som speglar skaparen bakom skärmen.</li>
+                    </ul>
+
+                    <p class="seo-about-text" style="font-weight: 700; color: #121212;">Kort sagt: Humor, självironi, selfies och precis lagom mycket glimt i ögat. Välkommen att utforska mer!</p>
+                </div>
+            </div>
+
+            <!-- POPULÄRA KLIPP -->
+            <div class="link-section-wrap">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 10px;">Populära klipp</h2>
+                <div class="video-grid" style="margin-top: 0;">
+                    <!-- Klipp 1: Mekonomen (TikTok) -->
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" title="Mekonomen 🇳🇴⚙️">
+                        <img src="mekonomen.jpg" alt="Fotjozef besöker Mekonomen" class="video-card-img">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">TikTok</div>
+                    </a>
+
+                    <!-- Klipp 2: Emil (TikTok) -->
+                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" title="Lime / Emil 🍋😡">
+                        <img src="emil.jpg" alt="Fotjozef och citroner i relation till Emil Hansius" class="video-card-img">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">TikTok</div>
+                    </a>
+
+                    <!-- Klipp 3: Alkis (Instagram) -->
+                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" title="Är du alkis 🔄">
+                        <img src="alkis.jpg" alt="Fotjozef humoromdöme om alkis-frågan" class="video-card-img">
+                        <div class="pinned-badge">📌</div>
+                        <div class="play-btn-banner">Instagram</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SENASTE FLÖDET (MED LAZY LOAD PÅ KLICK) -->
+            <div class="link-section-wrap">
+                <button class="action-link-btn" onclick="toggleFeed()">
+                    <span>📣 <strong>Senaste flödet</strong> – kika här!</span>
+                    <span class="action-link-arrow" id="feed-arrow">▼</span>
+                </button>
+                <div class="collapse-content" id="feed-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.3s ease;">
+                    <div style="padding-top: 16px;" id="behold-container">
+                        <!-- Widgeten laddas dynamiskt här vid klick -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- HASHTAG DIREKTKNAPP (PLACERAD EFTER SENASTE FLÖDET) -->
+            <div class="link-section-wrap" style="margin-bottom: 24px;">
+                <a href="https://www.tiktok.com/tag/fotjozef" target="_blank" class="action-link-btn" style="border-color: #121212;">
+                    <span>🔍 Upptäck mer under <strong>#fotjozef</strong></span>
+                    <span class="action-link-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- HÄNG MED -->
+            <div class="social-section">
+                <h2 class="section-title">Häng med</h2>
+                
+                <div class="primary-buttons">
+                    <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn-primary">🎵 TikTok</a>
+                    <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn-primary">📸 Instagram</a>
+                </div>
+
+                <div class="social-tier-label" style="margin-top: 16px;">Också här</div>
+                <div class="secondary-buttons">
+                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-secondary">▶️ YouTube</a>
+                    <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
+                    <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
+                    <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
+                </div>
+
+                <a href="mailto:kontakt@jozef.se" class="contact-link" style="margin-top: 8px;">✉️ kontakt@jozef.se</a>
+            </div>
+
+            <!-- COPYRIGHT FOOTER -->
+            <div class="copyright-footer">
+                © 2026 Fotjozef
+                <span class="footer-highlight">Mannen. Myten. Legenden. 🦿</span>
+                
+                <!-- TURN-O-MATIC BILJETT -->
+                <div class="turnomatic-ticket" title="Ditt riktiga könummer som besökare">
+                    <div class="ticket-banner">Kölapp</div>
+                    <div class="ticket-number" id="queue-number">...</div>
+                    <div class="ticket-arrow">↓</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        const audio = document.getElementById('bg-audio');
+        const musicIcon = document.getElementById('music-icon');
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                musicIcon.innerHTML = '⏸️';
+            } else {
+                audio.pause();
+                musicIcon.innerHTML = '▶️';
+            }
+        }
+
+        let feedLoaded = false;
+        function toggleFeed() {
+            const content = document.getElementById('feed-content');
+            const arrow = document.getElementById('feed-arrow');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                content.style.maxHeight = "0px";
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = "3000px";
+                arrow.style.transform = "rotate(180deg)";
+
+                // Ladda behold-widgeten först vid första klicket (Lazy Load)
+                if (!feedLoaded) {
+                    feedLoaded = true;
+                    const beholdContainer = document.getElementById('behold-container');
+                    beholdContainer.innerHTML = '<behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>';
+                    
+                    const d = document, s = d.createElement("script");
+                    s.type = "module";
+                    s.src = "https://w.behold.so/widget.js";
+                    d.head.append(s);
+                }
+            }
+        }
+
+        function toggleSeoAbout() {
+            const collapse = document.getElementById('seo-collapse');
+            const toggleBtn = document.getElementById('seo-toggle-btn');
+            
+            if (collapse.style.maxHeight && collapse.style.maxHeight !== "0px") {
+                collapse.style.maxHeight = "0px";
+                toggleBtn.innerText = "Läs mer ↓";
+            } else {
+                collapse.style.maxHeight = "1000px";
+                toggleBtn.innerText = "Visa mindre ↑";
+            }
+        }
+
+        function loadYouTubeVideo() {
+            const box = document.getElementById('yt-player-box');
+            box.innerHTML = `
+                <iframe 
+                    src="https://www.youtube.com/embed/7rHjrC0AT_A?start=454&autoplay=1" 
+                    title="Emil Hansius reagerar på Fotjozef" 
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    sandbox="allow-scripts allow-same-origin allow-presentation"
+                    allowfullscreen>
+                </iframe>
+            `;
+        }
+
+        const diseases = [
+            "Haltar", "Svag", "Ryggont", "Dropfot", "Nedsatt lungkapacitet", 
+            "Ojämn", "Dyslexi", "Bokstavskombinationer", "Blodbrist", "Dyskalkyli", 
+            "Nagelvärk", "Nervös", "Ledvärk", "Hörselnedsättning", "Dålig blodcirkulation", 
+            "Fotvärk", "Smalbent", "Dåligt blodvärde", "Knäsvag", "Tandpressning", 
+            "Dålig kondition", "Grovt synfel", "Rädd", "Döv", "Nackspänningar", 
+            "Skolios", "Polio", "Muskelvärk", "Allmänt nedsatt allmäntillstånd", "Postpolio"
+        ];
+
+        const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
+        document.getElementById("disease-name").innerText = randomDisease;
+
+        // AUTOMATISKT DAGENS DATUM PÅ SVENSKA
+        const today = new Date();
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        const formattedDate = today.toLocaleDateString('sv-SE', options);
+        document.getElementById("diagnosis-date").innerText = "Uppdaterad per " + formattedDate;
+
+        // BEREAL STREAK BERÄKNING
+        const startDate = new Date('2026-08-03');
+        const diffTime = Math.max(0, today - startDate);
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const currentStreak = 1168 + diffDays;
+
+        // RULLANDE SIFFROR ANIMATION (1 SEKUND)
+        function animateValue(id, start, end, duration, formatFn) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            let startstartTimestamp = null;
+            const step = (timestamp) => {
+                if (!startstartTimestamp) startstartTimestamp = timestamp;
+                const progress = Math.min((timestamp - startstartTimestamp) / duration, 1);
+                const currentVal = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = formatFn ? formatFn(currentVal) : currentVal;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // HÄMTA RIKTIGT BESÖKARNUMMER (ANVÄNDER API FÖR LIVE-RÄKNARE)
+        async function fetchVisitorCount() {
+            try {
+                const response = await fetch('https://api.counterapi.dev/v1/fotjozef/visits/up');
+                const data = await response.json();
+                if (data && data.count) {
+                    document.getElementById("queue-number").innerText = data.count;
+                } else {
+                    document.getElementById("queue-number").innerText = "420";
+                }
+            } catch (error) {
+                document.getElementById("queue-number").innerText = "333";
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            animateValue("snapscore-count", 3000000, 5200000, 1000, (val) => {
+                if (val >= 5200000) return "5,2M+";
+                return (val / 1000000).toFixed(1).replace('.', ',') + "M+";
+            });
+
+            animateValue("bereal-streak-count", 800, currentStreak, 1000, (val) => {
+                return val.toLocaleString('sv-SE');
+            });
+
+            fetchVisitorCount();
+        });
+    </script>
+
+</body>
+</html>
