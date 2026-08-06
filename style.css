@@ -65,7 +65,7 @@ body {
     object-fit: cover;
 }
 
-/* TYPOGRAFI HIERARKI (+10% STORLEK & LUFT) */
+/* TYPOGRAFI HIERARKI */
 h1 {
     font-size: 2.5rem;
     font-weight: 900;
@@ -79,7 +79,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* RUND VERIFIERAD BOCK (MED VIT BOCK ENLIGT TIKTOK-STANDARD) */
+/* RUND VERIFIERAD BOCK */
 .verified-badge {
     display: inline-flex;
     align-items: center;
@@ -124,7 +124,7 @@ h1 {
     margin-bottom: 18px;
 }
 
-/* LJUDSPELARE (OMGJORD TILL KNAPP) */
+/* LJUDSPELARE */
 .audio-bar {
     display: inline-flex;
     align-items: center;
@@ -315,7 +315,7 @@ h1 {
     z-index: 2;
 }
 
-/* OM FOTJOZEF (EXPANDERBAR SEO-BOX) */
+/* OM FOTJOZEF */
 .seo-about-section {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -620,7 +620,7 @@ h1 {
     line-height: 1;
 }
 
-/* --- LYCKOHJUL & FLIK STYLING (UPPDATERAD & SÄKER) --- */
+/* --- LYCKOHJUL & FLIK STYLING --- */
 .wheel-tab {
     position: fixed !important;
     right: 0 !important;
