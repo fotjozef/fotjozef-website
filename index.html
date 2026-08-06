@@ -64,44 +64,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700;1,800&display=swap" rel="stylesheet">
     
-    <!-- KONFETTI-BIBLIOTEK -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
     <!-- EXTERNAL STYLESHEET -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- RIGGAT LYCKOHJUL - FLIK PÅ SIDAN -->
-    <div id="wheel-tab" class="wheel-tab" onclick="openWheelModal()">
-        🎁 SPELA & VINN
-    </div>
-
-    <!-- LYCKOHJUL MODAL -->
-    <div id="wheel-modal" class="wheel-modal-overlay">
-        <div class="wheel-modal-content">
-            <button class="wheel-close-btn" onclick="closeWheelModal()">✕</button>
-            <h3 class="wheel-modal-title">SPELA & VINN! 🎡</h3>
-            <p class="wheel-modal-sub">Snurra hjulet för att kamma hem ditt drömpris!</p>
-
-            <div class="wheel-container">
-                <div class="wheel-pointer">▼</div>
-                <div id="wheel" class="wheel">
-                    <div class="wheel-slice" style="--i: 0;"><span>Dejt ❤️</span></div>
-                    <div class="wheel-slice" style="--i: 1;"><span>-50% 🦋</span></div>
-                    <div class="wheel-slice" style="--i: 2;"><span>Fotbild 📸</span></div>
-                    <div class="wheel-slice" style="--i: 3;"><span>Följ IG 📱</span></div>
-                    <div class="wheel-slice" style="--i: 4;"><span>Ferrari 🏎️</span></div>
-                    <div class="wheel-slice" style="--i: 5;"><span>Nitlott 🛑</span></div>
-                    <div class="wheel-slice" style="--i: 6;"><span>Följ TikTok 🎬</span></div>
-                    <div class="wheel-slice" style="--i: 7;"><span>Nagelsax 🦶🏾</span></div>
-                </div>
-            </div>
-
-            <button id="spin-btn" class="wheel-spin-action-btn" onclick="spinWheel()">SNURRA HJULET!</button>
-            <div id="wheel-result" class="wheel-result-box"></div>
-        </div>
-    </div>
 
     <div class="page-wrap">
         <!-- HERO PROFILBILD MED WEBP-STÖD -->
@@ -393,86 +359,6 @@
             }
         }
 
-        // --- LYCKOHJUL LOGIK ---
-        // Kolla om besökaren redan spelat nyligen (sparas i localStorage i 10 minuter)
-        function checkWheelCooldown() {
-            const lastPlayed = localStorage.getItem('fotjozef_wheel_played');
-            const tab = document.getElementById('wheel-tab');
-            if (lastPlayed) {
-                const elapsed = Date.now() - parseInt(lastPlayed, 10);
-                if (elapsed < 10 * 60 * 1000) { // 10 minuter
-                    tab.style.display = 'none';
-                } else {
-                    tab.style.display = 'flex';
-                }
-            }
-        }
-
-        function openWheelModal() {
-            document.getElementById('wheel-modal').style.display = 'flex';
-            document.getElementById('wheel-result').innerHTML = '';
-            document.getElementById('spin-btn').style.display = 'block';
-            // Återställ hjulets rotation
-            document.getElementById('wheel').style.transform = 'rotate(0deg)';
-        }
-
-        function closeWheelModal() {
-            document.getElementById('wheel-modal').style.display = 'none';
-        }
-
-        function spinWheel() {
-            const spinBtn = document.getElementById('spin-btn');
-            spinBtn.style.display = 'none';
-            
-            const wheel = document.getElementById('wheel');
-            
-            // Vi slumpar utfallet mellan de 3 roliga valen: 
-            // Alternativ 0 = Nitlott (Index 5 på hjulet)
-            // Alternativ 1 = TikTok (Index 6 på hjulet)
-            // Alternativ 2 = Instagram (Index 3 på hjulet)
-            const outcomes = [
-                {
-                    type: 'nitlott',
-                    sliceIndex: 5, // 225 grader
-                    text: '🛑 Otur! Du har för lite tur. Tack för din insats, gå vidare med ditt liv.'
-                },
-                {
-                    type: 'tiktok',
-                    sliceIndex: 6, // 270 grader
-                    text: '🎬 GRATTIS! Du vann äran att följa Fotjozef på TikTok. <br><br><a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="wheel-link-btn">Hämta vinst (Följ på TikTok)</a>'
-                },
-                {
-                    type: 'instagram',
-                    sliceIndex: 3, // 135 grader
-                    text: '📱 GRATTIS! Du vann äran att följa Fotjozef på Instagram. <br><br><a href="https://www.instagram.com/fotjozef" target="_blank" class="wheel-link-btn">Hämta vinst (Följ på Instagram)</a>'
-                }
-            ];
-
-            const chosen = outcomes[Math.floor(Math.random() * outcomes.length)];
-            
-            // Beräkna rotation: 5 hela varv (1800 grader) + vinkeln för den valda biten (varje bit är 45 grader)
-            const baseRotations = 5 * 360;
-            const targetDegree = baseRotations + (360 - (chosen.sliceIndex * 45));
-
-            wheel.style.transition = 'transform 3s cubic-bezier(0.15, 0.9, 0.2, 1)';
-            wheel.style.transform = `rotate(${targetDegree}deg)`;
-
-            setTimeout(() => {
-                // Avfyra konfetti!
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-
-                document.getElementById('wheel-result').innerHTML = chosen.text;
-                
-                // Sätt cooldown i 10 minuter och dölj fliken
-                localStorage.setItem('fotjozef_wheel_played', Date.now().toString());
-                document.getElementById('wheel-tab').style.display = 'none';
-            }, 3100);
-        }
-
         window.addEventListener('DOMContentLoaded', () => {
             animateValue("snapscore-count", 3000000, 5200000, 1000, (val) => {
                 if (val >= 5200000) return "5,2M+";
@@ -484,7 +370,6 @@
             });
 
             fetchVisitorCount();
-            checkWheelCooldown();
         });
     </script>
 
