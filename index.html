@@ -1,492 +1,92 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DV5R9XW0G4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-DV5R9XW0G4');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- OPTIMERAD FÖR SEO OCH SÖKMOTORER -->
-    <title>Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies</title>
-    
-    <!-- META DESCRIPTION & CANONICAL -->
-    <meta name="description" content="Fotjozef är en svensk kreatör som blandar humor, självironi, stil och vardagskaos med ett stort intresse för selfies och sociala medier. #fotjozef">
-    <link rel="canonical" href="https://fotjozef.se/">
-
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies">
-    <meta property="og:description" content="Svensk kreatör med humor, stil, självironi och världsrekord i selfies.">
-    <meta property="og:url" content="https://fotjozef.se/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://fotjozef.se/profile.jpg">
-
-    <!-- FAVICON -->
-    <link rel="icon" type="image/jpeg" href="profile.jpg">
-
-    <!-- STRUCTURED DATA (WEBSITE & PERSON SCHEMA) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://fotjozef.se/#website",
-          "url": "https://fotjozef.se/",
-          "name": "Fotjozef",
-          "image": "https://fotjozef.se/profile.jpg"
-        },
-        {
-          "@type": "Person",
-          "@id": "https://fotjozef.se/#person",
-          "name": "Fotjozef",
-          "url": "https://fotjozef.se/",
-          "image": "https://fotjozef.se/profile.jpg",
-          "jobTitle": "Content Creator",
-          "sameAs": [
-            "https://www.tiktok.com/@fotjozef.official",
-            "https://www.instagram.com/fotjozef",
-            "https://www.youtube.com/@fotjozef",
-            "https://www.snapchat.com/add/fotjozef"
-          ]
-        }
-      ]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700;1,800&display=swap" rel="stylesheet">
-    
-    <!-- KONFETTI-BIBLIOTEK -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <!-- EXTERNAL STYLESHEET -->
+    <title>Fotjozef</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- RIGGAT LYCKOHJUL - FLIK PÅ SIDAN -->
-    <div id="wheel-tab" class="wheel-tab" onclick="openWheelModal()">
-        🎁 SPELA & VINN
+    <div class="page-wrap">
+        <div class="container">
+            <h1>Fotjozef <span class="verified-badge">✓</span></h1>
+            <p class="tagline">Officiell samlingssida</p>
+            <p class="sub-tagline">Välkommen hit! Utforska mina senaste videor och projekt.</p>
+        </div>
     </div>
 
-    <!-- LYCKOHJUL MODAL -->
-    <div id="wheel-modal" class="wheel-modal-overlay">
-        <div class="wheel-modal-content">
-            <button class="wheel-close-btn" onclick="closeWheelModal()">✕</button>
-            <h3 class="wheel-modal-title">SPELA & VINN! 🎡</h3>
-            <p class="wheel-modal-sub">Snurra hjulet för att kamma hem ditt drömpris!</p>
+    <!-- HJUL-FLIK PÅ HÖGER KANT (LIGGER KVAR PERMANENT) -->
+    <div class="wheel-tab" id="wheelTab">
+        SPELA & VINN!
+    </div>
 
+    <!-- MODAL FÖR LYCKOHJUL -->
+    <div class="wheel-modal-overlay" id="wheelModal">
+        <div class="wheel-modal-content">
+            <button class="wheel-close-btn" id="wheelCloseBtn">&times;</button>
+            <h2 class="wheel-modal-title">Lyckohjulet</h2>
+            <p class="wheel-modal-sub">Snurra för att se vad du vinner!</p>
+            
             <div class="wheel-container">
                 <div class="wheel-pointer">▼</div>
-                <div id="wheel" class="wheel">
-                    <div class="wheel-slice" style="transform: rotate(0deg);"><span>Dejt ❤️</span></div>
-                    <div class="wheel-slice" style="transform: rotate(45deg);"><span>-50% 🦋</span></div>
-                    <div class="wheel-slice" style="transform: rotate(90deg);"><span>Fotbild 📸</span></div>
-                    <div class="wheel-slice" style="transform: rotate(135deg);"><span>Följ IG 📱</span></div>
-                    <div class="wheel-slice" style="transform: rotate(180deg);"><span>Ferrari 🏎️</span></div>
-                    <div class="wheel-slice" style="transform: rotate(225deg);"><span>Nitlott 🛑</span></div>
-                    <div class="wheel-slice" style="transform: rotate(270deg);"><span>Följ TikTok 🎬</span></div>
-                    <div class="wheel-slice" style="transform: rotate(315deg);"><span>Nagelsax 🦶🏾</span></div>
+                <div class="wheel" id="wheel">
+                    <div class="wheel-slice"><span>Vinst 1</span></div>
+                    <div class="wheel-slice"><span>Vinst 2</span></div>
+                    <div class="wheel-slice"><span>Vinst 3</span></div>
+                    <div class="wheel-slice"><span>Vinst 4</span></div>
+                    <div class="wheel-slice"><span>Vinst 5</span></div>
+                    <div class="wheel-slice"><span>Vinst 6</span></div>
+                    <div class="wheel-slice"><span>Vinst 7</span></div>
+                    <div class="wheel-slice"><span>Vinst 8</span></div>
                 </div>
             </div>
 
-            <button id="spin-btn" class="wheel-spin-action-btn" onclick="spinWheel()">SNURRA HJULET!</button>
-            <div id="wheel-result" class="wheel-result-box"></div>
+            <button class="wheel-spin-action-btn" id="spinBtn">SNURRA HJULET</button>
+            <div class="wheel-result-box" id="wheelResult"></div>
         </div>
     </div>
 
-    <div class="page-wrap">
-        <!-- HERO PROFILBILD MED WEBP-STÖD -->
-        <picture class="profile-wrap">
-            <source srcset="profile.webp" type="image/webp">
-            <img class="profile-img" src="profile.jpg" alt="Fotjozef profilbild">
-        </picture>
-
-        <div class="container">
-            <!-- TITEL & TAGLINE MED KAXIG TOUCH -->
-            <h1>Fotjozef <span class="verified-badge" title="Verifierad">✓</span></h1>
-            <p class="tagline">Sveriges kanske mest självupptagna selfielegend ✨</p>
-            <p class="sub-tagline">Svensk kreatör med humor, självironi och världsrekord i selfies 🤳🏾</p>
-            
-            <!-- LJUDSPELARE (OMGJORD TILL KNAPP) -->
-            <audio id="bg-audio" src="Fotjozef_by_DarkAudiogram972.mp3" preload="auto"></audio>
-            <button class="audio-bar" onclick="toggleMusic()" aria-label="Spela upp eller pausa Fotjozef-låten">
-                <span class="audio-btn" id="music-icon">▶️</span>
-                <span class="audio-text">Lyssna på Fotjozef-låten</span>
-            </button>
-
-            <!-- DAGENS DIAGNOS -->
-            <div>
-                <div class="disease-card">
-                    <div class="disease-label">Dagens Diagnos</div>
-                    <div class="disease-value" id="disease-name">Laddar...</div>
-                    <div class="disease-date" id="diagnosis-date">Uppdaterad per idag</div>
-                </div>
-            </div>
-
-            <!-- FOTJOZEF I SIFFROR -->
-            <h2 class="section-title">📊 Fotjozef i siffror</h2>
-            <div class="stats-editorial">
-                <div class="stat-box">
-                    <span class="stat-huge" id="snapscore-count">3,0M+</span>
-                    <span class="stat-sub">Snapscore</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-huge" id="bereal-streak-count">800</span>
-                    <span class="stat-sub">BeReal Streak</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-huge infinity">∞</span>
-                    <span class="stat-sub">Selfies</span>
-                </div>
-            </div>
-
-            <!-- IKONISKT ÖGONBLICK -->
-            <div class="reaction-feature">
-                <h2 class="reaction-title-main">🏆 Ikoniskt ögonblick</h2>
-                <p class="reaction-desc">När <strong title="Vet du varför citroner är gula?">Emil Hansius</strong> reagerar på Fotjozef 🍋</p>
-                
-                <div class="yt-preview-box" id="yt-player-box" onclick="loadYouTubeVideo()">
-                    <img src="Emil_Hansius.jpg" alt="Emil Hansius reagerar på Fotjozef" class="yt-preview-img">
-                    <div class="yt-play-overlay">▶</div>
-                    <div class="yt-badge">07:34</div>
-                </div>
-            </div>
-
-            <!-- OM FOTJOZEF (EXPANDERBAR SEO-BOX MED FÖRSLAG 2) -->
-            <div class="seo-about-section">
-                <button class="seo-about-header" onclick="toggleSeoAbout()" aria-expanded="false">
-                    <span class="seo-about-title">Om Fotjozef</span>
-                    <span class="seo-about-toggle" id="seo-toggle-btn">Läs mer ↓</span>
-                </button>
-                <p class="seo-intro-text">Fotjozef är en svensk innehållsskapare och digital kreatör som på ett unikt sätt blandar humor, självironi, stil och vardagskaos.</p>
-                
-                <div class="seo-collapse-content" id="seo-collapse">
-                    <p class="seo-about-text">Med ett brinnande intresse för fotografi, selfies och sociala medier har #fotjozef etablerat en egen, igenkännbar närvaro online.</p>
-                    
-                    <p class="seo-about-text" style="font-weight: 700; color: #121212; margin-top: 14px;">Människan bakom #fotjozef</p>
-                    <p class="seo-about-text">Med en personlig och avslappnad stil har Fotjozef byggt en engagerande digital värld fylld av komiska betraktelser, selfies, imponerande digitala milstolpar som höga streaks, och vardagsögonblick som varken tar sig själva eller tillvaron på för stort allvar.</p>
-                    <p class="seo-about-text">Denna sida fungerar som en central samlingsplats för allt som rör Fotjozef. Här hittar du:</p>
-                    
-                    <ul class="seo-about-text" style="padding-left: 20px; margin-bottom: 12px;">
-                        <li style="margin-bottom: 6px;"><strong>Ikoniska ögonblick:</strong> Klassiska reaktioner, minnesvärda händelser och höjdpunkter under hashtagen #fotjozef.</li>
-                        <li style="margin-bottom: 6px;"><strong>Sociala medier-rekord:</strong> Inblickar i livet på plattformar som Snapchat och TikTok, inklusive fokus på engagemang och aktiva streaks.</li>
-                        <li style="margin-bottom: 6px;"><strong>Autentiskt innehåll:</strong> En blandning av humor, selfies och självironi som speglar skaparen bakom skärmen.</li>
-                    </ul>
-
-                    <p class="seo-about-text" style="font-weight: 700; color: #121212;">Kort sagt: Humor, självironi, selfies och precis lagom mycket glimt i ögat. Välkommen att utforska mer!</p>
-                </div>
-            </div>
-
-            <!-- POPULÄRA KLIPP -->
-            <div class="link-section-wrap">
-                <h2 class="section-title" style="text-align: left; margin-bottom: 10px;">Populära klipp</h2>
-                <div class="video-grid" style="margin-top: 0;">
-                    <!-- Klipp 1: Mekonomen (TikTok) -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7179084741583392005" target="_blank" class="video-card" title="Mekonomen 🇳🇴⚙️">
-                        <img src="mekonomen.jpg" alt="Fotjozef besöker Mekonomen" class="video-card-img">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">TikTok</div>
-                    </a>
-
-                    <!-- Klipp 2: Emil (TikTok) -->
-                    <a href="https://www.tiktok.com/@fotjozef.official/video/7228226685773122842" target="_blank" class="video-card" title="Lime / Emil 🍋😡">
-                        <img src="emil.jpg" alt="Fotjozef och citroner i relation till Emil Hansius" class="video-card-img">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">TikTok</div>
-                    </a>
-
-                    <!-- Klipp 3: Alkis (Instagram) -->
-                    <a href="https://www.instagram.com/fotjozef/reel/DTpSSZiDRd9/" target="_blank" class="video-card" title="Är du alkis 🔄">
-                        <img src="alkis.jpg" alt="Fotjozef humoromdöme om alkis-frågan" class="video-card-img">
-                        <div class="pinned-badge">📌</div>
-                        <div class="play-btn-banner">Instagram</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- SENASTE FLÖDET (MED LAZY LOAD PÅ KLICK) -->
-            <div class="link-section-wrap">
-                <button class="action-link-btn" onclick="toggleFeed()">
-                    <span>📣 <strong>Senaste flödet</strong> – kika här!</span>
-                    <span class="action-link-arrow" id="feed-arrow">▼</span>
-                </button>
-                <div class="collapse-content" id="feed-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.3s ease;">
-                    <div style="padding-top: 16px;" id="behold-container">
-                        <!-- Widgeten laddas dynamiskt här vid klick -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- HASHTAG DIREKTKNAPP (PLACERAD EFTER SENASTE FLÖDET) -->
-            <div class="link-section-wrap" style="margin-bottom: 24px;">
-                <a href="https://www.tiktok.com/tag/fotjozef" target="_blank" class="action-link-btn" style="border-color: #121212;">
-                    <span>🔍 Upptäck mer under <strong>#fotjozef</strong></span>
-                    <span class="action-link-arrow">→</span>
-                </a>
-            </div>
-
-            <!-- HÄNG MED -->
-            <div class="social-section">
-                <h2 class="section-title">Häng med</h2>
-                
-                <div class="primary-buttons">
-                    <a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="btn-primary">🎵 TikTok</a>
-                    <a href="https://www.instagram.com/fotjozef" target="_blank" class="btn-primary">📸 Instagram</a>
-                </div>
-
-                <div class="social-tier-label" style="margin-top: 16px;">Också här</div>
-                <div class="secondary-buttons">
-                    <a href="https://www.youtube.com/@fotjozef" target="_blank" class="btn-secondary">▶️ YouTube</a>
-                    <a href="https://www.snapchat.com/add/fotjozef" target="_blank" class="btn-secondary">👻 Snapchat</a>
-                    <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
-                    <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
-                </div>
-
-                <a href="mailto:kontakt@jozef.se" class="contact-link" style="margin-top: 8px;">✉️ kontakt@jozef.se</a>
-            </div>
-
-            <!-- COPYRIGHT FOOTER -->
-            <div class="copyright-footer">
-                © 2026 Fotjozef
-                <span class="footer-highlight">Mannen. Myten. Legenden. 🦿</span>
-                
-                <!-- TURN-O-MATIC BILJETT -->
-                <div class="turnomatic-ticket" title="Ditt riktiga könummer som besökare">
-                    <div class="ticket-banner">Kölapp</div>
-                    <div class="ticket-number" id="queue-number">...</div>
-                    <div class="ticket-arrow">↓</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT -->
+    <!-- JAVASCRIPT FÖR ATT ÖPPNA/SNURRA HJULET -->
     <script>
-        const audio = document.getElementById('bg-audio');
-        const musicIcon = document.getElementById('music-icon');
+        const wheelTab = document.getElementById('wheelTab');
+        const wheelModal = document.getElementById('wheelModal');
+        const wheelCloseBtn = document.getElementById('wheelCloseBtn');
+        const spinBtn = document.getElementById('spinBtn');
+        const wheel = document.getElementById('wheel');
+        const wheelResult = document.getElementById('wheelResult');
 
-        function toggleMusic() {
-            if (audio.paused) {
-                audio.play();
-                musicIcon.innerHTML = '⏸️';
-            } else {
-                audio.pause();
-                musicIcon.innerHTML = '▶️';
+        // Öppna modalen när man klickar på fliken
+        wheelTab.addEventListener('click', () => {
+            wheelModal.style.display = 'flex';
+        });
+
+        // Stäng modalen
+        wheelCloseBtn.addEventListener('click', () => {
+            wheelModal.style.display = 'none';
+        });
+
+        // Stäng om man klickar utanför rutan
+        window.addEventListener('click', (e) => {
+            if (e.target === wheelModal) {
+                wheelModal.style.display = 'none';
             }
-        }
+        });
 
-        let feedLoaded = false;
-        function toggleFeed() {
-            const content = document.getElementById('feed-content');
-            const arrow = document.getElementById('feed-arrow');
+        // Snurra-funktion (utan tidsspärr eller borttagning av flik)
+        spinBtn.addEventListener('click', () => {
+            spinBtn.disabled = true;
+            wheelResult.textContent = "Hjulet snurrar...";
             
-            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-                content.style.maxHeight = "0px";
-                arrow.style.transform = "rotate(0deg)";
-            } else {
-                content.style.maxHeight = "3000px";
-                arrow.style.transform = "rotate(180deg)";
-
-                // Ladda behold-widgeten först vid första klicket (Lazy Load)
-                if (!feedLoaded) {
-                    feedLoaded = true;
-                    const beholdContainer = document.getElementById('behold-container');
-                    beholdContainer.innerHTML = '<behold-widget feed-id="Dw5reQOyFMABtBw4Hm2C"></behold-widget>';
-                    
-                    const d = document, s = d.createElement("script");
-                    s.type = "module";
-                    s.src = "https://w.behold.so/widget.js";
-                    d.head.append(s);
-                }
-            }
-        }
-
-        function toggleSeoAbout() {
-            const collapse = document.getElementById('seo-collapse');
-            const toggleBtn = document.getElementById('seo-toggle-btn');
-            
-            if (collapse.style.maxHeight && collapse.style.maxHeight !== "0px") {
-                collapse.style.maxHeight = "0px";
-                toggleBtn.innerText = "Läs mer ↓";
-            } else {
-                collapse.style.maxHeight = "1000px";
-                toggleBtn.innerText = "Visa mindre ↑";
-            }
-        }
-
-        function loadYouTubeVideo() {
-            const box = document.getElementById('yt-player-box');
-            box.innerHTML = `
-                <iframe 
-                    src="https://www.youtube.com/embed/7rHjrC0AT_A?start=454&autoplay=1" 
-                    title="Emil Hansius reagerar på Fotjozef" 
-                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    sandbox="allow-scripts allow-same-origin allow-presentation"
-                    allowfullscreen>
-                </iframe>
-            `;
-        }
-
-        const diseases = [
-            "Haltar", "Svag", "Ryggont", "Dropfot", "Nedsatt lungkapacitet", 
-            "Ojämn", "Dyslexi", "Bokstavskombinationer", "Blodbrist", "Dyskalkyli", 
-            "Nagelvärk", "Nervös", "Ledvärk", "Hörselnedsättning", "Dålig blodcirkulation", 
-            "Fotvärk", "Smalbent", "Dåligt blodvärde", "Knäsvag", "Tandpressning", 
-            "Dålig kondition", "Grovt synfel", "Rädd", "Döv", "Nackspänningar", 
-            "Skolios", "Polio", "Muskelvärk", "Allmänt nedsatt allmäntillstånd", "Postpolio"
-        ];
-
-        const randomDisease = diseases[Math.floor(Math.random() * diseases.length)];
-        document.getElementById("disease-name").innerText = randomDisease;
-
-        // AUTOMATISKT DAGENS DATUM PÅ SVENSKA
-        const today = new Date();
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        const formattedDate = today.toLocaleDateString('sv-SE', options);
-        document.getElementById("diagnosis-date").innerText = "Uppdaterad per " + formattedDate;
-
-        // BEREAL STREAK BERÄKNING
-        const startDate = new Date('2026-08-03');
-        const diffTime = Math.max(0, today - startDate);
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        const currentStreak = 1168 + diffDays;
-
-        // RULLANDE SIFFROR ANIMATION (1 SEKUND)
-        function animateValue(id, start, end, duration, formatFn) {
-            const obj = document.getElementById(id);
-            if (!obj) return;
-            let startstartTimestamp = null;
-            const step = (timestamp) => {
-                if (!startstartTimestamp) startstartTimestamp = timestamp;
-                const progress = Math.min((timestamp - startstartTimestamp) / duration, 1);
-                const currentVal = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = formatFn ? formatFn(currentVal) : currentVal;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // HÄMTA RIKTIGT BESÖKARNUMMER (ANVÄNDER API FÖR LIVE-RÄKNARE)
-        async function fetchVisitorCount() {
-            try {
-                const response = await fetch('https://api.counterapi.dev/v1/fotjozef/visits/up');
-                const data = await response.json();
-                if (data && data.count) {
-                    document.getElementById("queue-number").innerText = data.count;
-                } else {
-                    document.getElementById("queue-number").innerText = "420";
-                }
-            } catch (error) {
-                document.getElementById("queue-number").innerText = "333";
-            }
-        }
-
-        // --- LYCKOHJUL LOGIK ---
-        // Kolla om besökaren redan spelat nyligen (sparas i localStorage i 10 minuter)
-        function checkWheelCooldown() {
-            const lastPlayed = localStorage.getItem('fotjozef_wheel_played');
-            const tab = document.getElementById('wheel-tab');
-            if (lastPlayed) {
-                const elapsed = Date.now() - parseInt(lastPlayed, 10);
-                if (elapsed < 10 * 60 * 1000) { // 10 minuter
-                    tab.style.display = 'none';
-                } else {
-                    tab.style.display = 'flex';
-                }
-            }
-        }
-
-        function openWheelModal() {
-            document.getElementById('wheel-modal').style.display = 'flex';
-            document.getElementById('wheel-result').innerHTML = '';
-            document.getElementById('spin-btn').style.display = 'block';
-            // Återställ hjulets rotation
-            document.getElementById('wheel').style.transform = 'rotate(0deg)';
-        }
-
-        function closeWheelModal() {
-            document.getElementById('wheel-modal').style.display = 'none';
-        }
-
-        function spinWheel() {
-            const spinBtn = document.getElementById('spin-btn');
-            spinBtn.style.display = 'none';
-            
-            const wheel = document.getElementById('wheel');
-            
-            // Vi slumpar utfallet mellan de 3 roliga valen: 
-            // Alternativ 0 = Nitlott (Index 5 på hjulet)
-            // Alternativ 1 = TikTok (Index 6 på hjulet)
-            // Alternativ 2 = Instagram (Index 3 på hjulet)
-            const outcomes = [
-                {
-                    type: 'nitlott',
-                    sliceIndex: 5, // 225 grader
-                    text: '🛑 Otur! Du har för lite tur. Tack för din insats, gå vidare med ditt liv.'
-                },
-                {
-                    type: 'tiktok',
-                    sliceIndex: 6, // 270 grader
-                    text: '🎬 GRATTIS! Du vann äran att följa Fotjozef på TikTok. <br><br><a href="https://www.tiktok.com/@fotjozef.official" target="_blank" class="wheel-link-btn">Hämta vinst (Följ på TikTok)</a>'
-                },
-                {
-                    type: 'instagram',
-                    sliceIndex: 3, // 135 grader
-                    text: '📱 GRATTIS! Du vann äran att följa Fotjozef på Instagram. <br><br><a href="https://www.instagram.com/fotjozef" target="_blank" class="wheel-link-btn">Hämta vinst (Följ på Instagram)</a>'
-                }
-            ];
-
-            const chosen = outcomes[Math.floor(Math.random() * outcomes.length)];
-            
-            // Beräkna rotation: 5 hela varv (1800 grader) + vinkeln för den valda biten (varje bit är 45 grader)
-            const baseRotations = 5 * 360;
-            const targetDegree = baseRotations + (360 - (chosen.sliceIndex * 45));
-
-            wheel.style.transition = 'transform 3s cubic-bezier(0.15, 0.9, 0.2, 1)';
-            wheel.style.transform = `rotate(${targetDegree}deg)`;
+            const randomDegree = Math.floor(Math.random() * 3600) + 720;
+            wheel.style.transition = 'transform 4s cubic-bezier(0.15, 0.30, 0.15, 1)';
+            wheel.style.transform = `rotate(${randomDegree}deg)`;
 
             setTimeout(() => {
-                // Avfyra konfetti!
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-
-                document.getElementById('wheel-result').innerHTML = chosen.text;
-                
-                // Sätt cooldown i 10 minuter och dölj fliken
-                localStorage.setItem('fotjozef_wheel_played', Date.now().toString());
-                document.getElementById('wheel-tab').style.display = 'none';
-            }, 3100);
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            animateValue("snapscore-count", 3000000, 5200000, 1000, (val) => {
-                if (val >= 5200000) return "5,2M+";
-                return (val / 1000000).toFixed(1).replace('.', ',') + "M+";
-            });
-
-            animateValue("bereal-streak-count", 800, currentStreak, 1000, (val) => {
-                return val.toLocaleString('sv-SE');
-            });
-
-            fetchVisitorCount();
-            checkWheelCooldown();
+                wheelResult.innerHTML = "Grattis! Du vann ett hemligt pris! <br><a href='#' class='wheel-link-btn'>Hämta vinst</a>";
+                spinBtn.disabled = false;
+            }, 4000);
         });
     </script>
-
 </body>
 </html>
