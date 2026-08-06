@@ -622,22 +622,22 @@ h1 {
 
 /* --- LYCKOHJUL & FLIK STYLING --- */
 .wheel-tab {
-    position: fixed;
-    right: 0;
-    top: 40%;
-    transform: translateY(-50%) rotate(90deg);
-    transform-origin: right bottom;
-    background: linear-gradient(135deg, #fe2c55, #25F4EE);
-    color: #121212;
-    font-weight: 900;
-    font-size: 0.85rem;
-    padding: 10px 18px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    cursor: pointer;
-    box-shadow: -4px 4px 16px rgba(0,0,0,0.15);
-    z-index: 9999;
-    letter-spacing: 1px;
+    position: fixed !important;
+    right: 0 !important;
+    top: 40% !important;
+    transform: translateY(-50%) rotate(90deg) !important;
+    transform-origin: right bottom !important;
+    background: linear-gradient(135deg, #fe2c55, #25F4EE) !important;
+    color: #121212 !important;
+    font-weight: 900 !important;
+    font-size: 0.85rem !important;
+    padding: 10px 18px !important;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    cursor: pointer !important;
+    box-shadow: -4px 4px 16px rgba(0,0,0,0.15) !important;
+    z-index: 99999 !important;
+    letter-spacing: 1px !important;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -654,7 +654,7 @@ h1 {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
-    z-index: 10000;
+    z-index: 100000;
     justify-content: center;
     align-items: center;
     padding: 16px;
