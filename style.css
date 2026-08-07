@@ -42,7 +42,7 @@ body {
     z-index: 1;
 }
 
-/* PROFILBILD HERO */
+/* PROFILBILD HERO - Uppdaterad för att förhindra kopiering */
 .profile-wrap {
     position: absolute;
     top: -62px;
@@ -59,12 +59,24 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10;
+    /* Skydd mot markering och interaktion */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    pointer-events: none; 
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Extra skydd för själva bilden */
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /* TYPOGRAFI HIERARKI (+10% STORLEK & LUFT) */
