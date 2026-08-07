@@ -79,6 +79,47 @@
         Fotjozef är en svensk digital humorskapare och komiker, känd för sina korta, träffsäkra och igenkännbara humorvideor på sociala medier som TikTok, Instagram, Facebook, BeReal och Snapchat. Med vardagshumor, självironi och en unik blick på sociala situationer skapar Fotjozef sketcher om sådant som många svenskar känner igen från sin egen vardag. Hans humor bygger ofta på igenkänning, sociala normer och situationer där det vanliga plötsligt blir komiskt. Ett återkommande tema i Fotjozefs innehåll är känslan av att vara annorlunda eller hamna lite utanför. Genom att driva med både sig själv, sina egna misstag och sina mindre perfekta sidor skapar han en humor som känns personlig, spontan och lätt att relatera till.
     </div>
 
+    <!-- HÖGERFLIK FÖR LYCKOHJUL -->
+    <div id="wheel-tab" class="wheel-tab" onclick="openWheelModal()">
+        <span>🎁 Spela & Vinn</span>
+    </div>
+
+    <!-- MODAL FÖR LYCKOHJUL -->
+    <div id="wheel-modal" class="wheel-modal-overlay">
+        <div class="wheel-modal-content">
+            <button class="wheel-close-btn" onclick="closeWheelModal()">&times;</button>
+            <h3 class="wheel-title">Vinn med Fotjozef!</h3>
+            <p class="wheel-subtitle">Snurra hjulet och vinn exklusiva Fotjozef-priser!</p>
+            
+            <div class="wheel-container">
+                <div class="wheel-pointer"></div>
+                <div class="wheel" id="fortune-wheel">
+                    <!-- 8 Segments med dina valda priser -->
+                    <div class="wheel-segment" style="--i:0;"><span>Ferrari 🏎️</span></div>
+                    <div class="wheel-segment" style="--i:1;"><span>TikTok 🎵</span></div>
+                    <div class="wheel-segment" style="--i:2;"><span>Dejt ❤️</span></div>
+                    <div class="wheel-segment" style="--i:3;"><span>Nagelsax ✂️</span></div>
+                    <div class="wheel-segment" style="--i:4;"><span>Insta 📸</span></div>
+                    <div class="wheel-segment" style="--i:5;"><span>PT 6 mån 💪</span></div>
+                    <div class="wheel-segment" style="--i:6;"><span>Sjukhus 🏥</span></div>
+                    <div class="wheel-segment" style="--i:7;"><span>Fläktsida 🔥</span></div>
+                </div>
+            </div>
+
+            <button id="spin-btn" class="wheel-spin-button" onclick="spinWheel()">SNURRA HJULET!</button>
+            
+            <!-- VINSTRESULTAT (Dold från början) -->
+            <div id="win-result" class="win-result-box" style="display:none;">
+                <h4 id="win-heading">Grattis!</h4>
+                <p id="win-text">Du har vunnit!</p>
+                <a id="win-link" href="#" target="_blank" class="win-action-btn">Följ nu!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konfetti-bibliotek -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
     <div class="page-wrap">
         <!-- HERO PROFILBILD MED WEBP-STÖD -->
         <picture class="profile-wrap">
@@ -98,7 +139,6 @@
                 <span class="audio-text">Lyssna på Fotjozef-låten</span>
             </button>
 
-            <!-- ... (Resten av din kod är oförändrad nedan) ... -->
             <!-- DAGENS DIAGNOS -->
             <div>
                 <div class="disease-card">
@@ -292,6 +332,80 @@
                 document.getElementById("queue-number").innerText = data.count || "420";
             } catch (e) { document.getElementById("queue-number").innerText = "333"; }
         }
+
+        /* --- LYCKOHJUL LOGIK & KLICK UTANFÖR --- */
+        let hasPlayed = false;
+        let currentRotation = 0;
+
+        const wheelModal = document.getElementById('wheel-modal');
+
+        function openWheelModal() {
+            if (hasPlayed) {
+                alert("🎡 Hoppsan! Du har redan snurrat Fotjozefs lyckohjul.");
+                return;
+            }
+            wheelModal.style.display = 'flex';
+        }
+
+        function closeWheelModal() {
+            wheelModal.style.display = 'none';
+        }
+
+        // Stäng modalen om användaren klickar på mörka bakgrunden (overlay)
+        wheelModal.addEventListener('click', (e) => {
+            if (e.target === wheelModal) {
+                closeWheelModal();
+            }
+        });
+
+        function spinWheel() {
+            if (hasPlayed) return;
+            hasPlayed = true;
+            
+            const spinBtn = document.getElementById('spin-btn');
+            spinBtn.disabled = true;
+            spinBtn.style.opacity = '0.5';
+
+            // Styr hjulet till att BARA stanna på TikTok (index 1) eller Instagram (index 4)
+            const targets = [
+                { index: 1, name: "TikTok", url: "https://www.tiktok.com/@fotjozef.official" },
+                { index: 4, name: "Instagram", url: "https://www.instagram.com/fotjozef" }
+            ];
+            const winningChoice = targets[Math.floor(Math.random() * targets.length)];
+            
+            const segmentAngle = 360 / 8;
+            const targetDegree = 360 - (winningChoice.index * segmentAngle) - (segmentAngle / 2);
+            
+            currentRotation += 1800 + targetDegree + (Math.random() * 10 - 5);
+            
+            const wheel = document.getElementById('fortune-wheel');
+            wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+            setTimeout(() => {
+                triggerConfetti();
+                
+                const resultBox = document.getElementById('win-result');
+                const winHeading = document.getElementById('win-heading');
+                const winText = document.getElementById('win-text');
+                const winLink = document.getElementById('win-link');
+                
+                winHeading.innerText = "JACKPOT! 🎉";
+                winText.innerText = `Du fått en exklusiv chans att följa Fotjozef på ${winningChoice.name}!`;
+                winLink.href = winningChoice.url;
+                winLink.innerText = `Gå till ${winningChoice.name} →`;
+                
+                resultBox.style.display = 'block';
+            }, 4000);
+        }
+
+        function triggerConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             animateValue("snapscore-count", 3000000, 5200000, 1000, (val) => val >= 5200000 ? "5,2M+" : (val / 1000000).toFixed(1).replace('.', ',') + "M+");
             animateValue("bereal-streak-count", 800, currentStreak, 1000, (val) => val.toLocaleString('sv-SE'));
