@@ -177,6 +177,27 @@
                 </div>
             </div>
 
+            <!-- VINN MED FOTJOZEF - PRISER (Placerad mellan Ikoniskt ögonblick och Om Fotjozef) -->
+            <div class="link-section-wrap">
+                <button class="action-link-btn" onclick="togglePrices()">
+                    <span>🎁 <strong>Vinn med Fotjozef</strong> – exklusiva priser väntar!</span>
+                    <span class="action-link-arrow" id="prices-arrow">▼</span>
+                </button>
+                <div class="collapse-content" id="prices-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.3s ease;">
+                    <div style="padding-top: 16px; text-align: left; font-size: 0.9rem; color: #4b5563; line-height: 1.6;">
+                        <p style="margin-bottom: 12px; font-weight: 700; color: #121212;">Vill du vinna unika Fotjozef-priser? Klicka på "Spela & Vinn"-fliken till höger och snurra hjulet!</p>
+                        <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                            <li>❤️ Romantisk dejt med Fotjozef.</li>
+                            <li>🏥 Följa med Fotjozef på ett sjukhusbesök.</li>
+                            <li>🏎️ Provkör Fotjozefs Ferrari.</li>
+                            <li>💪 Fotjozef som din PT i 6 mån.</li>
+                            <li>✂️ Fotjozefs använda nagelsax.</li>
+                            <li>🔥 50% rabatt på Fotjozefs enda fläktsida.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <!-- OM FOTJOZEF -->
             <div class="seo-about-section">
                 <button class="seo-about-header" onclick="toggleSeoAbout()" aria-expanded="false">
@@ -303,6 +324,17 @@
                 collapse.style.maxHeight = "1000px"; toggleBtn.innerText = "Visa mindre ↑";
             }
         }
+        function togglePrices() {
+            const content = document.getElementById('prices-content');
+            const arrow = document.getElementById('prices-arrow');
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                content.style.maxHeight = "0px"; 
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = "500px"; 
+                arrow.style.transform = "rotate(180deg)";
+            }
+        }
         function loadYouTubeVideo() {
             const box = document.getElementById('yt-player-box');
             box.innerHTML = `<iframe src="https://www.youtube.com/embed/7rHjrC0AT_A?start=454&autoplay=1" title="Emil Hansius reagerar på Fotjozef" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>`;
@@ -403,7 +435,7 @@
                 particleCount: 150,
                 spread: 80,
                 origin: { y: 0.6 },
-                zIndex: 99999 // Sätter konfettin på ett eget högt lager ovanför allt annat
+		zIndex: 99999 // Sätter konfettin på ett eget högt lager ovanför allt annat
             });
         }
 
