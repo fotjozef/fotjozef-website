@@ -436,8 +436,8 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            animateValue("snapscore-count", 3000000, 5200000, 5000, (val) => val >= 5200000 ? "5,2M+" : (val / 1000000).toFixed(1).replace('.', ',') + "M+");
-            animateValue("bereal-streak-count", 1100, currentStreak, 5000, (val) => val.toLocaleString('sv-SE'));
+            animateValue("snapscore-count", 3000000, 5200000, 1000, (val) => val >= 5200000 ? "5,2M+" : (val / 1000000).toFixed(1).replace('.', ',') + "M+");
+            animateValue("bereal-streak-count", 1100, currentStreak, 1200, (val) => val.toLocaleString('sv-SE'));
         });
     </script>
 </body>
