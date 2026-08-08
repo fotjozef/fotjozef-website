@@ -24,7 +24,7 @@
     <title>Fotjozef | Svensk kreatör med humor, självironi & världsrekord i selfies</title>
     
     <!-- SEO META TAGS -->
-    <meta name="description" content="Fotjozef är en svensk humorskapare och komiker. Utforska vardagshumor, selfies och sociala medier-rekord under aliaset Fotjozef.">
+    <meta name="description" content="Fotjozef är ett svenskt humoralias på sociala medier, med vardagshumor, selfies, virala ögonblick och annat som händer längs vägen.">    
     <meta name="keywords" content="Fotjozef, vem är Fotjozef, svensk kreatör, Snapchat, Instagram, BeReal, Snapscore, selfies, rekord, humor, svensk influencer, viral svensk kreatör">
     <link rel="canonical" href="https://fotjozef.se/">
 
@@ -52,7 +52,7 @@
           "@type": "WebSite",
           "@id": "https://fotjozef.se/#website",
           "url": "https://fotjozef.se/",
-          "name": "Fotjozef",
+          "name": "Fotjozef – Mannen. Myten. Legenden.",
           "image": "https://fotjozef.se/profile.webp"
         },
         {
@@ -280,7 +280,7 @@
             <div class="copyright-footer">
                 © 2026 Fotjozef
                 <span class="footer-highlight">Mannen. Myten. Legenden. 🦿</span>
-                <div class="turnomatic-ticket" title="Könummer">
+                <div class="turnomatic-ticket" title="Könummer" onclick="showTicketSoldOut()" style="cursor: pointer;">
                     <div class="ticket-banner">Kölapp</div>
                     <div class="ticket-number">Köa här</div>
                     <div class="ticket-arrow">↓</div>
@@ -339,6 +339,11 @@
             const box = document.getElementById('yt-player-box');
             box.innerHTML = `<iframe src="https://www.youtube.com/embed/7rHjrC0AT_A?start=454&autoplay=1" title="Emil Hansius reagerar på Fotjozef" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>`;
         }
+        
+        function showTicketSoldOut() {
+            alert("På grund av exceptionellt hög efterfrågan är samtliga kölappar till Fotjozef slut.");
+        }
+
         const diseases = ["Haltar", "Svag", "Ryggont", "Dropfot", "Nedsatt lungkapacitet", "Ojämn", "Dyslexi", "Bokstavskombinationer", "Blodbrist", "Dyskalkyli", "Nagelvärk", "Nervös", "Ledvärk", "Hörselnedsättning", "Dålig blodcirkulation", "Fotvärk", "Smalbent", "Dåligt blodvärde", "Knäsvag", "Tandpressning", "Dålig kondition", "Grovt synfel", "Rädd", "Döv", "Nackspänningar", "Skolios", "Polio", "Muskelvärk", "Allmänt nedsatt allmäntillstånd", "Postpolio"];
         document.getElementById("disease-name").innerText = diseases[Math.floor(Math.random() * diseases.length)];
         const today = new Date();
