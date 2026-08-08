@@ -274,7 +274,8 @@
                     <a href="https://bere.al/fotjozef" target="_blank" class="btn-secondary">⚠️ BeReal</a>
                     <a href="https://www.threads.net/@fotjozef" target="_blank" class="btn-secondary">🧵 Threads</a>
                 </div>
-                <a href="mailto:kontakt@jozef.se" class="contact-link" style="margin-top: 8px;">✉️ kontakt@jozef.se</a>
+                <!-- ÄNDRAD: Nu med manager-popup -->
+                <a href="javascript:void(0);" onclick="showManagerPopup()" class="contact-link" style="margin-top: 8px;">✉️ kontakt@jozef.se</a>
             </div>
 
             <div class="copyright-footer">
@@ -291,6 +292,11 @@
 
     <!-- SCRIPT -->
     <script>
+        // NY FUNKTION FÖR MANAGER-POPUP
+        function showManagerPopup() {
+            alert("Hej!\nJag tycker att det är bäst att våra managers tar dialogen direkt. Be din manager kontakta min manager på kontakt@jozef.se");
+        }
+
         const audio = document.getElementById('bg-audio');
         const musicIcon = document.getElementById('music-icon');
         function toggleMusic() {
