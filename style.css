@@ -1,4 +1,32 @@
-/* --- Hela den kompletterade CSS:en --- */
+/* --- LOKALT HOSTAD MONTESSERT-FONT (Lättvikt: endast nödvändiga vikter) --- */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2') format('woff2');
+}
 
 /* BASE & SYSTEM SPACING */
 * {
@@ -6,7 +34,6 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-display: swap;
 }
 
 body {
@@ -42,7 +69,7 @@ body {
     z-index: 1;
 }
 
-/* PROFILBILD HERO - Skyddad mot kopiering och interaktion */
+/* PROFILBILD HERO */
 .profile-wrap {
     position: absolute;
     top: -62px;
@@ -60,10 +87,7 @@ body {
     align-items: center;
     z-index: 10;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
-    -webkit-touch-callout: none;
     pointer-events: none;
 }
 
@@ -71,13 +95,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    -webkit-user-drag: none;
-    user-drag: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
-/* TYPOGRAFI HIERARKI (+10% STORLEK & LUFT) */
+/* TYPOGRAFI HIERARKI */
 h1 {
     font-size: 2.5rem;
     font-weight: 900;
@@ -91,7 +111,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* RUND VERIFIERAD BOCK (MED VIT BOCK ENLIGT TIKTOK-STANDARD) */
 .verified-badge {
     display: inline-flex;
     align-items: center;
@@ -106,7 +125,6 @@ h1 {
     vertical-align: middle;
     box-shadow: 0 2px 8px rgba(32, 213, 223, 0.4);
     user-select: none;
-    -webkit-user-select: none;
     pointer-events: none;
 }
 
@@ -136,7 +154,7 @@ h1 {
     margin-bottom: 18px;
 }
 
-/* LJUDSPELARE (OMGJORD TILL KNAPP) */
+/* LJUDSPELARE */
 .audio-bar {
     display: inline-flex;
     align-items: center;
@@ -327,7 +345,7 @@ h1 {
     z-index: 2;
 }
 
-/* OM FOTJOZEF (EXPANDERBAR SEO-BOX) */
+/* OM FOTJOZEF */
 .seo-about-section {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -595,11 +613,6 @@ h1 {
     right: 0;
     top: 20px;
     transform: rotate(2deg);
-    transition: transform 0.2s ease;
-}
-
-.turnomatic-ticket:hover {
-    transform: rotate(0deg) scale(1.05);
 }
 
 .ticket-banner {
@@ -621,7 +634,7 @@ h1 {
     font-weight: bold;
     color: #121212;
     line-height: 1;
-    letter-spacing: -1px;
+    min-height: 16px;
 }
 
 .ticket-arrow {
@@ -632,7 +645,7 @@ h1 {
     line-height: 1;
 }
 
-/* --- LYCKOHJUL & HÖGERFLIK --- */
+/* LYCKOHJUL & HÖGERFLIK */
 .wheel-tab {
     position: fixed;
     right: 10px;
@@ -803,7 +816,6 @@ h1 {
     background: #f0fdfd;
     border: 1.5px solid #25F4EE;
     border-radius: 12px;
-    animation: fadeIn 0.4s ease;
 }
 
 .win-result-box h4 {
